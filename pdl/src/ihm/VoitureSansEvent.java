@@ -25,6 +25,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JTable;
+
+import principal.Variable_appli;
+
 import java.awt.Cursor;
 
 
@@ -54,7 +57,7 @@ public class VoitureSansEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 
-		JCheckBox chckbxVoitureActive = new JCheckBox("Voiture activ\u00E9e");
+		final JCheckBox chckbxVoitureActive = new JCheckBox("Voiture activ\u00E9e");
 		chckbxVoitureActive.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxVoitureActive.setBackground(SystemColor.activeCaption);
 		chckbxVoitureActive.setBounds(628, 133, 298, 23);
@@ -108,6 +111,9 @@ public class VoitureSansEvent extends JPanel {
 		textField.setBounds(189, 67, 283, 20);
 		desktopPane.add(textField);
 		textField.setColumns(10);
+		if (Variable_appli.voituresauvegarder.getVoiture_num()!=0) {
+			textField.setText(String.valueOf(Variable_appli.voituresauvegarder.getVoiture_num()));
+		}
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(568, 68, 290, 20);
@@ -128,7 +134,9 @@ public class VoitureSansEvent extends JPanel {
 		textField_4.setBounds(662, 202, 119, 20);
 		desktopPane.add(textField_4);
 		textField_4.setColumns(10);
-
+		
+		//textField_4.setText(arg0);
+		
 		table = new JTable();
 		table.setBounds(10, 325, 410, 214);
 		desktopPane.add(table);
@@ -136,7 +144,7 @@ public class VoitureSansEvent extends JPanel {
 
 		/* BOUTONS DE LA FENETRE */
 
-// Bouton Sauvegarder
+		// Bouton Sauvegarder
 		JButton btnSauvegarder = new JButton("Sauvegarder");
 		btnSauvegarder.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon1 = new ImageIcon("icones/disquette$.png");
@@ -144,6 +152,8 @@ public class VoitureSansEvent extends JPanel {
 		btnSauvegarder.setBounds(541, 355, 137, 74);
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				
 				removeAll();
 				repaint();
 				FirstFenetre inter2 = new FirstFenetre();
@@ -156,7 +166,7 @@ public class VoitureSansEvent extends JPanel {
 
 		
 		
-// annuler
+		// annuler
 		JButton btnAnnuler = new JButton("Annuler");
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon2 = new ImageIcon("");
@@ -176,7 +186,7 @@ public class VoitureSansEvent extends JPanel {
 
 
 
-// Ajouter un pilote
+		// Ajouter un pilote
 		JButton btnAjouterPilote = new JButton("");
 		btnAjouterPilote.setBorderPainted(false);
 		btnAjouterPilote.setIgnoreRepaint(true);
@@ -186,7 +196,28 @@ public class VoitureSansEvent extends JPanel {
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
 		btnAjouterPilote.setIcon(loginIcon3);
 		btnAjouterPilote.addActionListener(new ActionListener() {
+			int nom = 0;
 			public void actionPerformed(ActionEvent e) {
+				if (textField.getText()!=""){
+					nom = Integer.parseInt(textField.getText());
+				}
+				/*String couleur = textField_1.getText();
+				String lien = textField_2.getText();
+				int nbreTour = Integer.parseInt(textField_3.getText());
+				String temps = textField_4.getText();
+				boolean estactive = chckbxVoitureActive.isSelected();*/
+				if (nom!=0){
+					System.out.println("toto");
+				}
+				else {
+					System.out.println("tata");
+				}
+				//Variable_appli.voituresauvegarder.setVoiture_num(nom);
+				/*Variable_appli.voituresauvegarder.setVoiture_couleur(couleur);
+				Variable_appli.voituresauvegarder.setVoiture_lien_img(lien);
+				Variable_appli.voituresauvegarder.setVoiture_nbreTour_par_relai(nbreTour);
+				Variable_appli.voituresauvegarder.setVoiture_active(estactive);
+				Variable_appli.voituresauvegarder.setVoiture_temps_estime_partour(temps);*/
 				removeAll();
 				repaint();
 				CreerPiloteSansEvent inter4 = new CreerPiloteSansEvent();

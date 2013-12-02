@@ -19,8 +19,8 @@ public class test extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			
-			//Dico.langue = Dico.langue + "chinois";
-			public void run() {
+		//Dico.langue = Dico.langue + "chinois";
+		public void run() {
 				try {
 					test frame = new test();
 					Lancement l = new Lancement();
