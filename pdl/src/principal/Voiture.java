@@ -1,12 +1,13 @@
 package principal;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement 
-@XmlType(propOrder = { "voiture_num", "voiture_couleur", "voiture_lien_img", "voiture_nbreTour_par_relai", "voiture_temps_estime_partour" , "voiture_active" , "pil" , "voiture_pilote_actuelle" })
+//@XmlType(propOrder = { "voiture_num", "voiture_couleur", "voiture_lien_img", "voiture_nbreTour_par_relai", "voiture_temps_estime_partour" , "voiture_active" , "pil" , "voiture_pilote_actuelle" })
 public class Voiture {
 
 	// attributs principaux
@@ -15,8 +16,16 @@ public class Voiture {
 	private String voiture_lien_img;
 	private int voiture_nbreTour_par_relai;
 	private String voiture_temps_estime_partour;
+	
 	private boolean voiture_active;
-	private List <Pilote> voiture_list_pilotes;
+	private List <Pilote> voiture_list_pilotes = new ArrayList <Pilote>();
+	public List<Pilote> getVoiture_list_pilotes() {
+		return voiture_list_pilotes;
+	}
+	public void setVoiture_list_pilotes(List<Pilote> voiture_list_pilotes) {
+		this.voiture_list_pilotes = voiture_list_pilotes;
+	}
+
 	private Pilote voiture_pilote_actuelle;
 	private List<Top> voiture_list_top;
 	// autre attributs
@@ -32,7 +41,6 @@ public class Voiture {
 		this.voiture_nbreTour_par_relai = 0;
 		this.voiture_temps_estime_partour = "";
 		this.voiture_active = false;
-		this.voiture_list_pilotes = null;
 		this.voiture_pilote_actuelle = null;
 	}
 	public Voiture(int num, String couleur, String lien, int nbretourrelai, String tempsestimee, boolean active, List<Pilote> pil, Pilote actuelle) {
@@ -45,7 +53,7 @@ public class Voiture {
 		this.voiture_list_pilotes = pil;
 		this.voiture_pilote_actuelle = actuelle;
 	}
-	@XmlElement
+	//@XmlElement
 	public int getVoiture_num() {
 		return voiture_num;
 	}
@@ -53,7 +61,7 @@ public class Voiture {
 	public void setVoiture_num(int voiture_num) {
 		this.voiture_num = voiture_num;
 	}
-	@XmlElement
+	//@XmlElement
 	public String getVoiture_couleur() {
 		return voiture_couleur;
 	}
@@ -61,7 +69,7 @@ public class Voiture {
 	public void setVoiture_couleur(String voiture_couleur) {
 		this.voiture_couleur = voiture_couleur;
 	}
-	@XmlElement
+	//@XmlElement
 	public String getVoiture_lien_img() {
 		return voiture_lien_img;
 	}
@@ -69,7 +77,7 @@ public class Voiture {
 	public void setVoiture_lien_img(String voiture_lien_img) {
 		this.voiture_lien_img = voiture_lien_img;
 	}
-	@XmlElement
+	//@XmlElement
 	public int getVoiture_nbreTour_par_relai() {
 		return voiture_nbreTour_par_relai;
 	}
@@ -77,7 +85,7 @@ public class Voiture {
 	public void setVoiture_nbreTour_par_relai(int voiture_nbreTour_par_relai) {
 		this.voiture_nbreTour_par_relai = voiture_nbreTour_par_relai;
 	}
-	@XmlElement
+	//@XmlElement
 	public String getVoiture_temps_estime_partour() {
 		return voiture_temps_estime_partour;
 	}
@@ -86,7 +94,8 @@ public class Voiture {
 			String voiture_temps_estime_partour) {
 		this.voiture_temps_estime_partour = voiture_temps_estime_partour;
 	}
-	@XmlElement
+	//@XmlElement
+	@XmlAttribute
 	public boolean isVoiture_active() {
 		return voiture_active;
 	}
@@ -120,7 +129,7 @@ public class Voiture {
 		this.voiture_list_top = voiture_list_top;
 	}
 */	
-	@XmlElement
+
 	public void voiture_add_pilote(Pilote p) {
 		if (p!= null) {
 			this.voiture_list_pilotes.add(p);
@@ -131,6 +140,10 @@ public class Voiture {
 		if (this.voiture_list_pilotes.contains(p)) {
 			this.voiture_list_pilotes.remove(p);
 		}
+	}
+	
+	public boolean listPiloteVide (Voiture v){
+		return v.voiture_list_pilotes.isEmpty();
 	}
 	
 	
