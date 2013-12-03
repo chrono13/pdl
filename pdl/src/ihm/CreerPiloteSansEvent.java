@@ -88,6 +88,9 @@ public class CreerPiloteSansEvent extends JPanel {
 		nomPilote.setBounds(551, 122, 270, 20);
 		desktopPane.add(nomPilote);
 		nomPilote.setColumns(10);
+		if ((p.getPilote_nomprenom()).equals("")) {
+			nomPilote.setText(p.getPilote_nomprenom());
+		}
 		
 		
 		/* BOUTONS DE LA FENETRE */
@@ -101,14 +104,14 @@ public class CreerPiloteSansEvent extends JPanel {
 				String nom;
 				String img;
 				String casque;
-				if (nomPilote == null || nomPilote.getText().equals("") || prenomPilote== null || prenomPilote.getText().equals("") || couleurCasque.getText().equals("") 
+				if (nomPilote == null || nomPilote.getText().equals("")  || couleurCasque.getText().equals("") 
 						|| couleurCasque == null || imagePilote == null || imagePilote.getText().equals("")) {
 					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément chez le pilote alors on avertit le client
 				}
 				//évènement suite au "clic" sur le bouton ajouter/modifier
-				if (nomPilote != null && !nomPilote.getText().equals("") && prenomPilote!= null && !prenomPilote.getText().equals("")) {
-					nom = nomPilote.getText()+" "+prenomPilote.getText();
+				if (nomPilote != null && !nomPilote.getText().equals("") ) {
+					nom = nomPilote.getText();
 					p.setPilote_nomprenom(nom);
 				}
 				if (couleurCasque != null && !couleurCasque.getText().equals("")) {

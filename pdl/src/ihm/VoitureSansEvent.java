@@ -174,16 +174,19 @@ public class VoitureSansEvent extends JPanel {
 		model.addColumn("supprimer");
 		if (!v.listPiloteVide(v)) {
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+		
 			while(it.hasNext()) {
 				Pilote p1 = it.next();
 				String nom = p1.getPilote_nomprenom();
-				model.addRow(new Object [] {nom, 1, 2});
+				JButton b = new JButton("Ajout bouton");
+				model.addRow(new Object [] {nom,  b, 2});
 			}
 		}
 		table.setModel(model);
+		//JScrollPane scrollPane = new JScrollPane(table);
 		// kavishan ici doit voir le problème d'ajout d'une scroll bar au tableau
 		//JScrollPane scroll = new JScrollPane(table);
-		//desktopPane.add(scroll);	
+		//table.add(scrollPane);	
 		
 
 		/* BOUTONS DE LA FENETRE */
@@ -238,6 +241,7 @@ public class VoitureSansEvent extends JPanel {
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
 		btnAjouterPilote.setIcon(loginIcon3);
 		btnAjouterPilote.addActionListener(new ActionListener() {
+			
 			int nom = 0;
 			Pilote p = new Pilote();
 			public void actionPerformed(ActionEvent e) {
@@ -265,6 +269,17 @@ public class VoitureSansEvent extends JPanel {
 				Variable_appli.voituresauvegarder.setVoiture_temps_estime_partour(temps);*/
 				removeAll();
 				repaint();
+				int ligne = table.getSelectedRow();
+				if (ligne !=-1) {
+					Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+					int i = 0;
+					while(it.hasNext() && i<=ligne) {
+						
+						if (i == ligne) {
+							 p = it.next();
+						}
+					}
+				}
 				CreerPiloteSansEvent inter4 = new CreerPiloteSansEvent(v, p);
 				add(inter4);
 				validate();
