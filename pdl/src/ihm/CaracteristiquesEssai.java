@@ -3,14 +3,21 @@ package ihm;
 import javax.swing.JPanel;
 import javax.swing.JDesktopPane;
 import javax.swing.BoxLayout;
+
 import java.awt.SystemColor;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -134,6 +141,9 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.add(txtpnCommentairesCourse);
 		
 		JButton btnAnnuler = new JButton("Annuler");
+		btnAnnuler.setBorderPainted(false);
+		Icon loginIcon2 = new ImageIcon("icones/previous.png");
+		btnAnnuler.setIcon(loginIcon2);
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
@@ -148,6 +158,9 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.add(btnAnnuler);
 		
 		JButton btnValider = new JButton("Valider");
+		btnValider.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/valid.png");
+		btnValider.setIcon(loginIcon1);
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();

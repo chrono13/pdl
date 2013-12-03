@@ -3,13 +3,20 @@ package ihm;
 import javax.swing.JPanel;
 import javax.swing.JDesktopPane;
 import javax.swing.BoxLayout;
+
 import java.awt.SystemColor;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -131,7 +138,10 @@ public class CaracteristiquesCourse extends JPanel {
 		txtpnCommentairesCourse.setBounds(208, 310, 574, 164);
 		desktopPane.add(txtpnCommentairesCourse);
 		
-		JButton btnAnnuler = new JButton("Annuler");
+		JButton btnAnnuler = new JButton("");
+		btnAnnuler.setBorderPainted(false);
+		Icon loginIcon2 = new ImageIcon("icones/previous.png");
+		btnAnnuler.setIcon(loginIcon2);
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
@@ -142,10 +152,13 @@ public class CaracteristiquesCourse extends JPanel {
 			}
 		});
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		btnAnnuler.setBounds(108, 485, 163, 65);
+		btnAnnuler.setBounds(131, 486, 163, 65);
 		desktopPane.add(btnAnnuler);
 		
-		JButton btnLancerLaCourse = new JButton("Lancer la course");
+		JButton btnLancerLaCourse = new JButton("");
+		btnLancerLaCourse.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/lancer.png");
+		btnLancerLaCourse.setIcon(loginIcon1);
 		btnLancerLaCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
@@ -157,7 +170,7 @@ public class CaracteristiquesCourse extends JPanel {
 		});
 		btnLancerLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnLancerLaCourse.setToolTipText("");
-		btnLancerLaCourse.setBounds(714, 485, 163, 65);
+		btnLancerLaCourse.setBounds(653, 485, 163, 65);
 		desktopPane.add(btnLancerLaCourse);
 		
 		JLabel lblSur = new JLabel("sur");
@@ -169,6 +182,15 @@ public class CaracteristiquesCourse extends JPanel {
 		lblLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblLaCourse.setBounds(90, 422, 130, 22);
 		desktopPane.add(lblLaCourse);
+		
+		JLabel lblLancerLaCourse = new JLabel("Lancer la course");
+		lblLancerLaCourse.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		lblLancerLaCourse.setBounds(569, 508, 221, 16);
+		desktopPane.add(lblLancerLaCourse);
+		
+		JLabel lblAnnuler = new JLabel("Annuler");
+		lblAnnuler.setBounds(244, 509, 100, 16);
+		desktopPane.add(lblAnnuler);
 
 	}
 }
