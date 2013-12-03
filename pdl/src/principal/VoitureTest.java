@@ -28,7 +28,7 @@ public class VoitureTest {
 		v.setVoiture_couleur("bleu");
 		v.setVoiture_lien_img("\\hdfdb");
 		v.setVoiture_nbreTour_par_relai(25);
-		v.setVoiture_num(007);
+		v.setVoiture_num("007");
 		v.setVoiture_pilote_actuelle(p);
 		v.voiture_add_pilote(p);
 		v.voiture_add_pilote(p2);
