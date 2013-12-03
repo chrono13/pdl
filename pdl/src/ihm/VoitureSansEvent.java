@@ -27,6 +27,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 import principal.Pilote;
 import principal.Variable_appli;
@@ -54,13 +55,9 @@ public class VoitureSansEvent extends JPanel {
 		
 	}
 
-	public VoitureSansEvent(Voiture v) {
-		this.v = v;
-		mkUI();
-		
-	}
-
-	private void mkUI() {
+	public VoitureSansEvent(final Voiture v) {
+		//this.v = v;
+		//mkUI();
 		setBackground(new Color(240, 240, 240));
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 
@@ -121,7 +118,7 @@ public class VoitureSansEvent extends JPanel {
 		lblPiloteAuDopart.setBounds(547, 304, 189, 14);
 		desktopPane.add(lblPiloteAuDopart);
 
-		JComboBox comboBox = new JComboBox();
+		final JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(684, 296, 97, 27);
 		desktopPane.add(comboBox);
 		if (!v.listPiloteVide(v)) {
@@ -132,15 +129,13 @@ public class VoitureSansEvent extends JPanel {
 				comboBox.addItem(nom);
 			}
 		}
-		
+		this.v = v;
 		
 		textField = new JTextField();
 		textField.setBounds(189, 67, 283, 20);
 		desktopPane.add(textField);
 		textField.setColumns(10);
-		if (Variable_appli.voituresauvegarder.getVoiture_num()!=0) {
-			textField.setText(String.valueOf(Variable_appli.voituresauvegarder.getVoiture_num()));
-		}
+		
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(568, 68, 290, 20);
@@ -167,26 +162,26 @@ public class VoitureSansEvent extends JPanel {
 		table = new JTable();
 		table.setBounds(10, 325, 410, 214);
 		desktopPane.add(table);
-		String [] entete = {"nom du pilote", "modifier", "supprimer"};
-		DefaultTableModel model = new DefaultTableModel();
-		model.addColumn("Nom du pilote");
-		model.addColumn("modifier");
-		model.addColumn("supprimer");
+		final DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("Nom et prenom");
+		model.addColumn("Couleur Casque");
+		model.addColumn("Lien image");
+		String [] entete =  {"Nom et prenom", "Couleur Casque", "Lien image" };
+		
+		model.setColumnIdentifiers(entete);
+		
 		if (!v.listPiloteVide(v)) {
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 		
 			while(it.hasNext()) {
 				Pilote p1 = it.next();
 				String nom = p1.getPilote_nomprenom();
-				JButton b = new JButton("Ajout bouton");
-				model.addRow(new Object [] {nom,  b, 2});
+				String couleur = p1.getPilote_couleur();
+				String lien = p1.getPilote_lien_sur_img();
+				model.addRow(new Object [] {nom,  couleur, lien});
 			}
 		}
 		table.setModel(model);
-		//JScrollPane scrollPane = new JScrollPane(table);
-		// kavishan ici doit voir le problème d'ajout d'une scroll bar au tableau
-		//JScrollPane scroll = new JScrollPane(table);
-		//table.add(scrollPane);	
 		
 
 		/* BOUTONS DE LA FENETRE */
@@ -241,43 +236,22 @@ public class VoitureSansEvent extends JPanel {
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
 		btnAjouterPilote.setIcon(loginIcon3);
 		btnAjouterPilote.addActionListener(new ActionListener() {
-			
-			int nom = 0;
-			Pilote p = new Pilote();
 			public void actionPerformed(ActionEvent e) {
-				
-				if (textField != null && !textField.getText().equals("")) {
-					nom = Integer.parseInt(textField.getText());
+				String nom ="";
+				if (!textField.getText().equals("")) {
+					nom = textField.getText();
 					v.setVoiture_num(nom);
 				}
-				/*String couleur = textField_1.getText();
-				String lien = textField_2.getText();
-				int nbreTour = Integer.parseInt(textField_3.getText());
-				String temps = textField_4.getText();
-				boolean estactive = chckbxVoitureActive.isSelected();*/
-				/*if (nom!=0){
-					System.out.println("toto");
-				}
-				else {
-					System.out.println("tata");
-				}
-				//Variable_appli.voituresauvegarder.setVoiture_num(nom);
-				/*Variable_appli.voituresauvegarder.setVoiture_couleur(couleur);
-				Variable_appli.voituresauvegarder.setVoiture_lien_img(lien);
-				Variable_appli.voituresauvegarder.setVoiture_nbreTour_par_relai(nbreTour);
-				Variable_appli.voituresauvegarder.setVoiture_active(estactive);
-				Variable_appli.voituresauvegarder.setVoiture_temps_estime_partour(temps);*/
 				removeAll();
 				repaint();
 				int ligne = table.getSelectedRow();
-				if (ligne !=-1) {
-					Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+				Pilote p = new Pilote ();
+				if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
 					int i = 0;
-					while(it.hasNext() && i<=ligne) {
-						
-						if (i == ligne) {
-							 p = it.next();
-						}
+					Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+					while(it.hasNext() && i<=ligne){
+						p =it.next();
+						i++;
 					}
 				}
 				CreerPiloteSansEvent inter4 = new CreerPiloteSansEvent(v, p);
@@ -287,7 +261,31 @@ public class VoitureSansEvent extends JPanel {
 		});
 		btnAjouterPilote.setBounds(175, 303, 33, 18);
 		desktopPane.add(btnAjouterPilote);
-
+		
+		JButton button_supprimerpilote = new JButton("");
+		button_supprimerpilote.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int ligne = table.getSelectedRow();
+				Pilote p = new Pilote ();
+					if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+						int i = 0;
+						Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+						while(it.hasNext() && i<=ligne){
+							p = it.next();
+							if (i == ligne) {
+								it.remove();
+							}
+							i++;
+						}
+					}
+					model.removeRow(ligne);
+					comboBox.removeItemAt(ligne);
+					// on notify la table comme quoi un pilote n'est plus
+			}
+		});
+	
+		button_supprimerpilote.setBounds(227, 298, 41, 23);
+		desktopPane.add(button_supprimerpilote);
 		
 	}
 }

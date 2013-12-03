@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Voiture {
 
 	// attributs principaux
-	private int voiture_num;
+	private String voiture_num;
 	private String voiture_couleur;
 	private String voiture_lien_img;
 	private int voiture_nbreTour_par_relai;
@@ -35,7 +35,7 @@ public class Voiture {
 	private int voiture_num_relai;
 	
 	public Voiture() {
-		this.voiture_num = 0;
+		this.voiture_num = "";
 		this.voiture_couleur = "";
 		this.voiture_lien_img = "";
 		this.voiture_nbreTour_par_relai = 0;
@@ -43,7 +43,7 @@ public class Voiture {
 		this.voiture_active = false;
 		this.voiture_pilote_actuelle = null;
 	}
-	public Voiture(int num, String couleur, String lien, int nbretourrelai, String tempsestimee, boolean active, List<Pilote> pil, Pilote actuelle) {
+	public Voiture(String num, String couleur, String lien, int nbretourrelai, String tempsestimee, boolean active, List<Pilote> pil, Pilote actuelle) {
 		this.voiture_num = num;
 		this.voiture_couleur = couleur;
 		this.voiture_lien_img = lien;
@@ -54,11 +54,11 @@ public class Voiture {
 		this.voiture_pilote_actuelle = actuelle;
 	}
 	//@XmlElement
-	public int getVoiture_num() {
+	public String getVoiture_num() {
 		return voiture_num;
 	}
 
-	public void setVoiture_num(int voiture_num) {
+	public void setVoiture_num(String voiture_num) {
 		this.voiture_num = voiture_num;
 	}
 	//@XmlElement

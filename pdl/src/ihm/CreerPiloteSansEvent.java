@@ -27,6 +27,7 @@ public class CreerPiloteSansEvent extends JPanel {
 	
 	private Voiture v;
 	private Pilote p;
+	private Boolean verrou = false;
 
 	/**
 	 * Create the panel.
@@ -74,15 +75,18 @@ public class CreerPiloteSansEvent extends JPanel {
 		nomPilote.setBounds(551, 184, 270, 20);
 		desktopPane.add(nomPilote);
 		nomPilote.setColumns(10);
-		if ((p.getPilote_nomprenom()).equals("")) {
-			nomPilote.setText(p.getPilote_nomprenom());
-		}
 		
+		if (p!=null) {
+			verrou = true;
+			nomPilote.setText(p.getPilote_nomprenom());
+			imagePilote.setText(p.getPilote_lien_sur_img());
+			couleurCasque.setText(p.getPilote_couleur());
+		}
 		
 		/* BOUTONS DE LA FENETRE */
 		
 
-//bouton ajouter ou modifier		
+		//bouton ajouter ou modifier		
 		JButton btnAjoutermodifier = new JButton("Ajouter/Modifier");
 		btnAjoutermodifier.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjoutermodifier.addActionListener(new ActionListener() {
@@ -90,6 +94,9 @@ public class CreerPiloteSansEvent extends JPanel {
 				String nom;
 				String img;
 				String casque;
+				if (verrou) {// si le pilote existait déja est que le modifie alors on supprime son ancien item afin d'en refaire un nouveau
+					v.voiture_remove_pilote(p);
+				}
 				if (nomPilote == null || nomPilote.getText().equals("")  || couleurCasque.getText().equals("") 
 						|| couleurCasque == null || imagePilote == null || imagePilote.getText().equals("")) {
 					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
@@ -121,7 +128,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		
 		
 		
-// bouton retour		
+		// bouton retour		
 		JButton btnRetour = new JButton("Retour");
 		btnRetour.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnRetour.addActionListener(new ActionListener() {
