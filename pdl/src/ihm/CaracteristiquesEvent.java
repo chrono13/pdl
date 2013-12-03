@@ -15,7 +15,6 @@ import javax.swing.JTextPane;
 import javax.swing.JFormattedTextField;
 import javax.swing.border.LineBorder;
 
-
 public class CaracteristiquesEvent extends JPanel {
 
 	/**
@@ -28,7 +27,7 @@ public class CaracteristiquesEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblCaractristiquesDeLa = new JLabel("Caract\u00E9ristiques de l'\u00E9v\u00E9nement");
+		JLabel lblCaractristiquesDeLa = new JLabel("Caracteristiques de l'evenement");
 		lblCaractristiquesDeLa.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblCaractristiquesDeLa.setBounds(218, 6, 751, 44);
 		desktopPane.add(lblCaractristiquesDeLa);

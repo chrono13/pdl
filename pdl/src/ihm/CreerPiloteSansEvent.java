@@ -44,7 +44,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblInformationDuPilote = new JLabel("Information sur le pilote");
+		JLabel lblInformationDuPilote = new JLabel("Informations sur le pilote");
 		lblInformationDuPilote.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblInformationDuPilote.setBounds(285, 20, 555, 45);
 		desktopPane.add(lblInformationDuPilote);
@@ -54,7 +54,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		lblNom.setBounds(182, 121, 120, 23);
 		desktopPane.add(lblNom);
 		
-		JLabel lblPrnom = new JLabel("Pr\u00E9nom");
+		JLabel lblPrnom = new JLabel("Prenom");
 		lblPrnom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		lblPrnom.setBounds(182, 183, 120, 23);
 		desktopPane.add(lblPrnom);

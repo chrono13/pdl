@@ -68,7 +68,7 @@ public class Language extends JPanel {
 		desktopPane.add(btnValider);
 		
 		
-//bouton Quitter		
+//bouton Quitter	
 		JButton btnQuitter = new JButton("Quitter");
 		btnQuitter.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon1 = new ImageIcon("icones/.png");

@@ -43,7 +43,7 @@ public class Lancement extends JPanel {
 		lblVoulezvousLancerLapplication.setBounds(354, 216, 492, 39);
 		desktopPane.add(lblVoulezvousLancerLapplication);
 		
-		JLabel lblRealiseeParKavishan = new JLabel("Realise par Kavishan, Kevin, Philippe et Yann");
+		JLabel lblRealiseeParKavishan = new JLabel("R\u00E9alis\u00E9 par Kavishan, Kevin, Philippe et Yann");
 		lblRealiseeParKavishan.setBounds(354, 281, 313, 14);
 		desktopPane.add(lblRealiseeParKavishan);
 		
