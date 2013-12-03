@@ -3,12 +3,17 @@ package ihm;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.JDesktopPane;
+
 import java.awt.Color;
+
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JTextPane;
+
+import principal.Voiture;
+
 import java.awt.Choice;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -57,9 +62,10 @@ public class FirstFenetre extends JPanel {
 		btnCreerVoiture.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnCreerVoiture.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Voiture v = new Voiture();
 				removeAll();
 				repaint();
-				VoitureSansEvent inter3 = new VoitureSansEvent();
+				VoitureSansEvent inter3 = new VoitureSansEvent(v);
 				add(inter3);
 				validate();
 			}

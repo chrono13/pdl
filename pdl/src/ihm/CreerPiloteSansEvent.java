@@ -1,12 +1,19 @@
 package ihm;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.JDesktopPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.SystemColor;
+
 import javax.swing.JButton;
+
+import principal.Pilote;
+import principal.Voiture;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -17,19 +24,23 @@ public class CreerPiloteSansEvent extends JPanel {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
 	private JTextField prenomPilote;
 	private JTextField couleurCasque;
 	private JTextField imagePilote;
 	private JTextField nomPilote;
+	
+	private Voiture v;
+	private Pilote p;
 
 	/**
 	 * Create the panel.
 	 */
-	public CreerPiloteSansEvent() {
+	public CreerPiloteSansEvent(final Voiture v, final Pilote p) {
+		this.p = p;
+		this.v = v;
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
-		JDesktopPane desktopPane = new JDesktopPane();
+		final JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
@@ -87,10 +98,31 @@ public class CreerPiloteSansEvent extends JPanel {
 		btnAjoutermodifier.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjoutermodifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String nom;
+				String img;
+				String casque;
+				if (nomPilote == null || nomPilote.getText().equals("") || prenomPilote== null || prenomPilote.getText().equals("") || couleurCasque.getText().equals("") 
+						|| couleurCasque == null || imagePilote == null || imagePilote.getText().equals("")) {
+					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					return;// si il manque au moins un élément chez le pilote alors on avertit le client
+				}
 				//évènement suite au "clic" sur le bouton ajouter/modifier
+				if (nomPilote != null && !nomPilote.getText().equals("") && prenomPilote!= null && !prenomPilote.getText().equals("")) {
+					nom = nomPilote.getText()+" "+prenomPilote.getText();
+					p.setPilote_nomprenom(nom);
+				}
+				if (couleurCasque != null && !couleurCasque.getText().equals("")) {
+					casque = couleurCasque.getText();
+					p.setPilote_couleur(casque);
+				}
+				if (imagePilote != null && !imagePilote.getText().equals("")) {
+					img = imagePilote.getText();
+					p.setPilote_lien_sur_img(img);
+				}
+				v.voiture_add_pilote(p);// on ajoute un pilote p à la voiture
 				removeAll();
 				repaint();
-				VoitureSansEvent inter2 = new VoitureSansEvent();
+				VoitureSansEvent inter2 = new VoitureSansEvent(v);
 				add(inter2);
 				validate();
 			}
@@ -107,7 +139,7 @@ public class CreerPiloteSansEvent extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				VoitureSansEvent inter2 = new VoitureSansEvent();
+				VoitureSansEvent inter2 = new VoitureSansEvent(v);
 				add(inter2);
 				validate();
 			}

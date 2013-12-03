@@ -201,7 +201,7 @@ public class VoitureAvecEvent extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				removeAll();
 				repaint();
-				CreerPiloteSansEvent inter = new CreerPiloteSansEvent();
+				CreerPiloteAvecEvent inter = new CreerPiloteAvecEvent();
 				add(inter);
 				validate();
 			}

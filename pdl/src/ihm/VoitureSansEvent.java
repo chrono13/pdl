@@ -19,16 +19,21 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
+import principal.Pilote;
 import principal.Variable_appli;
+import principal.Voiture;
 
 import java.awt.Cursor;
+import java.util.Iterator;
 
 
 public class VoitureSansEvent extends JPanel {
@@ -38,11 +43,24 @@ public class VoitureSansEvent extends JPanel {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTable table;
+	
+	
+	private Voiture v = null;
 
 	/**
-	 * Create the panel.
+	 * Impossible to create a VoitureSansEvent without a voiture
 	 */
-	public VoitureSansEvent() {
+	private VoitureSansEvent() {
+		
+	}
+
+	public VoitureSansEvent(Voiture v) {
+		this.v = v;
+		mkUI();
+		
+	}
+
+	private void mkUI() {
 		setBackground(new Color(240, 240, 240));
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 
@@ -106,7 +124,16 @@ public class VoitureSansEvent extends JPanel {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(684, 296, 97, 27);
 		desktopPane.add(comboBox);
-
+		if (!v.listPiloteVide(v)) {
+			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+			while(it.hasNext()) {
+				Pilote p1 = it.next();
+				String nom = p1.getPilote_nomprenom();
+				comboBox.addItem(nom);
+			}
+		}
+		
+		
 		textField = new JTextField();
 		textField.setBounds(189, 67, 283, 20);
 		desktopPane.add(textField);
@@ -140,7 +167,24 @@ public class VoitureSansEvent extends JPanel {
 		table = new JTable();
 		table.setBounds(10, 325, 410, 214);
 		desktopPane.add(table);
-
+		String [] entete = {"nom du pilote", "modifier", "supprimer"};
+		DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("Nom du pilote");
+		model.addColumn("modifier");
+		model.addColumn("supprimer");
+		if (!v.listPiloteVide(v)) {
+			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+			while(it.hasNext()) {
+				Pilote p1 = it.next();
+				String nom = p1.getPilote_nomprenom();
+				model.addRow(new Object [] {nom, 1, 2});
+			}
+		}
+		table.setModel(model);
+		// kavishan ici doit voir le problème d'ajout d'une scroll bar au tableau
+		//JScrollPane scroll = new JScrollPane(table);
+		//desktopPane.add(scroll);	
+		
 
 		/* BOUTONS DE LA FENETRE */
 
@@ -152,8 +196,6 @@ public class VoitureSansEvent extends JPanel {
 		btnSauvegarder.setBounds(541, 355, 137, 74);
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				
 				removeAll();
 				repaint();
 				FirstFenetre inter2 = new FirstFenetre();
@@ -197,16 +239,19 @@ public class VoitureSansEvent extends JPanel {
 		btnAjouterPilote.setIcon(loginIcon3);
 		btnAjouterPilote.addActionListener(new ActionListener() {
 			int nom = 0;
+			Pilote p = new Pilote();
 			public void actionPerformed(ActionEvent e) {
-				if (textField.getText()!=""){
+				
+				if (textField != null && !textField.getText().equals("")) {
 					nom = Integer.parseInt(textField.getText());
+					v.setVoiture_num(nom);
 				}
 				/*String couleur = textField_1.getText();
 				String lien = textField_2.getText();
 				int nbreTour = Integer.parseInt(textField_3.getText());
 				String temps = textField_4.getText();
 				boolean estactive = chckbxVoitureActive.isSelected();*/
-				if (nom!=0){
+				/*if (nom!=0){
 					System.out.println("toto");
 				}
 				else {
@@ -220,7 +265,7 @@ public class VoitureSansEvent extends JPanel {
 				Variable_appli.voituresauvegarder.setVoiture_temps_estime_partour(temps);*/
 				removeAll();
 				repaint();
-				CreerPiloteSansEvent inter4 = new CreerPiloteSansEvent();
+				CreerPiloteSansEvent inter4 = new CreerPiloteSansEvent(v, p);
 				add(inter4);
 				validate();
 			}
@@ -228,5 +273,6 @@ public class VoitureSansEvent extends JPanel {
 		btnAjouterPilote.setBounds(175, 303, 33, 18);
 		desktopPane.add(btnAjouterPilote);
 
+		
 	}
 }

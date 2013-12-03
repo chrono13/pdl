@@ -48,7 +48,7 @@ public class Language extends JPanel {
 		
 		/* BOUTONS DE LA FENETRE */
 		
-//bouton Valider	
+		//bouton Valider	
 		JButton btnValider = new JButton("Valider");
 		btnValider.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon4 = new ImageIcon("icones/valid.png");
