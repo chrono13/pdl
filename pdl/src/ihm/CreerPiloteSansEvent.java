@@ -21,10 +21,6 @@ import java.awt.Color;
 
 
 public class CreerPiloteSansEvent extends JPanel {
-	/**
-	 * 
-	 */
-	private JTextField prenomPilote;
 	private JTextField couleurCasque;
 	private JTextField imagePilote;
 	private JTextField nomPilote;
@@ -49,15 +45,10 @@ public class CreerPiloteSansEvent extends JPanel {
 		lblInformationDuPilote.setBounds(285, 20, 555, 45);
 		desktopPane.add(lblInformationDuPilote);
 		
-		JLabel lblNom = new JLabel("Nom");
+		JLabel lblNom = new JLabel("Nom et prenom");
 		lblNom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
-		lblNom.setBounds(182, 121, 120, 23);
+		lblNom.setBounds(182, 183, 120, 23);
 		desktopPane.add(lblNom);
-		
-		JLabel lblPrnom = new JLabel("Prenom");
-		lblPrnom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
-		lblPrnom.setBounds(182, 183, 120, 23);
-		desktopPane.add(lblPrnom);
 		
 		JLabel lblCouleurDuCasque = new JLabel("Couleur du casque");
 		lblCouleurDuCasque.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
@@ -68,11 +59,6 @@ public class CreerPiloteSansEvent extends JPanel {
 		lblImageDuPilote.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		lblImageDuPilote.setBounds(182, 313, 120, 23);
 		desktopPane.add(lblImageDuPilote);
-		
-		prenomPilote = new JTextField();
-		prenomPilote.setBounds(551, 184, 270, 20);
-		desktopPane.add(prenomPilote);
-		prenomPilote.setColumns(10);
 		
 		couleurCasque = new JTextField();
 		couleurCasque.setBounds(551, 251, 270, 20);
@@ -85,7 +71,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		imagePilote.setColumns(10);
 		
 		nomPilote = new JTextField();
-		nomPilote.setBounds(551, 122, 270, 20);
+		nomPilote.setBounds(551, 184, 270, 20);
 		desktopPane.add(nomPilote);
 		nomPilote.setColumns(10);
 		if ((p.getPilote_nomprenom()).equals("")) {

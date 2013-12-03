@@ -20,7 +20,6 @@ public class CreerPiloteAvecEvent extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 
@@ -39,15 +38,10 @@ public class CreerPiloteAvecEvent extends JPanel {
 		lblInformationDuPilote.setBounds(317, 20, 563, 45);
 		desktopPane.add(lblInformationDuPilote);
 		
-		JLabel lblNom = new JLabel("Nom");
+		JLabel lblNom = new JLabel("Nom et prenom");
 		lblNom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
-		lblNom.setBounds(170, 170, 120, 23);
+		lblNom.setBounds(170, 236, 120, 23);
 		desktopPane.add(lblNom);
-		
-		JLabel lblPrnom = new JLabel("Prenom");
-		lblPrnom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
-		lblPrnom.setBounds(170, 235, 120, 23);
-		desktopPane.add(lblPrnom);
 		
 		JLabel lblCouleurDuCasque = new JLabel("Couleur du casque");
 		lblCouleurDuCasque.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
@@ -60,14 +54,9 @@ public class CreerPiloteAvecEvent extends JPanel {
 		desktopPane.add(lblImageDuPilote);
 		
 		textField = new JTextField();
-		textField.setBounds(551, 170, 270, 20);
+		textField.setBounds(551, 237, 270, 20);
 		desktopPane.add(textField);
 		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(551, 235, 270, 20);
-		desktopPane.add(textField_1);
-		textField_1.setColumns(10);
 		
 		JButton btnAjoutermofifier = new JButton("Ajouter/Modifier");
 		btnAjoutermofifier.addActionListener(new ActionListener() {
