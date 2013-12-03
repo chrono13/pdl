@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -64,9 +66,17 @@ setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		nomCircuit.setBounds(310, 230, 330, 28);
 		desktopPane.add(nomCircuit);
 		
-		JButton btnSuivant = new JButton("Suivant");
-		btnSuivant.setBounds(387, 445, 175, 83);
+		JButton btnSuivant = new JButton("");
+		btnSuivant.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/next.png");
+		btnSuivant.setIcon(loginIcon1);
+		btnSuivant.setBounds(417, 446, 175, 83);
 		desktopPane.add(btnSuivant);
+		
+		JLabel lblSuivant = new JLabel("Suivant");
+		lblSuivant.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		lblSuivant.setBounds(407, 477, 61, 16);
+		desktopPane.add(lblSuivant);
 		btnSuivant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//évènement suite au "clic" sur le boutton ajouter un évènement
