@@ -134,8 +134,7 @@ public class VoitureSansEvent extends JPanel {
 		textField = new JTextField();
 		textField.setBounds(189, 67, 283, 20);
 		desktopPane.add(textField);
-		textField.setColumns(10);
-		
+		textField.setColumns(10);		
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(568, 68, 290, 20);
@@ -157,7 +156,13 @@ public class VoitureSansEvent extends JPanel {
 		desktopPane.add(textField_4);
 		textField_4.setColumns(10);
 		
-		//textField_4.setText(arg0);
+		if (v!=null) {
+			textField.setText(v.getVoiture_num());
+			textField_1.setText(v.getVoiture_couleur());
+			textField_2.setText(v.getVoiture_lien_img());
+			textField_3.setText(Integer.toString(v.getVoiture_nbreTour_par_relai()));
+			textField_4.setText(v.getVoiture_temps_estime_partour());
+		}
 		
 		table = new JTable();
 		table.setBounds(10, 325, 410, 214);
@@ -242,6 +247,27 @@ public class VoitureSansEvent extends JPanel {
 					nom = textField.getText();
 					v.setVoiture_num(nom);
 				}
+				if (!textField_1.getText().equals("")) {
+					String field1 = textField_1.getText();
+					v.setVoiture_couleur(field1);
+				}
+				if (!textField_2.getText().equals("")) {
+					String field2 = textField_2.getText();
+					v.setVoiture_lien_img(field2);
+				}
+				if (!textField_3.getText().equals("")) {
+					int field3 = Integer.parseInt(textField_3.getText());
+					v.setVoiture_nbreTour_par_relai(field3);
+				}
+				if (!textField_4.getText().equals("")) {
+					String fiel4 = textField.getText();
+					v.setVoiture_temps_estime_partour(fiel4);;
+				}
+				textField.setText(v.getVoiture_num());
+				textField_1.setText(v.getVoiture_couleur());
+				textField_2.setText(v.getVoiture_lien_img());
+				textField_3.setText(Integer.toString(v.getVoiture_nbreTour_par_relai()));
+				textField_4.setText(v.getVoiture_temps_estime_partour());
 				removeAll();
 				repaint();
 				int ligne = table.getSelectedRow();
