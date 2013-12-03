@@ -34,7 +34,7 @@ public class GestionEvent extends JPanel {
 		
 		
 // bouton ajouter un 思始ement		
-		JButton btnAjouterEvent = new JButton("Ajouter un \u00E9v\u00E9nement");
+		JButton btnAjouterEvent = new JButton("Ajouter un evenement");
 		btnAjouterEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjouterEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -52,7 +52,7 @@ public class GestionEvent extends JPanel {
 		
 		
 // bouton charger un 思始ement		
-		JButton btnChargerEvent = new JButton("Charger un \u00E9v\u00E9nement");
+		JButton btnChargerEvent = new JButton("Charger un evenement");
 		btnChargerEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnChargerEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {

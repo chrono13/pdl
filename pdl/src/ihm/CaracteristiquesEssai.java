@@ -45,7 +45,7 @@ public class CaracteristiquesEssai extends JPanel {
 		lblNomDeLa.setBounds(193, 59, 163, 14);
 		desktopPane.add(lblNomDeLa);
 		
-		JLabel lblHeureDeDbut = new JLabel("Heure de d\u00E9but :");
+		JLabel lblHeureDeDbut = new JLabel("Heure de debut :");
 		lblHeureDeDbut.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblHeureDeDbut.setBounds(193, 96, 136, 14);
 		desktopPane.add(lblHeureDeDbut);
@@ -60,7 +60,7 @@ public class CaracteristiquesEssai extends JPanel {
 		lblNewLabel.setBounds(193, 200, 256, 14);
 		desktopPane.add(lblNewLabel);
 		
-		JCheckBox chckbxDpartAutomatique = new JCheckBox("D\u00E9part automatique");
+		JCheckBox chckbxDpartAutomatique = new JCheckBox("Depart automatique");
 		chckbxDpartAutomatique.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxDpartAutomatique.setBackground(SystemColor.activeCaption);
 		chckbxDpartAutomatique.setForeground(new Color(0, 0, 0));
@@ -89,7 +89,7 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.add(txtNomcourse);
 		txtNomcourse.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("Dur\u00E9e totale maximum par pilote :");
+		JLabel lblNewLabel_1 = new JLabel("Duree totale maximum par pilote :");
 		lblNewLabel_1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel_1.setBounds(194, 235, 271, 14);
 		desktopPane.add(lblNewLabel_1);
@@ -114,7 +114,7 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.add(textDureeMaxPilote);
 		textDureeMaxPilote.setColumns(10);
 		
-		JLabel lblDureConscutiveMaximum = new JLabel("Dur\u00E9e cons\u00E9cutive maximum par pilote :");
+		JLabel lblDureConscutiveMaximum = new JLabel("Duree consecutive maximum par pilote :");
 		lblDureConscutiveMaximum.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblDureConscutiveMaximum.setBounds(193, 270, 311, 14);
 		desktopPane.add(lblDureConscutiveMaximum);

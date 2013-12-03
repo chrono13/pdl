@@ -28,7 +28,7 @@ setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblAjouterEvent = new JLabel("Ajouter un \u00E9v\u00E9nement");
+		JLabel lblAjouterEvent = new JLabel("Ajouter un evenement");
 		lblAjouterEvent.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblAjouterEvent.setBounds(274, 0, 751, 44);
 		desktopPane.add(lblAjouterEvent);

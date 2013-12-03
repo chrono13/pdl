@@ -42,7 +42,7 @@ public class FirstFenetre extends JPanel {
 		/* BOUTONS DE LA FENETRE */
 		
 //bouton créer un événement		
-		JButton btnCreerEvent = new JButton("Cr\u00E9er un \u00E9v\u00E9nement");
+		JButton btnCreerEvent = new JButton("Creer un evenement");
 		btnCreerEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnCreerEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
