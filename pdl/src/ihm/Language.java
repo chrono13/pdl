@@ -41,7 +41,7 @@ public class Language extends JPanel {
 		final JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(367, 194, 216, 54);
 		desktopPane.add(comboBox);
-		comboBox.addItem("Francais");
+		comboBox.addItem("Fran\u00E7ais");
 		comboBox.addItem("English");
 		comboBox.addItem("Deutsch");
 		
