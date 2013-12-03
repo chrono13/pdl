@@ -6,11 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
 import java.awt.Color;
 
 
@@ -58,8 +61,12 @@ public class CreerPiloteAvecEvent extends JPanel {
 		desktopPane.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnAjoutermofifier = new JButton("Ajouter/Modifier");
-		btnAjoutermofifier.addActionListener(new ActionListener() {
+		JButton btnAjouterModifier = new JButton("Ajouter/Modifier");
+		btnAjouterModifier.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/add.png");
+		btnAjouterModifier.setIcon(loginIcon1);
+		btnAjouterModifier.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnAjouterModifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//évènement suite au "clic" sur le boutton ajouter/modifier
 				removeAll();
@@ -69,8 +76,8 @@ public class CreerPiloteAvecEvent extends JPanel {
 				validate();
 			}
 		});
-		btnAjoutermofifier.setBounds(236, 469, 120, 45);
-		desktopPane.add(btnAjoutermofifier);
+		btnAjouterModifier.setBounds(236, 469, 219, 45);
+		desktopPane.add(btnAjouterModifier);
 		
 		textField_2 = new JTextField();
 		textField_2.setBounds(551, 300, 270, 20);
@@ -82,8 +89,12 @@ public class CreerPiloteAvecEvent extends JPanel {
 		desktopPane.add(textField_3);
 		textField_3.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Retour");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnRetour = new JButton("Retour");
+		btnRetour.setFont(new Font("Dialog", Font.PLAIN, 14));
+		Icon loginIcon2 = new ImageIcon("icones/previous.png");
+		btnRetour.setIcon(loginIcon2);
+		btnRetour.setBorderPainted(false);
+		btnRetour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
@@ -92,8 +103,8 @@ public class CreerPiloteAvecEvent extends JPanel {
 				validate();
 			}
 		});
-		btnNewButton.setBounds(592, 469, 120, 45);
-		desktopPane.add(btnNewButton);
+		btnRetour.setBounds(592, 469, 153, 45);
+		desktopPane.add(btnRetour);
 
 	}
 }

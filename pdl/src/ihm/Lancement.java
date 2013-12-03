@@ -38,7 +38,7 @@ public class Lancement extends JPanel {
 		lblBonjour.setBounds(413, 60, 218, 56);
 		desktopPane.add(lblBonjour);
 		
-		JLabel lblVoulezvousLancerLapplication = new JLabel("Application PDL-Chrno13 ");
+		JLabel lblVoulezvousLancerLapplication = new JLabel("Application PDL-Chrono13 ");
 		lblVoulezvousLancerLapplication.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
 		lblVoulezvousLancerLapplication.setBounds(354, 216, 492, 39);
 		desktopPane.add(lblVoulezvousLancerLapplication);
@@ -50,6 +50,7 @@ public class Lancement extends JPanel {
 		
 // bouton Continuer		
 		JButton btnContinuer = new JButton("Continuer");
+		btnContinuer.setBorderPainted(false);
 		btnContinuer.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon1 = new ImageIcon("icones/valid.png");
 		btnContinuer.setIcon(loginIcon1);
@@ -62,7 +63,7 @@ public class Lancement extends JPanel {
 				validate();
 			}
 		});
-		btnContinuer.setBounds(413, 339, 127, 46);
+		btnContinuer.setBounds(413, 339, 156, 56);
 		desktopPane.add(btnContinuer);
 
 	}

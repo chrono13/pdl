@@ -6,11 +6,14 @@ import javax.swing.JDesktopPane;
 
 import java.awt.Color;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
 
 import principal.Voiture;
 
@@ -43,6 +46,11 @@ public class FirstFenetre extends JPanel {
 		
 //bouton créer un événement		
 		JButton btnCreerEvent = new JButton("Creer un evenement");
+		btnCreerEvent.setBorderPainted(false);
+		Icon loginIcon2 = new ImageIcon("icones/flag.png");
+		btnCreerEvent.setIcon(loginIcon2);
+		btnCreerEvent.setVerticalTextPosition(SwingConstants.BOTTOM);
+		btnCreerEvent.setHorizontalTextPosition(SwingConstants.CENTER);
 		btnCreerEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnCreerEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -53,12 +61,17 @@ public class FirstFenetre extends JPanel {
 				validate();
 			}
 		});
-		btnCreerEvent.setBounds(187, 333, 162, 43);
+		btnCreerEvent.setBounds(146, 304, 200, 72);
 		desktopPane.add(btnCreerEvent);
 		
 		
 //bouton Créer une voiture		
 		JButton btnCreerVoiture = new JButton(Dico.dansLedico("Creer une voiture", Dico.langue));
+		btnCreerVoiture.setBorderPainted(false);
+		Icon loginIcon3 = new ImageIcon("icones/car.png");
+		btnCreerVoiture.setIcon(loginIcon3);
+		btnCreerVoiture.setVerticalTextPosition(SwingConstants.BOTTOM);
+		btnCreerVoiture.setHorizontalTextPosition(SwingConstants.CENTER);
 		btnCreerVoiture.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnCreerVoiture.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -70,12 +83,15 @@ public class FirstFenetre extends JPanel {
 				validate();
 			}
 		});
-		btnCreerVoiture.setBounds(406, 333, 154, 43);
+		btnCreerVoiture.setBounds(387, 304, 234, 72);
 		desktopPane.add(btnCreerVoiture);
 		
 		
 //bouton annuler		
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Retour", Dico.langue));
+		btnAnnuler.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/previous.png");
+		btnAnnuler.setIcon(loginIcon1);
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {// si on clique sur le bouton annuler on ferme l'application 
@@ -86,7 +102,7 @@ public class FirstFenetre extends JPanel {
 				validate();
 			}
 		});
-		btnAnnuler.setBounds(635, 333, 148, 43);
+		btnAnnuler.setBounds(635, 304, 162, 72);
 		desktopPane.add(btnAnnuler);
 		
 	}
