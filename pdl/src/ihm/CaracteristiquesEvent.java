@@ -201,7 +201,7 @@ public class CaracteristiquesEvent extends JPanel {
 		btnEdit.setBorderPainted(false);
 		Icon loginIcon5 = new ImageIcon("icones/edit.png");
 		btnEdit.setIcon(loginIcon5);
-		btnEdit.setBounds(747, 92, 117, 29);
+		btnEdit.setBounds(716, 92, 148, 29);
 		desktopPane.add(btnEdit);
 
 		// Bouton Importer Voiture
@@ -252,7 +252,7 @@ public class CaracteristiquesEvent extends JPanel {
 			}
 		});
 		btnLancerLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		btnLancerLaCourse.setBounds(740, 496, 184, 44);
+		btnLancerLaCourse.setBounds(740, 496, 194, 44);
 		desktopPane.add(btnLancerLaCourse);
 
 

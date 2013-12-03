@@ -17,6 +17,7 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 
 
@@ -34,8 +35,9 @@ public class Language extends JPanel {
 		add(desktopPane);
 		
 		JLabel lblChoisirLaLangue = new JLabel("Choix de la langue ");
+		lblChoisirLaLangue.setHorizontalAlignment(SwingConstants.CENTER);
 		lblChoisirLaLangue.setFont(new Font("Vrinda", Font.BOLD, 35));
-		lblChoisirLaLangue.setBounds(314, 57, 503, 54);
+		lblChoisirLaLangue.setBounds(314, 57, 445, 54);
 		desktopPane.add(lblChoisirLaLangue);
 		
 		final JComboBox comboBox = new JComboBox();
@@ -50,6 +52,8 @@ public class Language extends JPanel {
 		
 		//bouton Valider	
 		JButton btnValider = new JButton("Valider");
+		btnValider.setBorderPainted(false);
+		btnValider.setContentAreaFilled(false);
 		btnValider.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon4 = new ImageIcon("icones/valid.png");
 		btnValider.setIcon(loginIcon4);
@@ -70,6 +74,8 @@ public class Language extends JPanel {
 		
 //bouton Quitter	
 		JButton btnQuitter = new JButton("Quitter");
+		btnQuitter.setBorderPainted(false);
+		btnQuitter.setContentAreaFilled(false);
 		btnQuitter.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon1 = new ImageIcon("icones/.png");
 		btnValider.setIcon(loginIcon1);

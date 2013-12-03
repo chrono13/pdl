@@ -18,6 +18,7 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 
 public class Lancement extends JPanel {
@@ -34,17 +35,20 @@ public class Lancement extends JPanel {
 		add(desktopPane);
 		
 		JLabel lblBonjour = new JLabel("Bonjour");
+		lblBonjour.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBonjour.setFont(new Font("Vrinda", Font.BOLD, 35));
-		lblBonjour.setBounds(413, 60, 218, 56);
+		lblBonjour.setBounds(366, 60, 218, 56);
 		desktopPane.add(lblBonjour);
 		
 		JLabel lblVoulezvousLancerLapplication = new JLabel("Application PDL-Chrono13 ");
+		lblVoulezvousLancerLapplication.setHorizontalAlignment(SwingConstants.CENTER);
 		lblVoulezvousLancerLapplication.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
-		lblVoulezvousLancerLapplication.setBounds(354, 216, 492, 39);
+		lblVoulezvousLancerLapplication.setBounds(229, 216, 492, 39);
 		desktopPane.add(lblVoulezvousLancerLapplication);
 		
 		JLabel lblRealiseeParKavishan = new JLabel("R\u00E9alis\u00E9 par Kavishan, Kevin, Philippe et Yann");
-		lblRealiseeParKavishan.setBounds(354, 281, 313, 14);
+		lblRealiseeParKavishan.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRealiseeParKavishan.setBounds(318, 281, 313, 14);
 		desktopPane.add(lblRealiseeParKavishan);
 		
 		
@@ -64,7 +68,7 @@ public class Lancement extends JPanel {
 				validate();
 			}
 		});
-		btnContinuer.setBounds(413, 339, 156, 56);
+		btnContinuer.setBounds(397, 339, 156, 56);
 		desktopPane.add(btnContinuer);
 
 	}
