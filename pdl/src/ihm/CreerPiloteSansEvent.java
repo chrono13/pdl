@@ -88,6 +88,7 @@ public class CreerPiloteSansEvent extends JPanel {
 
 		//bouton ajouter ou modifier		
 		JButton btnAjoutermodifier = new JButton("Ajouter/Modifier");
+		btnAjoutermodifier.setContentAreaFilled(false);
 		btnAjoutermodifier.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjoutermodifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -130,6 +131,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		
 		// bouton retour		
 		JButton btnRetour = new JButton("Retour");
+		btnRetour.setContentAreaFilled(false);
 		btnRetour.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnRetour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

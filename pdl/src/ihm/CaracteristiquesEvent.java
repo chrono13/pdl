@@ -132,6 +132,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		//Bouton Ajouter Pilote
 		JButton btnAjouterPilote = new JButton("Ajouter");
+		btnAjouterPilote.setContentAreaFilled(false);
 		btnAjouterPilote.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/add.png");
 		btnAjouterPilote.setIcon(loginIcon1);
@@ -152,6 +153,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		//Bouton Supprimer Pilote		
 		JButton btnSupprimer = new JButton("Supprimer");
+		btnSupprimer.setContentAreaFilled(false);
 		btnSupprimer.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnSupprimer.setBorderPainted(false);
 		Icon loginIcon2 = new ImageIcon("icones/suppr.png");
@@ -161,6 +163,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		//Bouton Ajouter Essai		
 		JButton btnAjouterEssai = new JButton("Ajouter");
+		btnAjouterEssai.setContentAreaFilled(false);
 		btnAjouterEssai.setBorderPainted(false);
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
 		btnAjouterEssai.setIcon(loginIcon3);
@@ -182,6 +185,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		//Bouton Supprimer Essai
 		JButton btnSupprimerEssai = new JButton("Supprimer");
+		btnSupprimerEssai.setContentAreaFilled(false);
 		Icon loginIcon4 = new ImageIcon("icones/suppr.png");
 		btnSupprimerEssai.setIcon(loginIcon4);
 		btnSupprimerEssai.setFont(new Font("Dialog", Font.PLAIN, 14));
@@ -192,6 +196,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		//Bouton Modifier
 		JButton btnEdit = new JButton("Modifier");
+		btnEdit.setContentAreaFilled(false);
 		btnEdit.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnEdit.setBorderPainted(false);
 		Icon loginIcon5 = new ImageIcon("icones/edit.png");
@@ -201,6 +206,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		// Bouton Importer Voiture
 		JButton btnImporterVoiture = new JButton("Importer Voiture");
+		btnImporterVoiture.setContentAreaFilled(false);
 		btnImporterVoiture.setBorderPainted(false);
 		Icon loginIcon6 = new ImageIcon("icones/import.png");
 		btnImporterVoiture.setIcon(loginIcon6);
@@ -211,6 +217,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		// Bouton Lancer Essai
 		JButton btnLancerLessai = new JButton("Lancer l'essai");
+		btnLancerLessai.setContentAreaFilled(false);
 		btnLancerLessai.setBorderPainted(false);
 		Icon loginIcon7 = new ImageIcon("icones/lancerEssai.png");
 		btnLancerLessai.setIcon(loginIcon7);
@@ -231,6 +238,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		// Bouton Lancer Course
 		JButton btnLancerLaCourse = new JButton("Lancer la course");
+		btnLancerLaCourse.setContentAreaFilled(false);
 		btnLancerLaCourse.setBorderPainted(false);
 		Icon loginIcon8 = new ImageIcon("icones/lancer.png");
 		btnLancerLaCourse.setIcon(loginIcon8);
@@ -250,6 +258,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		// Bouton Sauvegarder
 		JButton btnSauvegarder = new JButton("Sauvegarder");
+		btnSauvegarder.setContentAreaFilled(false);
 		btnSauvegarder.setBorderPainted(false);
 		Icon loginIcon9 = new ImageIcon("icones/save.png");
 		btnSauvegarder.setIcon(loginIcon9);
@@ -260,6 +269,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 		// Bouton Retour
 		JButton btnRetour = new JButton("Retour");
+		btnRetour.setContentAreaFilled(false);
 		btnRetour.setBorderPainted(false);
 		Icon loginIcon10 = new ImageIcon("icones/previous.png");
 		btnRetour.setIcon(loginIcon10);

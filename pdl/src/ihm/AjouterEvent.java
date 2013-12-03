@@ -70,6 +70,7 @@ setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		desktopPane.add(nomCircuit);
 		
 		JButton btnSuivant = new JButton("Suivant   ");
+		btnSuivant.setContentAreaFilled(false);
 		btnSuivant.setBorderPainted(false);
 		btnSuivant.setHorizontalTextPosition(SwingConstants.LEFT);;
 		Icon loginIcon1 = new ImageIcon("icones/next.png");

@@ -62,6 +62,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 		textField.setColumns(10);
 		
 		JButton btnAjouterModifier = new JButton("Ajouter/Modifier");
+		btnAjouterModifier.setContentAreaFilled(false);
 		btnAjouterModifier.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/add.png");
 		btnAjouterModifier.setIcon(loginIcon1);
@@ -90,6 +91,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 		textField_3.setColumns(10);
 		
 		JButton btnRetour = new JButton("Retour");
+		btnRetour.setContentAreaFilled(false);
 		btnRetour.setFont(new Font("Dialog", Font.PLAIN, 14));
 		Icon loginIcon2 = new ImageIcon("icones/previous.png");
 		btnRetour.setIcon(loginIcon2);
