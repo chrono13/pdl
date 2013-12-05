@@ -30,7 +30,7 @@ public class test extends JFrame {
 					frame.setResizable(false); // pas de redimensionnement
 					frame.setSize(950, 650); // taille de 950x650
 					
-					frame.setAlwaysOnTop(true); // toujours au premier plan
+					//frame.setAlwaysOnTop(true); // toujours au premier plan
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

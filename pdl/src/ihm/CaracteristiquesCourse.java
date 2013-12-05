@@ -138,7 +138,8 @@ public class CaracteristiquesCourse extends JPanel {
 		txtpnCommentairesCourse.setBounds(208, 310, 574, 164);
 		desktopPane.add(txtpnCommentairesCourse);
 		
-		JButton btnAnnuler = new JButton("");
+		JButton btnAnnuler = new JButton("Annuler");
+		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
 		Icon loginIcon2 = new ImageIcon("icones/previous.png");
 		btnAnnuler.setIcon(loginIcon2);
@@ -155,7 +156,8 @@ public class CaracteristiquesCourse extends JPanel {
 		btnAnnuler.setBounds(131, 486, 163, 65);
 		desktopPane.add(btnAnnuler);
 		
-		JButton btnLancerLaCourse = new JButton("");
+		JButton btnLancerLaCourse = new JButton("Lancer la course");
+		btnLancerLaCourse.setContentAreaFilled(false);
 		btnLancerLaCourse.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/lancer.png");
 		btnLancerLaCourse.setIcon(loginIcon1);
@@ -182,15 +184,6 @@ public class CaracteristiquesCourse extends JPanel {
 		lblLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblLaCourse.setBounds(90, 422, 130, 22);
 		desktopPane.add(lblLaCourse);
-		
-		JLabel lblLancerLaCourse = new JLabel("Lancer la course");
-		lblLancerLaCourse.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
-		lblLancerLaCourse.setBounds(569, 508, 221, 16);
-		desktopPane.add(lblLancerLaCourse);
-		
-		JLabel lblAnnuler = new JLabel("Annuler");
-		lblAnnuler.setBounds(244, 509, 100, 16);
-		desktopPane.add(lblAnnuler);
 
 	}
 }

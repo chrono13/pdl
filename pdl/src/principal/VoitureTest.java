@@ -32,11 +32,11 @@ public class VoitureTest {
 		v.setVoiture_pilote_actuelle(p);
 		v.voiture_add_pilote(p);
 		v.voiture_add_pilote(p2);
-		File file = new File("C:\\file.xml");//sauvegarde dans l'explorateur le fichier
+		File file = new File("C:/Users/Kavishan/xaxa.xml");//sauvegarde dans l'explorateur le fichier
 		JAXBContext jaxbContext = JAXBContext.newInstance(Voiture.class);
 		Marshaller m = jaxbContext.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		//m.marshal(v, file);
+		m.marshal(v, file);
 		m.marshal(v, System.out);
 	}
 

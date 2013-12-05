@@ -1,6 +1,10 @@
 package ihm;
 
 import java.util.Hashtable;
+import java.util.Locale;
+
+import javax.swing.JComponent;
+import javax.swing.UIManager;
 
 
 public class Dico {
@@ -299,5 +303,23 @@ public class Dico {
 				resultat = dico_francais.get(base);
 			}
 			return resultat;
+		}
+		
+		public static void langueSystem(String langue){
+			if (langue == "English") {
+				Locale.setDefault(Locale.ENGLISH);
+				UIManager.getDefaults().setDefaultLocale(Locale.ENGLISH);
+				JComponent.setDefaultLocale(Locale.ENGLISH);
+			}
+			else if (langue == "Deutsch") {
+				Locale.setDefault(Locale.GERMAN);
+				UIManager.getDefaults().setDefaultLocale(Locale.GERMAN);
+				JComponent.setDefaultLocale(Locale.GERMAN);
+			}
+			else {
+				Locale.setDefault(Locale.FRENCH);
+				UIManager.getDefaults().setDefaultLocale(Locale.FRENCH);
+				JComponent.setDefaultLocale(Locale.FRENCH);
+			}
 		}
 }
