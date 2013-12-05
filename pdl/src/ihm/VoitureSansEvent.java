@@ -3,6 +3,7 @@ package ihm;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JDesktopPane;
@@ -16,25 +17,40 @@ import java.awt.Font;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.UIManager;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JTable;
+import javax.swing.filechooser.FileFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+import org.xml.sax.XMLFilter;
 
 import principal.Pilote;
 import principal.Variable_appli;
 import principal.Voiture;
 
 import java.awt.Cursor;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Iterator;
+import java.util.Locale;
 
 
 public class VoitureSansEvent extends JPanel {
@@ -66,7 +82,7 @@ public class VoitureSansEvent extends JPanel {
 		add(panel);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
-		JDesktopPane desktopPane = new JDesktopPane();
+		final JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		desktopPane.setInheritsPopupMenu(true);
 		desktopPane.setBackground(new Color(240, 255, 255));
@@ -164,14 +180,22 @@ public class VoitureSansEvent extends JPanel {
 			textField_4.setText(v.getVoiture_temps_estime_partour());
 		}
 		
+		String [] entete =  {"Nom et prenom", "Couleur Casque", "Lien image" };
 		table = new JTable();
 		table.setBounds(10, 325, 410, 214);
-		desktopPane.add(table);
-		final DefaultTableModel model = new DefaultTableModel();
+		
+		final DefaultTableModel model = new DefaultTableModel() {
+			
+			@Override
+			public boolean isCellEditable(int x, int y) {
+				return false ; 
+			}
+			
+			
+		};
 		model.addColumn("Nom et prenom");
 		model.addColumn("Couleur Casque");
 		model.addColumn("Lien image");
-		String [] entete =  {"Nom et prenom", "Couleur Casque", "Lien image" };
 		
 		model.setColumnIdentifiers(entete);
 		
@@ -186,7 +210,15 @@ public class VoitureSansEvent extends JPanel {
 				model.addRow(new Object [] {nom,  couleur, lien});
 			}
 		}
+
 		table.setModel(model);
+		//desktopPane.setLayout(new BorderLayout());
+		
+		//JScrollPane scroll = new JScrollPane();
+		//scroll.setViewportView(table);
+		desktopPane.add(table);
+		//desktopPane.add(table.getTableHeader());//, BorderLayout.NORTH);
+		
 		
 
 		/* BOUTONS DE LA FENETRE */
@@ -199,11 +231,57 @@ public class VoitureSansEvent extends JPanel {
 		btnSauvegarder.setBounds(541, 355, 137, 74);
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				removeAll();
-				repaint();
-				FirstFenetre inter2 = new FirstFenetre();
-				add(inter2);
-				validate();			
+				/*verification si l'ensemble des cellules est rempli*/
+				if (v.listPiloteVide(v)){
+					JOptionPane.showMessageDialog(desktopPane, "Attention", "Vous avez aucun pilote", JOptionPane.ERROR_MESSAGE);
+				}
+				if (textField == null || textField.getText().equals("")  || textField_2.getText().equals("") 
+						|| textField_2 == null || textField_4 == null || textField_4.getText().equals("")
+						|| textField_3 == null || textField_3.getText().equals("0") || textField_1== null || textField_1.getText().equals(""))
+				
+				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
+					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					return;// si il manque au moins un élément dans le voiture alors on avertit le client
+				}
+				else {
+					//v.setVoiture_active(textField);
+					v.setVoiture_couleur(textField_1.getText());
+					v.setVoiture_lien_img(textField_2.getText());
+					v.setVoiture_nbreTour_par_relai(Integer.parseInt(textField_3.getText()));
+					v.setVoiture_num(textField.getText());
+					v.setVoiture_temps_estime_partour(textField_4.getText());
+					//v.setVoiture_pilote_actuelle(comboBox.getitem);
+					
+					Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
+					JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
+					File fichier;
+					String namefile = "";
+					String pathname= "";
+					if (dialogue.showSaveDialog(null)==JFileChooser.APPROVE_OPTION){
+						fichier = dialogue.getSelectedFile();
+						namefile = fichier.getName();// on recupere le nom du fichier
+						pathname = fichier.getParent();// on recupere le chemein du fichier
+					}
+					String nomdufichier = pathname+"/"+namefile+".xml";// on ajoute l'extension xml au fihcier
+					if (!nomdufichier.equals("/.xml")){// verifie que lors du choix de l'emplacement si on fait annuler on arrete l'enregistrement
+						File file = new File(nomdufichier);//sauvegarde dans l'explorateur le fichier
+						JAXBContext jaxbContext;
+						try {
+							jaxbContext = JAXBContext.newInstance(Voiture.class);// on fait un xml par rapport a la classse voiture
+							Marshaller m = jaxbContext.createMarshaller();// marshaller permet de passer d'une classe a un xml
+							m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+							m.marshal(v, file);// genere le fichier de sauvegarde
+						} catch (JAXBException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						removeAll();
+						repaint();
+						FirstFenetre inter2 = new FirstFenetre();
+						add(inter2);
+						validate();		
+					}
+				}
 			}
 		});
 		btnSauvegarder.setBounds(557, 448, 137, 74);
