@@ -74,7 +74,7 @@ public class VoitureAvecEvent extends JPanel {
 		
 		JLabel lblLienVersLimage = new JLabel("Lien vers l'image :");
 		lblLienVersLimage.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblLienVersLimage.setBounds(10, 137, 196, 14);
+		lblLienVersLimage.setBounds(10, 137, 196, 19);
 		desktopPane.add(lblLienVersLimage);
 		
 		JLabel lblNombreDeTours = new JLabel("Nombre de tours / relais :");
@@ -84,7 +84,7 @@ public class VoitureAvecEvent extends JPanel {
 		
 		JLabel lblTempsEstimPar = new JLabel("Temps estim\u00E9 par tour :");
 		lblTempsEstimPar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblTempsEstimPar.setBounds(459, 203, 258, 14);
+		lblTempsEstimPar.setBounds(459, 203, 258, 19);
 		desktopPane.add(lblTempsEstimPar);
 		
 		JLabel lblPilotes = new JLabel("Pilotes");
@@ -94,11 +94,11 @@ public class VoitureAvecEvent extends JPanel {
 		
 		JLabel lblPiloteAuDopart = new JLabel("Pilote au d\u00E9part :");
 		lblPiloteAuDopart.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblPiloteAuDopart.setBounds(192, 303, 189, 14);
+		lblPiloteAuDopart.setBounds(574, 301, 189, 14);
 		desktopPane.add(lblPiloteAuDopart);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(329, 299, 97, 23);
+		comboBox.setBounds(700, 299, 133, 23);
 		desktopPane.add(comboBox);
 		
 		numVoiture = new JTextField();
@@ -127,7 +127,7 @@ public class VoitureAvecEvent extends JPanel {
 		textField_4.setColumns(10);
 		
 		table = new JTable();
-		table.setBounds(10, 328, 411, 208);
+		table.setBounds(10, 328, 483, 255);
 		desktopPane.add(table);
 		
 		
@@ -136,8 +136,10 @@ public class VoitureAvecEvent extends JPanel {
 		
 // bouton Sauvegarder		
 		JButton btnSauvegarder = new JButton("Sauvegarder");
-		btnSauvegarder.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		Icon loginIcon1 = new ImageIcon("icones/disquette$.png");
+		btnSauvegarder.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnSauvegarder.setBorderPainted(false);
+		btnSauvegarder.setContentAreaFilled(false);
+		Icon loginIcon1 = new ImageIcon("icones/save.png");
 		btnSauvegarder.setIcon(loginIcon1);
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -148,13 +150,15 @@ public class VoitureAvecEvent extends JPanel {
 				validate();
 			}
 		});
-		btnSauvegarder.setBounds(557, 355, 137, 74);
+		btnSauvegarder.setBounds(557, 403, 160, 74);
 		desktopPane.add(btnSauvegarder);
 		
 		
 // bouton Valider		
 		JButton btnValider = new JButton("Valider");
-		btnValider.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnValider.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnValider.setBorderPainted(false);
+		btnValider.setContentAreaFilled(false);
 		Icon loginIcon4 = new ImageIcon("icones/valid.png");
 		btnValider.setIcon(loginIcon4);
 		btnValider.addActionListener(new ActionListener() {
@@ -166,14 +170,16 @@ public class VoitureAvecEvent extends JPanel {
 				validate();
 			}
 		});
-		btnValider.setBounds(651, 455, 159, 74);
+		btnValider.setBounds(650, 517, 183, 74);
 		desktopPane.add(btnValider);
 		
 	
 //bouton Annuler
 		JButton btnAnnuler = new JButton("Annuler");
-		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		Icon loginIcon2 = new ImageIcon("");
+		btnAnnuler.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnAnnuler.setBorderPainted(false);
+		btnAnnuler.setContentAreaFilled(false);
+		Icon loginIcon2 = new ImageIcon("icones/previous.png");
 		btnAnnuler.setIcon(loginIcon2);
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -184,17 +190,15 @@ public class VoitureAvecEvent extends JPanel {
 				validate();
 			}
 		});
-		btnAnnuler.setBounds(763, 355, 130, 74);
+		btnAnnuler.setBounds(753, 403, 155, 74);
 		desktopPane.add(btnAnnuler);
 	
 		
 // bouton Ajouter un pilote		
-		JButton btnAjouterPilote = new JButton("");
+		JButton btnAjouterPilote = new JButton("Ajouter");
+		btnAjouterPilote.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnAjouterPilote.setBorderPainted(false);
-		btnAjouterPilote.setIgnoreRepaint(true);
 		btnAjouterPilote.setContentAreaFilled(false);
-		btnAjouterPilote.setForeground(new Color(240, 255, 255));
-		btnAjouterPilote.setBackground(new Color(240, 255, 255));
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
 		btnAjouterPilote.setIcon(loginIcon3);
 		btnAjouterPilote.addActionListener(new ActionListener() {
@@ -206,7 +210,31 @@ public class VoitureAvecEvent extends JPanel {
 				validate();
 			}
 		});
-		btnAjouterPilote.setBounds(113, 304, 33, 18);
+		btnAjouterPilote.setBounds(69, 302, 137, 18);
 		desktopPane.add(btnAjouterPilote);
+		
+		
+		// bouton Supprimer un pilote				
+		JButton btnSupprimer = new JButton("Supprimer");
+		btnSupprimer.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnSupprimer.setBorderPainted(false);
+		btnSupprimer.setContentAreaFilled(false);
+		Icon loginIcon5 = new ImageIcon("icones/suppr.png");
+		btnSupprimer.setIcon(loginIcon5);
+		btnSupprimer.setBounds(376, 297, 117, 29);
+		desktopPane.add(btnSupprimer);
+	
+		
+		// bouton Modifier un pilote		
+		JButton btnModifier = new JButton("Modifier");
+		btnModifier.setFont(new Font("Dialog", Font.PLAIN, 14));
+		btnModifier.setBorderPainted(false);
+		btnModifier.setContentAreaFilled(false);
+		Icon loginIcon6 = new ImageIcon("icones/edit.png");
+		btnModifier.setIcon(loginIcon6);
+		btnModifier.setBounds(221, 299, 117, 29);
+		desktopPane.add(btnModifier);
 	}
+	
+	
 }

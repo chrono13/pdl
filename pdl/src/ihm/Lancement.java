@@ -51,6 +51,7 @@ public class Lancement extends JPanel {
 // bouton Continuer		
 		JButton btnContinuer = new JButton("Continuer");
 		btnContinuer.setBorderPainted(false);
+		btnContinuer.setContentAreaFilled(false);
 		btnContinuer.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon1 = new ImageIcon("icones/valid.png");
 		btnContinuer.setIcon(loginIcon1);

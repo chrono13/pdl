@@ -2,11 +2,16 @@ package ihm;
 
 import javax.rmi.CORBA.Util;
 import javax.swing.JPanel;
+
 import java.awt.SystemColor;
+
 import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
@@ -24,9 +29,9 @@ public class GestionEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblQueSouhaitezVous = new JLabel("Que souhaitez vous faire?");
+		JLabel lblQueSouhaitezVous = new JLabel("Que souhaitez vous faire ?");
 		lblQueSouhaitezVous.setFont(new Font("Vrinda", Font.BOLD, 35));
-		lblQueSouhaitezVous.setBounds(275, 20, 400, 45);
+		lblQueSouhaitezVous.setBounds(275, 20, 543, 45);
 		desktopPane.add(lblQueSouhaitezVous);
 		
 		
@@ -35,6 +40,10 @@ public class GestionEvent extends JPanel {
 		
 // bouton ajouter un 思始ement		
 		JButton btnAjouterEvent = new JButton("Ajouter un evenement");
+		btnAjouterEvent.setContentAreaFilled(false);
+		btnAjouterEvent.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/add.png");
+		btnAjouterEvent.setIcon(loginIcon1);
 		btnAjouterEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjouterEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -46,13 +55,17 @@ public class GestionEvent extends JPanel {
 				validate();
 			}
 		});
-		btnAjouterEvent.setBounds(382, 276, 196, 50);
+		btnAjouterEvent.setBounds(382, 276, 234, 50);
 		desktopPane.add(btnAjouterEvent);
 		
 		
 		
 // bouton charger un 思始ement		
 		JButton btnChargerEvent = new JButton("Charger un evenement");
+		btnChargerEvent.setContentAreaFilled(false);
+		btnChargerEvent.setBorderPainted(false);
+		Icon loginIcon6 = new ImageIcon("icones/import.png");
+		btnChargerEvent.setIcon(loginIcon6);
 		btnChargerEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnChargerEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
@@ -69,12 +82,16 @@ public class GestionEvent extends JPanel {
 //			        }
 			}
 		});
-		btnChargerEvent.setBounds(93, 111, 196, 50);
+		btnChargerEvent.setBounds(93, 111, 253, 50);
 		desktopPane.add(btnChargerEvent);
 
 		
 // bouton annuler		
 		JButton btnAnnuler = new JButton("Annuler");
+		btnAnnuler.setContentAreaFilled(false);
+		btnAnnuler.setBorderPainted(false);
+		Icon loginIcon10 = new ImageIcon("icones/previous.png");
+		btnAnnuler.setIcon(loginIcon10);
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -85,7 +102,7 @@ public class GestionEvent extends JPanel {
 				validate();
 			}
 		});
-		btnAnnuler.setBounds(671, 439, 196, 50);
+		btnAnnuler.setBounds(671, 439, 217, 50);
 		desktopPane.add(btnAnnuler);
 	}
 	

@@ -1,5 +1,7 @@
 package ihm;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -88,6 +90,11 @@ public class CreerPiloteSansEvent extends JPanel {
 
 		//bouton ajouter ou modifier		
 		JButton btnAjoutermodifier = new JButton("Ajouter/Modifier");
+		btnAjoutermodifier.setContentAreaFilled(false);
+		btnAjoutermodifier.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/add.png");
+		btnAjoutermodifier.setIcon(loginIcon1);
+		btnAjoutermodifier.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnAjoutermodifier.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjoutermodifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -123,14 +130,19 @@ public class CreerPiloteSansEvent extends JPanel {
 				validate();
 			}
 		});
-		btnAjoutermodifier.setBounds(217, 490, 150, 45);
+		btnAjoutermodifier.setBounds(217, 490, 235, 45);
 		desktopPane.add(btnAjoutermodifier);
 		
 		
 		
 		// bouton retour		
 		JButton btnRetour = new JButton("Retour");
+		btnRetour.setContentAreaFilled(false);
 		btnRetour.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnRetour.setFont(new Font("Dialog", Font.PLAIN, 14));
+		Icon loginIcon2 = new ImageIcon("icones/previous.png");
+		btnRetour.setIcon(loginIcon2);
+		btnRetour.setBorderPainted(false);
 		btnRetour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();

@@ -50,7 +50,10 @@ public class Language extends JPanel {
 		
 		//bouton Valider	
 		JButton btnValider = new JButton("Valider");
+		
 		btnValider.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnValider.setContentAreaFilled(false);
+		btnValider.setBorderPainted(false);
 		Icon loginIcon4 = new ImageIcon("icones/valid.png");
 		btnValider.setIcon(loginIcon4);
 		btnValider.addActionListener(new ActionListener() {
@@ -71,8 +74,10 @@ public class Language extends JPanel {
 //bouton Quitter	
 		JButton btnQuitter = new JButton("Quitter");
 		btnQuitter.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		Icon loginIcon1 = new ImageIcon("icones/.png");
-		btnValider.setIcon(loginIcon1);
+		btnQuitter.setContentAreaFilled(false);
+		btnQuitter.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/quit.png");
+		btnQuitter.setIcon(loginIcon1);
 		btnQuitter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);

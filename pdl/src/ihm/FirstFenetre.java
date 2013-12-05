@@ -9,18 +9,13 @@ import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
-import javax.swing.JList;
-import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 
 import principal.Voiture;
 
-import java.awt.Choice;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Button;
 import java.awt.Font;
 
 
@@ -46,6 +41,7 @@ public class FirstFenetre extends JPanel {
 		
 //bouton créer un événement		
 		JButton btnCreerEvent = new JButton("Creer un evenement");
+		btnCreerEvent.setContentAreaFilled(false);
 		btnCreerEvent.setBorderPainted(false);
 		Icon loginIcon2 = new ImageIcon("icones/flag.png");
 		btnCreerEvent.setIcon(loginIcon2);
@@ -67,6 +63,7 @@ public class FirstFenetre extends JPanel {
 		
 //bouton Créer une voiture		
 		JButton btnCreerVoiture = new JButton(Dico.dansLedico("Creer une voiture", Dico.langue));
+		btnCreerVoiture.setContentAreaFilled(false);
 		btnCreerVoiture.setBorderPainted(false);
 		Icon loginIcon3 = new ImageIcon("icones/car.png");
 		btnCreerVoiture.setIcon(loginIcon3);
@@ -89,6 +86,7 @@ public class FirstFenetre extends JPanel {
 		
 //bouton annuler		
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Retour", Dico.langue));
+		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/previous.png");
 		btnAnnuler.setIcon(loginIcon1);
