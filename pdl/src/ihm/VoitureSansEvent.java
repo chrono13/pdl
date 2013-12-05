@@ -244,14 +244,26 @@ public class VoitureSansEvent extends JPanel {
 					return;// si il manque au moins un élément dans le voiture alors on avertit le client
 				}
 				else {
-					//v.setVoiture_active(textField);
+					// fixation des informations de la voiture avant la sauvegarde
+					v.setVoiture_active(chckbxVoitureActive.isSelected());
 					v.setVoiture_couleur(textField_1.getText());
 					v.setVoiture_lien_img(textField_2.getText());
 					v.setVoiture_nbreTour_par_relai(Integer.parseInt(textField_3.getText()));
 					v.setVoiture_num(textField.getText());
 					v.setVoiture_temps_estime_partour(textField_4.getText());
-					//v.setVoiture_pilote_actuelle(comboBox.getitem);
-					
+					// on recupere le pilote de depart via ce qui suit
+					String pilote = (String) comboBox.getSelectedItem();
+					if (!v.listPiloteVide(v)) {
+						Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+						boolean pilotetrouve = true;
+						while(it.hasNext()&& pilotetrouve) {
+							Pilote p1 = it.next();
+							if (p1.getPilote_nomprenom().equals(pilote)){
+								v.setVoiture_pilote_actuelle(p1);
+							}
+						}
+					}
+					// processus de sauvegarde
 					Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
 					JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
 					File fichier;
@@ -341,11 +353,11 @@ public class VoitureSansEvent extends JPanel {
 					String fiel4 = textField.getText();
 					v.setVoiture_temps_estime_partour(fiel4);;
 				}
-				textField.setText(v.getVoiture_num());
+				/*textField.setText(v.getVoiture_num());
 				textField_1.setText(v.getVoiture_couleur());
 				textField_2.setText(v.getVoiture_lien_img());
 				textField_3.setText(Integer.toString(v.getVoiture_nbreTour_par_relai()));
-				textField_4.setText(v.getVoiture_temps_estime_partour());
+				textField_4.setText(v.getVoiture_temps_estime_partour());*/
 				removeAll();
 				repaint();
 				int ligne = table.getSelectedRow();

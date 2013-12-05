@@ -27,7 +27,7 @@ public class AjouterEvent extends JPanel {
 	 * Create the panel.
 	 */
 	public AjouterEvent() {
-setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
 		JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));

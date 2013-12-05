@@ -40,7 +40,7 @@ public class FirstFenetre extends JPanel {
 		
 		/* BOUTONS DE LA FENETRE */
 		
-//bouton créer un événement		
+		//bouton creer un evenement		
 		JButton btnCreerEvent = new JButton("Creer un evenement");
 		btnCreerEvent.setContentAreaFilled(false);
 		btnCreerEvent.setBorderPainted(false);
