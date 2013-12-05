@@ -141,6 +141,7 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.add(txtpnCommentairesCourse);
 		
 		JButton btnAnnuler = new JButton("Annuler");
+		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
 		Icon loginIcon2 = new ImageIcon("icones/previous.png");
 		btnAnnuler.setIcon(loginIcon2);
@@ -158,6 +159,7 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.add(btnAnnuler);
 		
 		JButton btnValider = new JButton("Valider");
+		btnValider.setContentAreaFilled(false);
 		btnValider.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/valid.png");
 		btnValider.setIcon(loginIcon1);
