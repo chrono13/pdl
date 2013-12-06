@@ -137,7 +137,7 @@ public class VoitureSansEvent extends JPanel {
 		final JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(684, 296, 97, 27);
 		desktopPane.add(comboBox);
-		if (!v.listPiloteVide(v)) {
+		if (!v.listPiloteVide()) {
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 			while(it.hasNext()) {
 				Pilote p1 = it.next();
@@ -199,7 +199,7 @@ public class VoitureSansEvent extends JPanel {
 		
 		model.setColumnIdentifiers(entete);
 		
-		if (!v.listPiloteVide(v)) {
+		if (!v.listPiloteVide()) {
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 		
 			while(it.hasNext()) {
@@ -232,7 +232,7 @@ public class VoitureSansEvent extends JPanel {
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				/*verification si l'ensemble des cellules est rempli*/
-				if (v.listPiloteVide(v)){
+				if (v.listPiloteVide()){
 					JOptionPane.showMessageDialog(desktopPane, "Attention", "Vous avez aucun pilote", JOptionPane.ERROR_MESSAGE);
 				}
 				if (textField == null || textField.getText().equals("")  || textField_2.getText().equals("") 
@@ -253,7 +253,17 @@ public class VoitureSansEvent extends JPanel {
 					v.setVoiture_temps_estime_partour(textField_4.getText());
 					// on recupere le pilote de depart via ce qui suit
 					String pilote = (String) comboBox.getSelectedItem();
-					if (!v.listPiloteVide(v)) {
+					// nous verifions que le relais est bien est entier
+					try
+					{
+					     int i=Integer.decode(textField_3.getText());// verifie si la saisie de la longueur est un entier
+					 
+					}catch(NumberFormatException  e)
+					{
+						JOptionPane.showMessageDialog(desktopPane, "La relais n'est pas numerique !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					if (!v.listPiloteVide()) {
 						Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 						boolean pilotetrouve = true;
 						while(it.hasNext()&& pilotetrouve) {

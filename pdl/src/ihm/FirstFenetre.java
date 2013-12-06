@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
+import principal.Evenement;
 import principal.Voiture;
 
 import java.awt.event.ActionListener;
@@ -62,7 +63,7 @@ public class FirstFenetre extends JPanel {
 		desktopPane.add(btnCreerEvent);
 		
 		
-//bouton Créer une voiture		
+		//bouton Creer une voiture		
 		JButton btnCreerVoiture = new JButton(Dico.dansLedico("Creer une voiture", Dico.langue));
 		btnCreerVoiture.setContentAreaFilled(false);
 		btnCreerVoiture.setBorderPainted(false);

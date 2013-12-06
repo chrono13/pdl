@@ -17,6 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
 
+import principal.Course;
+import principal.Evenement;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -29,13 +32,18 @@ public class CaracteristiquesCourse extends JPanel {
 	private JTextField textnbToursMax;
 	private JTextField textDureeMaxPilote;
 	private JTextField textDureeConsécutiveMaxPilote;
+	private Course c = null;
+	private Evenement event = null;
+	
 
 	/**
 	 * Create the panel.
 	 */
-	public CaracteristiquesCourse() {
+	public CaracteristiquesCourse(Evenement e, Course course) {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
+		this.event = e;
+		this.c = course;
 		JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
@@ -147,7 +155,7 @@ public class CaracteristiquesCourse extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				CaracteristiquesEvent inter = new CaracteristiquesEvent();
+				CaracteristiquesEvent inter = new CaracteristiquesEvent(event);
 				add(inter);
 				validate();
 			}
@@ -165,7 +173,7 @@ public class CaracteristiquesCourse extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				InterCourse inter = new InterCourse();
+				InterCourse inter = new InterCourse(event, c);
 				add(inter);
 				validate();
 			}

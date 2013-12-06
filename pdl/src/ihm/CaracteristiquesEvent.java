@@ -2,6 +2,8 @@ package ihm;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.JDesktopPane;
@@ -18,21 +20,38 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.io.File;
+import java.util.Iterator;
 
 import javax.swing.JTextPane;
 import javax.swing.JFormattedTextField;
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JSeparator;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+import principal.Course;
+import principal.Essai;
+import principal.Evenement;
+import principal.Voiture;
+
+import javax.swing.JTable;
 
 public class CaracteristiquesEvent extends JPanel {
 
+	private Evenement event = null;
+	private JTable table_voiture;
+	private JTable table_essais;
 	/**
 	 * Create the panel.
 	 */
-	public CaracteristiquesEvent() {
+	public CaracteristiquesEvent(final Evenement e) {
+		this.event = e;
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 
-		JDesktopPane desktopPane = new JDesktopPane();
+		final JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 
@@ -76,14 +95,6 @@ public class CaracteristiquesEvent extends JPanel {
 		lblCourse.setBounds(789, 206, 61, 14);
 		desktopPane.add(lblCourse);
 
-		JTextPane voituresListe = new JTextPane();
-		voituresListe.setBounds(10, 231, 327, 239);
-		desktopPane.add(voituresListe);
-
-		JTextPane essaiListe = new JTextPane();
-		essaiListe.setBounds(367, 231, 350, 239);
-		desktopPane.add(essaiListe);
-
 
 		JLabel lblNomCourse = new JLabel("");
 		lblNomCourse.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -92,6 +103,7 @@ public class CaracteristiquesEvent extends JPanel {
 		lblNomCourse.setBackground(SystemColor.scrollbar);
 		lblNomCourse.setBounds(218, 63, 451, 20);
 		desktopPane.add(lblNomCourse);
+		lblNomCourse.setText(event.getEven_nom());
 
 		JLabel lblNomCircuit = new JLabel("");
 		lblNomCircuit.setForeground(Color.BLACK);
@@ -100,6 +112,7 @@ public class CaracteristiquesEvent extends JPanel {
 		lblNomCircuit.setBackground(SystemColor.windowBorder);
 		lblNomCircuit.setBounds(218, 97, 451, 20);
 		desktopPane.add(lblNomCircuit);
+		lblNomCircuit.setText(event.getEven_nom_circuit());
 
 		JLabel lblLongueurCircuit = new JLabel("");
 		lblLongueurCircuit.setForeground(Color.BLACK);
@@ -108,6 +121,7 @@ public class CaracteristiquesEvent extends JPanel {
 		lblLongueurCircuit.setBackground(SystemColor.windowBorder);
 		lblLongueurCircuit.setBounds(218, 130, 451, 20);
 		desktopPane.add(lblLongueurCircuit);
+		lblLongueurCircuit.setText(String.valueOf(event.getEven_longueur_circuit()));
 
 
 		JSeparator separator = new JSeparator();
@@ -130,29 +144,85 @@ public class CaracteristiquesEvent extends JPanel {
 
 		/******* BOUTONS DE LA PAGE *******/
 
-		//Bouton Ajouter Pilote
-		JButton btnAjouterPilote = new JButton("Ajouter");
-		btnAjouterPilote.setContentAreaFilled(false);
-		btnAjouterPilote.setBorderPainted(false);
+		// remplir  la table des voiture
+		table_voiture = new JTable();
+		table_voiture.setBounds(20, 239, 319, 259);
+		final DefaultTableModel model = new DefaultTableModel() {
+
+			@Override
+			public boolean isCellEditable(int x, int y) {
+				return false ; 
+			}
+		};
+		model.addColumn("Nom et prenom");
+		//model.setColumnIdentifiers(entete);
+		if (!event.listVoitureVide()) {
+			Iterator <Voiture> it = event.getVoitures().iterator();
+			while(it.hasNext()) {
+				Voiture v1 = it.next();
+				String nom = v1.getVoiture_num();
+				model.addRow(new Object [] {nom});
+			}
+		}
+
+		table_voiture.setModel(model);
+		desktopPane.add(table_voiture);
+
+
+		//Bouton Ajouter voiture
+		JButton btnAjouterVoiture = new JButton("Ajouter");
+		btnAjouterVoiture.setContentAreaFilled(false);
+		btnAjouterVoiture.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/add.png");
-		btnAjouterPilote.setIcon(loginIcon1);
-		btnAjouterPilote.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		btnAjouterPilote.addActionListener(new ActionListener() {
+		btnAjouterVoiture.setIcon(loginIcon1);
+		btnAjouterVoiture.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnAjouterVoiture.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Voiture v = new Voiture();
+				int ligne = table_voiture.getSelectedRow();
+				if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+					int i = 0;
+					Iterator <Voiture> it = event.getVoitures().iterator();
+					while(it.hasNext() && i<=ligne){
+						v =it.next();
+						i++;
+					}
+				}				
 				removeAll();
 				repaint();
-				VoitureAvecEvent inter7 = new VoitureAvecEvent();
+				VoitureAvecEvent inter7 = new VoitureAvecEvent(event, v);
 				add(inter7);
 				validate();
 			}
 		});
-		btnAjouterPilote.setForeground(new Color(0, 0, 0));
-		btnAjouterPilote.setBackground(SystemColor.activeCaption);
-		btnAjouterPilote.setBounds(79, 199, 148, 29);
-		desktopPane.add(btnAjouterPilote);
+		btnAjouterVoiture.setForeground(new Color(0, 0, 0));
+		btnAjouterVoiture.setBackground(SystemColor.activeCaption);
+		btnAjouterVoiture.setBounds(79, 199, 148, 29);
+		desktopPane.add(btnAjouterVoiture);
 
-		//Bouton Supprimer Pilote		
+
+
+		//Bouton Supprimer Voiture		
 		JButton btnSupprimer = new JButton("Supprimer");
+		btnSupprimer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int ligne = table_voiture.getSelectedRow();
+				Voiture voiture = new Voiture ();
+				if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+					int i = 0;
+					Iterator <Voiture> it = event.getVoitures().iterator();
+					while(it.hasNext() && i<=ligne){
+						voiture = it.next();
+						if (i == ligne) {
+							it.remove();
+						}
+						i++;
+					}
+				}
+				model.removeRow(ligne);
+				// on notify la table comme quoi une voiture n'est plus
+			}
+		});
 		btnSupprimer.setContentAreaFilled(false);
 		btnSupprimer.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnSupprimer.setBorderPainted(false);
@@ -160,6 +230,28 @@ public class CaracteristiquesEvent extends JPanel {
 		btnSupprimer.setIcon(loginIcon2);
 		btnSupprimer.setBounds(207, 199, 148, 29);
 		desktopPane.add(btnSupprimer);
+
+		// contructions table essai
+		table_essais = new JTable();
+		table_essais.setBounds(377, 239, 341, 259);
+		final DefaultTableModel model2 = new DefaultTableModel() {
+			@Override
+			public boolean isCellEditable(int x, int y) {
+				return false ; 
+			}
+		};
+		model2.addColumn("nom de l'essai");
+		if (!event.listVoitureVide()) {
+			Iterator <Essai> it = event.getEssais().iterator();
+
+			while(it.hasNext()) {
+				Essai s1 = it.next();
+				//String nom = s1.
+				//model2.addRow(new Object [] {nom});
+			}
+		}
+		table_essais.setModel(model2);
+		desktopPane.add(table_essais);
 
 		//Bouton Ajouter Essai		
 		JButton btnAjouterEssai = new JButton("Ajouter");
@@ -171,7 +263,8 @@ public class CaracteristiquesEvent extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				CaracteristiquesEssai inter7 = new CaracteristiquesEssai();
+				Essai ess = new Essai();
+				CaracteristiquesEssai inter7 = new CaracteristiquesEssai(event, ess);
 				add(inter7);
 				validate();
 			}
@@ -196,6 +289,15 @@ public class CaracteristiquesEvent extends JPanel {
 
 		//Bouton Modifier
 		JButton btnEdit = new JButton("Modifier");
+		btnEdit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				removeAll();
+				repaint();
+				AjouterEvent inter7 = new AjouterEvent(event);
+				add(inter7);
+				validate();
+			}
+		});
 		btnEdit.setContentAreaFilled(false);
 		btnEdit.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnEdit.setBorderPainted(false);
@@ -223,11 +325,19 @@ public class CaracteristiquesEvent extends JPanel {
 		btnLancerLessai.setIcon(loginIcon7);
 		btnLancerLessai.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				removeAll();
-				repaint();
-				InterCourse inter7 = new InterCourse();
-				add(inter7);
-				validate();
+				if (!event.auMoinsuneVoitureActive()){// si l'utilsateur n'a rentre aucun essai alors il n'as pas le droit de lancer l'essai
+					JOptionPane.showMessageDialog(desktopPane, "Vous devez au moins avoir une voiture active!!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				else {
+					removeAll();
+					repaint();
+					Essai essai = new Essai();
+					//Course course = new Course();
+					InterCourse inter7 = new InterCourse(event, essai);
+					add(inter7);
+					validate();
+				}
 			}
 		});
 		btnLancerLessai.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -244,11 +354,19 @@ public class CaracteristiquesEvent extends JPanel {
 		btnLancerLaCourse.setIcon(loginIcon8);
 		btnLancerLaCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				removeAll();
-				repaint();
-				CaracteristiquesCourse inter7 = new CaracteristiquesCourse();
-				add(inter7);
-				validate();
+				if (!event.auMoinsuneVoitureActive()){// si l'utilsateur n'a rentre aucune voiture alors il n'as pas le droit de lancer la course
+					JOptionPane.showMessageDialog(desktopPane, "Vous devez avoir au moins une voiture active!!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				else {
+					removeAll();
+					repaint();
+					Course course = new Course();
+					CaracteristiquesCourse inter7 = new CaracteristiquesCourse(event, course);
+					add(inter7);
+					validate();
+				}
+
 			}
 		});
 		btnLancerLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -258,6 +376,33 @@ public class CaracteristiquesEvent extends JPanel {
 
 		// Bouton Sauvegarder
 		JButton btnSauvegarder = new JButton("Sauvegarder");
+		btnSauvegarder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
+				JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
+				File fichier;
+				String namefile = "";
+				String pathname= "";
+				if (dialogue.showSaveDialog(null)==JFileChooser.APPROVE_OPTION){
+					fichier = dialogue.getSelectedFile();
+					namefile = fichier.getName();// on recupere le nom du fichier
+					pathname = fichier.getParent();// on recupere le chemein du fichier
+				}
+				String nomdufichier = pathname+"/"+namefile+".xml";// on ajoute l'extension xml au fihcier
+				if (!nomdufichier.equals("/.xml")){// verifie que lors du choix de l'emplacement si on fait annuler on arrete l'enregistrement
+					File file = new File(nomdufichier);//sauvegarde dans l'explorateur le fichier
+					JAXBContext jaxbContext;
+					try {
+						jaxbContext = JAXBContext.newInstance(Evenement.class);// on fait un xml par rapport a la classse evenement
+						Marshaller m = jaxbContext.createMarshaller();// marshaller permet de passer d'une classe a un xml
+						m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+						m.marshal(event, file);// genere le fichier de sauvegarde
+					} catch (JAXBException e1) {
+						e1.printStackTrace();
+					}
+				}
+			}
+		});// une fois sauvegarder on reste sur la page
 		btnSauvegarder.setContentAreaFilled(false);
 		btnSauvegarder.setBorderPainted(false);
 		Icon loginIcon9 = new ImageIcon("icones/save.png");
@@ -285,7 +430,6 @@ public class CaracteristiquesEvent extends JPanel {
 		btnRetour.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnRetour.setBounds(740, 388, 148, 44);
 		desktopPane.add(btnRetour);
-
 
 
 	}

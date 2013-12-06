@@ -6,29 +6,42 @@ import javax.swing.JDesktopPane;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
 import javax.swing.JProgressBar;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JComboBox;
 import javax.swing.JTextPane;
 import javax.swing.JTable;
 
+import principal.Evenement;
+import principal.Session;
+
 
 public class InterCourse extends JPanel {
 	private JTable table;
+	private Evenement event = null;
+	private Session session = null;
 
 	/**
 	 * Create the panel.
 	 */
-	public InterCourse() {
+	public InterCourse(Evenement e, Session s) {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+		
+		this.event = e;
+		this.session = s;
 		
 		final Chrono chr = new Chrono();
 		

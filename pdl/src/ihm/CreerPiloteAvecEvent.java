@@ -11,8 +11,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import principal.Evenement;
+import principal.Pilote;
+import principal.Voiture;
 
 import java.awt.Color;
 
@@ -25,14 +30,24 @@ public class CreerPiloteAvecEvent extends JPanel {
 	private JTextField textField;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private Pilote p = null;
+	private Voiture v = null;
+	private Evenement event = null;
+	private boolean verrou = false;
 
 	/**
 	 * Create the panel.
+	 * @param event 
+	 * @param pil 
 	 */
-	public CreerPiloteAvecEvent() {
+	public CreerPiloteAvecEvent(final Evenement event, Voiture voit, Pilote pil) {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
-		JDesktopPane desktopPane = new JDesktopPane();
+		this.v = voit;
+		this.p = pil;
+		this.event = event;
+		
+		final JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
@@ -70,9 +85,34 @@ public class CreerPiloteAvecEvent extends JPanel {
 		btnAjouterModifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//évènement suite au "clic" sur le boutton ajouter/modifier
+				String nom;
+				String img;
+				String casque;
+				if (verrou) {// si le pilote existait déja est que le modifie alors on supprime son ancien item afin d'en refaire un nouveau
+					v.voiture_remove_pilote(p);
+				}
+				if (textField == null || textField.getText().equals("")  || textField_2.getText().equals("") 
+						|| textField_2 == null || textField_3 == null || textField_3.getText().equals("")) {
+					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					return;// si il manque au moins un élément chez le pilote alors on avertit le client
+				}
+				//évènement suite au "clic" sur le bouton ajouter/modifier
+				if (textField != null && !textField.getText().equals("") ) {
+					nom = textField.getText();
+					p.setPilote_nomprenom(nom);
+				}
+				if (textField_2 != null && !textField_2.getText().equals("")) {
+					casque = textField_2.getText();
+					p.setPilote_couleur(casque);
+				}
+				if (textField_3 != null && !textField_3.getText().equals("")) {
+					img = textField_3.getText();
+					p.setPilote_lien_sur_img(img);
+				}
+				v.voiture_add_pilote(p);
 				removeAll();
 				repaint();
-				VoitureAvecEvent inter2 = new VoitureAvecEvent();
+				VoitureAvecEvent inter2 = new VoitureAvecEvent(event, v);
 				add(inter2);
 				validate();
 			}
@@ -90,6 +130,14 @@ public class CreerPiloteAvecEvent extends JPanel {
 		desktopPane.add(textField_3);
 		textField_3.setColumns(10);
 		
+		
+		if (p!=null) {
+			verrou = true;
+			textField.setText(p.getPilote_nomprenom());
+			textField_3.setText(p.getPilote_lien_sur_img());
+			textField_2.setText(p.getPilote_couleur());
+		}
+		
 		JButton btnRetour = new JButton("Retour");
 		btnRetour.setContentAreaFilled(false);
 		btnRetour.setBorderPainted(false);
@@ -100,7 +148,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				VoitureAvecEvent inter2 = new VoitureAvecEvent();
+				VoitureAvecEvent inter2 = new VoitureAvecEvent(event, v);
 				add(inter2);
 				validate();
 			}

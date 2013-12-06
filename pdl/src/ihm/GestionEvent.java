@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 
+import principal.Evenement;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
@@ -38,7 +40,7 @@ public class GestionEvent extends JPanel {
 		/* BOUTONS DE LA FENETRE */
 		
 		
-// bouton ajouter un ŽvŽnement		
+		// bouton ajouter un evenement		
 		JButton btnAjouterEvent = new JButton("Ajouter un evenement");
 		btnAjouterEvent.setContentAreaFilled(false);
 		btnAjouterEvent.setBorderPainted(false);
@@ -48,9 +50,10 @@ public class GestionEvent extends JPanel {
 		btnAjouterEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//évènement suite au "clic" sur le boutton ajouter un évènement
+				Evenement event = new Evenement();
 				removeAll();
 				repaint();
-				AjouterEvent inter4 = new AjouterEvent();
+				AjouterEvent inter4 = new AjouterEvent(event);
 				add(inter4);
 				validate();
 			}
@@ -60,7 +63,7 @@ public class GestionEvent extends JPanel {
 		
 		
 		
-// bouton charger un ŽvŽnement		
+		// bouton charger un ŽvŽnement		
 		JButton btnChargerEvent = new JButton("Charger un evenement");
 		btnChargerEvent.setContentAreaFilled(false);
 		btnChargerEvent.setBorderPainted(false);
@@ -69,17 +72,7 @@ public class GestionEvent extends JPanel {
 		btnChargerEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnChargerEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
-				/*test2 pil = new test2();
-				System.out.println("bla");
-				//évènement suite au "clic" sur le boutton charger un évènement*/
-//				 try
-//			        {
-//			         Util.openLink(new URL("file://" + Util.getWorkingDirectory().getAbsolutePath()).toURI());
-//			        }
-//			        catch (Exception e)
-//			        {
-//			         e.printStackTrace();
-//			        }
+				
 			}
 		});
 		btnChargerEvent.setBounds(93, 111, 253, 50);
