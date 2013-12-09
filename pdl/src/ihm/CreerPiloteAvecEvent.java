@@ -51,22 +51,22 @@ public class CreerPiloteAvecEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblInformationDuPilote = new JLabel("Information sur le pilote");
+		JLabel lblInformationDuPilote = new JLabel(Dico.dansLedico("Informations sur le pilote", Dico.langue));
 		lblInformationDuPilote.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblInformationDuPilote.setBounds(317, 20, 563, 45);
 		desktopPane.add(lblInformationDuPilote);
 		
-		JLabel lblNom = new JLabel("Nom et prenom");
+		JLabel lblNom = new JLabel(Dico.dansLedico("Nom et prenom :", Dico.langue));
 		lblNom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
-		lblNom.setBounds(170, 236, 120, 23);
+		lblNom.setBounds(170, 236, 219, 23);
 		desktopPane.add(lblNom);
 		
-		JLabel lblCouleurDuCasque = new JLabel("Couleur du casque");
+		JLabel lblCouleurDuCasque = new JLabel(Dico.dansLedico("Couleur du casque", Dico.langue));
 		lblCouleurDuCasque.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		lblCouleurDuCasque.setBounds(170, 300, 120, 23);
 		desktopPane.add(lblCouleurDuCasque);
 		
-		JLabel lblImageDuPilote = new JLabel("Image du pilote");
+		JLabel lblImageDuPilote = new JLabel(Dico.dansLedico("Image du pilote", Dico.langue));
 		lblImageDuPilote.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		lblImageDuPilote.setBounds(170, 365, 120, 23);
 		desktopPane.add(lblImageDuPilote);
@@ -76,7 +76,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 		desktopPane.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnAjouterModifier = new JButton("Ajouter/Modifier");
+		JButton btnAjouterModifier = new JButton(Dico.dansLedico("Ajouter / Modifier", Dico.langue));
 		btnAjouterModifier.setContentAreaFilled(false);
 		btnAjouterModifier.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/add.png");
@@ -93,7 +93,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 				}
 				if (textField == null || textField.getText().equals("")  || textField_2.getText().equals("") 
 						|| textField_2 == null || textField_3 == null || textField_3.getText().equals("")) {
-					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément chez le pilote alors on avertit le client
 				}
 				//évènement suite au "clic" sur le bouton ajouter/modifier
@@ -138,7 +138,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 			textField_2.setText(p.getPilote_couleur());
 		}
 		
-		JButton btnRetour = new JButton("Retour");
+		JButton btnRetour = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnRetour.setContentAreaFilled(false);
 		btnRetour.setBorderPainted(false);
 		btnRetour.setFont(new Font("Dialog", Font.PLAIN, 14));

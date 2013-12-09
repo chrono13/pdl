@@ -31,7 +31,7 @@ public class GestionEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblQueSouhaitezVous = new JLabel("Que souhaitez vous faire ?");
+		JLabel lblQueSouhaitezVous = new JLabel(Dico.dansLedico("Que souhaitez-vous faire ?", Dico.langue));
 		lblQueSouhaitezVous.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblQueSouhaitezVous.setBounds(275, 20, 543, 45);
 		desktopPane.add(lblQueSouhaitezVous);
@@ -41,7 +41,7 @@ public class GestionEvent extends JPanel {
 		
 		
 		// bouton ajouter un evenement		
-		JButton btnAjouterEvent = new JButton("Ajouter un evenement");
+		JButton btnAjouterEvent = new JButton(Dico.dansLedico("Ajouter un evenement", Dico.langue));
 		btnAjouterEvent.setContentAreaFilled(false);
 		btnAjouterEvent.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/add.png");
@@ -64,7 +64,7 @@ public class GestionEvent extends JPanel {
 		
 		
 		// bouton charger un événement		
-		JButton btnChargerEvent = new JButton("Charger un evenement");
+		JButton btnChargerEvent = new JButton(Dico.dansLedico("Charger un evenement", Dico.langue));
 		btnChargerEvent.setContentAreaFilled(false);
 		btnChargerEvent.setBorderPainted(false);
 		Icon loginIcon6 = new ImageIcon("icones/import.png");
@@ -80,7 +80,7 @@ public class GestionEvent extends JPanel {
 
 		
 // bouton annuler		
-		JButton btnAnnuler = new JButton("Annuler");
+		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
 		Icon loginIcon10 = new ImageIcon("icones/previous.png");

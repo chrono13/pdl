@@ -50,50 +50,52 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblInformationsConcernantLaCourse = new JLabel("Informations concernant l'essai");
+		JLabel lblInformationsConcernantLaCourse = new JLabel(Dico.dansLedico("Informations concernant l'essai", Dico.langue));
 		lblInformationsConcernantLaCourse.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblInformationsConcernantLaCourse.setBounds(214, 0, 685, 36);
 		desktopPane.add(lblInformationsConcernantLaCourse);
 		
-		JLabel lblNomDeLa = new JLabel("Nom de l'essai :");
+		JLabel lblNomDeLa = new JLabel(Dico.dansLedico("Nom de l'essai :", Dico.langue));
 		lblNomDeLa.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNomDeLa.setBounds(193, 59, 163, 14);
 		desktopPane.add(lblNomDeLa);
 		
-		JLabel lblHeureDeDbut = new JLabel("Heure de debut :");
+		JLabel lblHeureDeDbut = new JLabel(Dico.dansLedico("Heure de debut :", Dico.langue));
 		lblHeureDeDbut.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblHeureDeDbut.setBounds(193, 96, 136, 14);
 		desktopPane.add(lblHeureDeDbut);
 		
-		JLabel lblHeureDeFin = new JLabel("Heure de fin :");
+		JLabel lblHeureDeFin = new JLabel(Dico.dansLedico("Heure de fin :", Dico.langue));
 		lblHeureDeFin.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblHeureDeFin.setBounds(569, 96, 107, 14);
 		desktopPane.add(lblHeureDeFin);
 		
-		JLabel lblNewLabel = new JLabel("Nombre de tours maximum :");
+		JLabel lblNewLabel = new JLabel(Dico.dansLedico("Nombre de tours maximum :", Dico.langue));
 		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel.setBounds(193, 200, 256, 14);
 		desktopPane.add(lblNewLabel);
 		
-		final JCheckBox chckbxDpartAutomatique = new JCheckBox("Depart automatique");
+
+		final JCheckBox chckbxDpartAutomatique = new JCheckBox(Dico.dansLedico("Depart automatique", Dico.langue));
 		chckbxDpartAutomatique.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxDpartAutomatique.setBackground(SystemColor.activeCaption);
 		chckbxDpartAutomatique.setForeground(new Color(0, 0, 0));
 		chckbxDpartAutomatique.setBounds(193, 149, 204, 23);
 		desktopPane.add(chckbxDpartAutomatique);
 		
-		JLabel lblTypeDeFin = new JLabel("Type de fin :");
+		JLabel lblTypeDeFin = new JLabel(Dico.dansLedico("Type de fin :", Dico.langue));
 		lblTypeDeFin.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblTypeDeFin.setBounds(501, 149, 117, 19);
 		desktopPane.add(lblTypeDeFin);
 		
-		final JCheckBox chckbxParNombreDe = new JCheckBox("Par nombre de tours");
+
+		final JCheckBox chckbxParNombreDe = new JCheckBox(Dico.dansLedico("Par nombre de tours", Dico.langue));
 		chckbxParNombreDe.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxParNombreDe.setBackground(SystemColor.activeCaption);
 		chckbxParNombreDe.setBounds(609, 136, 198, 23);
 		desktopPane.add(chckbxParNombreDe);
 		
-		final JCheckBox chckbxParTemps = new JCheckBox("Par temps");
+		final JCheckBox chckbxParTemps = new JCheckBox(Dico.dansLedico("Par temps", Dico.langue));
 		chckbxParTemps.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxParTemps.setBackground(SystemColor.activeCaption);
 		chckbxParTemps.setBounds(609, 162, 163, 23);
@@ -104,7 +106,7 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.add(txtNomcourse);
 		txtNomcourse.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("Duree totale maximum par pilote :");
+		JLabel lblNewLabel_1 = new JLabel(Dico.dansLedico("Duree totale maximum par pilote :", Dico.langue));
 		lblNewLabel_1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel_1.setBounds(194, 235, 271, 14);
 		desktopPane.add(lblNewLabel_1);
@@ -129,7 +131,7 @@ public class CaracteristiquesEssai extends JPanel {
 		desktopPane.add(textDureeMaxPilote);
 		textDureeMaxPilote.setColumns(10);
 		
-		JLabel lblDureConscutiveMaximum = new JLabel("Duree consecutive maximum par pilote :");
+		JLabel lblDureConscutiveMaximum = new JLabel(Dico.dansLedico("Duree consecutive maximum par pilote :", Dico.langue));
 		lblDureConscutiveMaximum.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblDureConscutiveMaximum.setBounds(193, 270, 311, 14);
 		desktopPane.add(lblDureConscutiveMaximum);
@@ -139,7 +141,7 @@ public class CaracteristiquesEssai extends JPanel {
 		textDureeConsécutiveMaxPilote.setBounds(501, 267, 130, 20);
 		desktopPane.add(textDureeConsécutiveMaxPilote);
 		
-		JLabel lblCommentairesSurLa = new JLabel("Commentaires");
+		JLabel lblCommentairesSurLa = new JLabel(Dico.dansLedico("Commentaires", Dico.langue));
 		lblCommentairesSurLa.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblCommentairesSurLa.setBounds(75, 356, 130, 22);
 		desktopPane.add(lblCommentairesSurLa);
@@ -169,7 +171,7 @@ public class CaracteristiquesEssai extends JPanel {
 			}
 		}
 		
-		JButton btnAnnuler = new JButton("Annuler");
+		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
 		Icon loginIcon2 = new ImageIcon("icones/previous.png");
@@ -187,7 +189,7 @@ public class CaracteristiquesEssai extends JPanel {
 		btnAnnuler.setBounds(107, 483, 163, 65);
 		desktopPane.add(btnAnnuler);
 		
-		JButton btnValider = new JButton("Valider");
+		JButton btnValider = new JButton(Dico.dansLedico("Valider", Dico.langue));
 		btnValider.setContentAreaFilled(false);
 		btnValider.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/valid.png");
@@ -252,12 +254,12 @@ public class CaracteristiquesEssai extends JPanel {
 		btnValider.setBounds(714, 483, 163, 65);
 		desktopPane.add(btnValider);
 		
-		JLabel lblSur = new JLabel("sur");
+		JLabel lblSur = new JLabel(Dico.dansLedico("sur", Dico.langue));
 		lblSur.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblSur.setBounds(107, 389, 130, 22);
 		desktopPane.add(lblSur);
 		
-		JLabel lblLaCourse = new JLabel("l'essai");
+		JLabel lblLaCourse = new JLabel(Dico.dansLedico("l'essai", Dico.langue));
 		lblLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblLaCourse.setBounds(95, 423, 130, 22);
 		desktopPane.add(lblLaCourse);

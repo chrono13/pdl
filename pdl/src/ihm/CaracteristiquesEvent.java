@@ -55,34 +55,34 @@ public class CaracteristiquesEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 
-		JLabel lblCaractristiquesDeLa = new JLabel("Caracteristiques de l'evenement");
+		JLabel lblCaractristiquesDeLa = new JLabel(Dico.dansLedico("Caracteristiques de l'evenement", Dico.langue));
 		lblCaractristiquesDeLa.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblCaractristiquesDeLa.setBounds(218, 6, 751, 44);
 		desktopPane.add(lblCaractristiquesDeLa);
 
-		JLabel lblNomDeLa = new JLabel("Nom de la course :");
+		JLabel lblNomDeLa = new JLabel(Dico.dansLedico("Nom de la course :", Dico.langue));
 		lblNomDeLa.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNomDeLa.setBounds(10, 66, 266, 14);
 		desktopPane.add(lblNomDeLa);
 
-		JLabel lblNomDuCircuit = new JLabel("Nom du circuit :");
+		JLabel lblNomDuCircuit = new JLabel(Dico.dansLedico("Nom du circuit :", Dico.langue));
 		lblNomDuCircuit.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNomDuCircuit.setBounds(10, 97, 266, 14);
 		desktopPane.add(lblNomDuCircuit);
 
-		JLabel lblLongueurDuCircuit = new JLabel("Longueur du circuit (m) :");
+		JLabel lblLongueurDuCircuit = new JLabel(Dico.dansLedico("Longueur du circuit (m) :", Dico.langue));
 		lblLongueurDuCircuit.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblLongueurDuCircuit.setBounds(10, 123, 266, 28);
 		desktopPane.add(lblLongueurDuCircuit);
 
-		JLabel lblVoitures = new JLabel("Voitures");
+		JLabel lblVoitures = new JLabel(Dico.dansLedico("Voiture(s)", Dico.langue));
 		lblVoitures.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblVoitures.setBounds(10, 206, 91, 14);
 		desktopPane.add(lblVoitures);
 
 
 
-		JLabel lblSancesDessai = new JLabel("S\u00E9ances d'essai");
+		JLabel lblSancesDessai = new JLabel(Dico.dansLedico("Seance d'essai", Dico.langue));
 		lblSancesDessai.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblSancesDessai.setBounds(367, 206, 148, 14);
 		desktopPane.add(lblSancesDessai);
@@ -90,7 +90,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 
-		JLabel lblCourse = new JLabel("COURSE");
+		JLabel lblCourse = new JLabel(Dico.dansLedico("COURSE", Dico.langue));
 		lblCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblCourse.setBounds(789, 206, 61, 14);
 		desktopPane.add(lblCourse);
@@ -154,7 +154,7 @@ public class CaracteristiquesEvent extends JPanel {
 				return false ; 
 			}
 		};
-		model.addColumn("Nom et prenom");
+		model.addColumn(Dico.dansLedico("Nom et prenom :", Dico.langue));
 		//model.setColumnIdentifiers(entete);
 		if (!event.listVoitureVide()) {
 			Iterator <Voiture> it = event.getVoitures().iterator();
@@ -170,7 +170,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		//Bouton Ajouter voiture
-		JButton btnAjouterVoiture = new JButton("Ajouter");
+		JButton btnAjouterVoiture = new JButton(Dico.dansLedico("Ajouter", Dico.langue));
 		btnAjouterVoiture.setContentAreaFilled(false);
 		btnAjouterVoiture.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/add.png");
@@ -203,7 +203,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		//Bouton Supprimer Voiture		
-		JButton btnSupprimer = new JButton("Supprimer");
+		JButton btnSupprimer = new JButton(Dico.dansLedico("Supprimer", Dico.langue));
 		btnSupprimer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int ligne = table_voiture.getSelectedRow();
@@ -240,8 +240,9 @@ public class CaracteristiquesEvent extends JPanel {
 				return false ; 
 			}
 		};
-		model2.addColumn("nom de l'essai");
-		if (!event.listEssaiVide()) {
+
+		model2.addColumn(Dico.dansLedico("Nom de l'essai :", Dico.langue));
+		if (!event.listVoitureVide()) {
 			Iterator <Essai> it = event.getEssais().iterator();
 			while(it.hasNext()) {
 				Essai s1 = it.next();
@@ -253,7 +254,7 @@ public class CaracteristiquesEvent extends JPanel {
 		desktopPane.add(table_essais);
 
 		//Bouton Ajouter Essai		
-		JButton btnAjouterEssai = new JButton("Ajouter");
+		JButton btnAjouterEssai = new JButton(Dico.dansLedico("Ajouter", Dico.langue));
 		btnAjouterEssai.setContentAreaFilled(false);
 		btnAjouterEssai.setBorderPainted(false);
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
@@ -285,7 +286,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		//Bouton Supprimer Essai
-		JButton btnSupprimerEssai = new JButton("Supprimer");
+		JButton btnSupprimerEssai = new JButton(Dico.dansLedico("Supprimer", Dico.langue));
 		btnSupprimerEssai.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int ligne = table_essais.getSelectedRow();
@@ -314,7 +315,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		//Bouton Modifier
-		JButton btnEdit = new JButton("Modifier");
+		JButton btnEdit = new JButton(Dico.dansLedico("Modifier", Dico.langue));
 		btnEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				removeAll();
@@ -333,7 +334,7 @@ public class CaracteristiquesEvent extends JPanel {
 		desktopPane.add(btnEdit);
 
 		// Bouton Importer Voiture
-		JButton btnImporterVoiture = new JButton("Importer Voiture");
+		JButton btnImporterVoiture = new JButton(Dico.dansLedico("Importer une voiture", Dico.langue));
 		btnImporterVoiture.setContentAreaFilled(false);
 		btnImporterVoiture.setBorderPainted(false);
 		Icon loginIcon6 = new ImageIcon("icones/import.png");
@@ -344,7 +345,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		// Bouton Lancer Essai
-		JButton btnLancerLessai = new JButton("Lancer l'essai");
+		JButton btnLancerLessai = new JButton(Dico.dansLedico("Lancer l'essai", Dico.langue));
 		btnLancerLessai.setContentAreaFilled(false);
 		btnLancerLessai.setBorderPainted(false);
 		Icon loginIcon7 = new ImageIcon("icones/lancerEssai.png");
@@ -352,7 +353,7 @@ public class CaracteristiquesEvent extends JPanel {
 		btnLancerLessai.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!event.auMoinsuneVoitureActive()){// si l'utilsateur n'a rentre aucun essai alors il n'as pas le droit de lancer l'essai
-					JOptionPane.showMessageDialog(desktopPane, "Vous devez au moins avoir une voiture active!!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous devez au moins avoir une voiture activee !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				else {// pour lancer un essai on doit au moins selectionner un essai
@@ -387,7 +388,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		// Bouton Lancer Course
-		JButton btnLancerLaCourse = new JButton("Lancer la course");
+		JButton btnLancerLaCourse = new JButton(Dico.dansLedico("Lancer la course", Dico.langue));
 		btnLancerLaCourse.setContentAreaFilled(false);
 		btnLancerLaCourse.setBorderPainted(false);
 		Icon loginIcon8 = new ImageIcon("icones/lancer.png");
@@ -395,7 +396,7 @@ public class CaracteristiquesEvent extends JPanel {
 		btnLancerLaCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!event.auMoinsuneVoitureActive()){// si l'utilsateur n'a rentre aucune voiture alors il n'as pas le droit de lancer la course
-					JOptionPane.showMessageDialog(desktopPane, "Vous devez avoir au moins une voiture active!!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous devez avoir au moins une voiture activee !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				else {
@@ -415,7 +416,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		// Bouton Sauvegarder
-		JButton btnSauvegarder = new JButton("Sauvegarder");
+		JButton btnSauvegarder = new JButton(Dico.dansLedico("Sauvegarder", Dico.langue));
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
@@ -453,7 +454,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		// Bouton Retour
-		JButton btnRetour = new JButton("Retour");
+		JButton btnRetour = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnRetour.setContentAreaFilled(false);
 		btnRetour.setBorderPainted(false);
 		Icon loginIcon10 = new ImageIcon("icones/previous.png");
