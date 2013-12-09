@@ -15,8 +15,8 @@ public class Voiture {
 	private String voiture_lien_img;
 	private int voiture_nbreTour_par_relai;
 	private String voiture_temps_estime_partour;
-	
 	private boolean voiture_active;
+	
 	private List <Pilote> voiture_list_pilotes = new ArrayList <Pilote>();
 	public List<Pilote> getVoiture_list_pilotes() {
 		return voiture_list_pilotes;
@@ -123,8 +123,8 @@ public class Voiture {
 		}
 	}
 	
-	public boolean listPiloteVide (Voiture v){
-		return v.voiture_list_pilotes.isEmpty();
+	public boolean listPiloteVide (){
+		return this.voiture_list_pilotes.isEmpty();
 	}
 	
 	

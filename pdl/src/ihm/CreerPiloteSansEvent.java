@@ -2,6 +2,7 @@ package ihm;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -43,22 +44,22 @@ public class CreerPiloteSansEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblInformationDuPilote = new JLabel("Informations sur le pilote");
+		JLabel lblInformationDuPilote = new JLabel(Dico.dansLedico("Informations sur le pilote", Dico.langue));
 		lblInformationDuPilote.setFont(new Font("Vrinda", Font.BOLD, 35));
-		lblInformationDuPilote.setBounds(285, 20, 555, 45);
+		lblInformationDuPilote.setBounds(182, 20, 711, 45);
 		desktopPane.add(lblInformationDuPilote);
 		
-		JLabel lblNom = new JLabel("Nom et prenom");
+		JLabel lblNom = new JLabel(Dico.dansLedico("Nom et prenom", Dico.langue));
 		lblNom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
-		lblNom.setBounds(182, 183, 120, 23);
+		lblNom.setBounds(182, 183, 198, 23);
 		desktopPane.add(lblNom);
 		
-		JLabel lblCouleurDuCasque = new JLabel("Couleur du casque");
+		JLabel lblCouleurDuCasque = new JLabel(Dico.dansLedico("Couleur du casque", Dico.langue));
 		lblCouleurDuCasque.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		lblCouleurDuCasque.setBounds(182, 250, 120, 23);
 		desktopPane.add(lblCouleurDuCasque);
 		
-		JLabel lblImageDuPilote = new JLabel("Image du pilote");
+		JLabel lblImageDuPilote = new JLabel(Dico.dansLedico("Image du pilote", Dico.langue));
 		lblImageDuPilote.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		lblImageDuPilote.setBounds(182, 313, 120, 23);
 		desktopPane.add(lblImageDuPilote);
@@ -89,7 +90,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		
 
 		//bouton ajouter ou modifier		
-		JButton btnAjoutermodifier = new JButton("Ajouter/Modifier");
+		JButton btnAjoutermodifier = new JButton(Dico.dansLedico("Ajouter / Modifier", Dico.langue));
 		btnAjoutermodifier.setContentAreaFilled(false);
 		btnAjoutermodifier.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/add.png");
@@ -135,7 +136,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		
 		
 		// bouton retour		
-		JButton btnRetour = new JButton("Retour");
+		JButton btnRetour = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnRetour.setContentAreaFilled(false);
 		btnRetour.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnRetour.setFont(new Font("Dialog", Font.PLAIN, 14));

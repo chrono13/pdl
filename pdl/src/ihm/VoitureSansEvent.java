@@ -88,48 +88,48 @@ public class VoitureSansEvent extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 
-		final JCheckBox chckbxVoitureActive = new JCheckBox("Voiture activ\u00E9e");
+		final JCheckBox chckbxVoitureActive = new JCheckBox(Dico.dansLedico("Voiture activee", Dico.langue));
 		chckbxVoitureActive.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxVoitureActive.setBackground(SystemColor.activeCaption);
 		chckbxVoitureActive.setBounds(628, 133, 298, 23);
 		desktopPane.add(chckbxVoitureActive);
 
-		JLabel lblCaractristiquesDeLa = new JLabel("Caract\u00E9ristiques de la voiture");
+		JLabel lblCaractristiquesDeLa = new JLabel(Dico.dansLedico("Caracteristiques de la voiture", Dico.langue));
 		lblCaractristiquesDeLa.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblCaractristiquesDeLa.setBounds(249, 0, 628, 50);
 		desktopPane.add(lblCaractristiquesDeLa);
 
-		JLabel lblNumroDeLa = new JLabel("Num\u00E9ro de la voiture :");
+		JLabel lblNumroDeLa = new JLabel(Dico.dansLedico("Numero de la voiture :", Dico.langue));
 		lblNumroDeLa.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNumroDeLa.setBounds(10, 68, 207, 14);
 		desktopPane.add(lblNumroDeLa);
 
-		JLabel lblCouleur = new JLabel("Couleur :");
+		JLabel lblCouleur = new JLabel(Dico.dansLedico("Couleur :", Dico.langue));
 		lblCouleur.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblCouleur.setBounds(482, 68, 83, 14);
 		desktopPane.add(lblCouleur);
 
-		JLabel lblLienVersLimage = new JLabel("Lien vers l'image :");
+		JLabel lblLienVersLimage = new JLabel(Dico.dansLedico("Lien vers l'image :", Dico.langue));
 		lblLienVersLimage.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblLienVersLimage.setBounds(10, 137, 196, 14);
 		desktopPane.add(lblLienVersLimage);
 
-		JLabel lblNombreDeTours = new JLabel("Nombre de tours / relais :");
+		JLabel lblNombreDeTours = new JLabel(Dico.dansLedico("Nombre de tours par relais :", Dico.langue));
 		lblNombreDeTours.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNombreDeTours.setBounds(10, 203, 258, 14);
 		desktopPane.add(lblNombreDeTours);
 
-		JLabel lblTempsEstimPar = new JLabel("Temps estim\u00E9 par tour :");
+		JLabel lblTempsEstimPar = new JLabel(Dico.dansLedico("Temps estime par tour :", Dico.langue));
 		lblTempsEstimPar.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblTempsEstimPar.setBounds(459, 203, 258, 14);
 		desktopPane.add(lblTempsEstimPar);
 
-		JLabel lblPilotes = new JLabel("Pilotes");
+		JLabel lblPilotes = new JLabel(Dico.dansLedico("Pilotes", Dico.langue));
 		lblPilotes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblPilotes.setBounds(113, 303, 104, 14);
 		desktopPane.add(lblPilotes);
 
-		JLabel lblPiloteAuDopart = new JLabel("Pilote au d\u00E9part :");
+		JLabel lblPiloteAuDopart = new JLabel(Dico.dansLedico("Pilote au depart :", Dico.langue));
 		lblPiloteAuDopart.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblPiloteAuDopart.setBounds(547, 304, 189, 14);
 		desktopPane.add(lblPiloteAuDopart);
@@ -137,7 +137,7 @@ public class VoitureSansEvent extends JPanel {
 		final JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(684, 296, 97, 27);
 		desktopPane.add(comboBox);
-		if (!v.listPiloteVide(v)) {
+		if (!v.listPiloteVide()) {
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 			while(it.hasNext()) {
 				Pilote p1 = it.next();
@@ -193,13 +193,13 @@ public class VoitureSansEvent extends JPanel {
 			
 			
 		};
-		model.addColumn("Nom et prenom");
-		model.addColumn("Couleur Casque");
-		model.addColumn("Lien image");
+		model.addColumn(Dico.dansLedico("Nom et prenom", Dico.langue));
+		model.addColumn(Dico.dansLedico("Couleur Casque", Dico.langue));
+		model.addColumn(Dico.dansLedico("Lien image", Dico.langue));
 		
 		model.setColumnIdentifiers(entete);
 		
-		if (!v.listPiloteVide(v)) {
+		if (!v.listPiloteVide()) {
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 		
 			while(it.hasNext()) {
@@ -224,7 +224,7 @@ public class VoitureSansEvent extends JPanel {
 		/* BOUTONS DE LA FENETRE */
 
 		// Bouton Sauvegarder
-		JButton btnSauvegarder = new JButton("Sauvegarder");
+		JButton btnSauvegarder = new JButton(Dico.dansLedico("Sauvegarder", Dico.langue));
 		btnSauvegarder.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon1 = new ImageIcon("icones/disquette$.png");
 		btnSauvegarder.setIcon(loginIcon1);
@@ -232,26 +232,48 @@ public class VoitureSansEvent extends JPanel {
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				/*verification si l'ensemble des cellules est rempli*/
-				if (v.listPiloteVide(v)){
-					JOptionPane.showMessageDialog(desktopPane, "Attention", "Vous avez aucun pilote", JOptionPane.ERROR_MESSAGE);
+				if (v.listPiloteVide()){
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Attention", Dico.langue), Dico.dansLedico("Vous avez aucun pilote", Dico.langue), JOptionPane.ERROR_MESSAGE);
 				}
 				if (textField == null || textField.getText().equals("")  || textField_2.getText().equals("") 
 						|| textField_2 == null || textField_4 == null || textField_4.getText().equals("")
 						|| textField_3 == null || textField_3.getText().equals("0") || textField_1== null || textField_1.getText().equals(""))
 				
 				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
-					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément dans le voiture alors on avertit le client
 				}
 				else {
-					//v.setVoiture_active(textField);
+					// fixation des informations de la voiture avant la sauvegarde
+					v.setVoiture_active(chckbxVoitureActive.isSelected());
 					v.setVoiture_couleur(textField_1.getText());
 					v.setVoiture_lien_img(textField_2.getText());
 					v.setVoiture_nbreTour_par_relai(Integer.parseInt(textField_3.getText()));
 					v.setVoiture_num(textField.getText());
 					v.setVoiture_temps_estime_partour(textField_4.getText());
-					//v.setVoiture_pilote_actuelle(comboBox.getitem);
-					
+					// on recupere le pilote de depart via ce qui suit
+					String pilote = (String) comboBox.getSelectedItem();
+					// nous verifions que le relais est bien est entier
+					try
+					{
+					     int i = Integer.decode(textField_3.getText());// verifie si la saisie de la longueur est un entier
+					 
+					}catch(NumberFormatException  e)
+					{
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Nombre de relai(s) incorrect !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					if (!v.listPiloteVide()) {
+						Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
+						boolean pilotetrouve = true;
+						while(it.hasNext()&& pilotetrouve) {
+							Pilote p1 = it.next();
+							if (p1.getPilote_nomprenom().equals(pilote)){
+								v.setVoiture_pilote_actuelle(p1);
+							}
+						}
+					}
+					// processus de sauvegarde
 					Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
 					JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
 					File fichier;
@@ -290,7 +312,7 @@ public class VoitureSansEvent extends JPanel {
 		
 		
 		// annuler
-		JButton btnAnnuler = new JButton("Annuler");
+		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		Icon loginIcon2 = new ImageIcon("");
 		btnAnnuler.setIcon(loginIcon2);
@@ -341,11 +363,11 @@ public class VoitureSansEvent extends JPanel {
 					String fiel4 = textField.getText();
 					v.setVoiture_temps_estime_partour(fiel4);;
 				}
-				textField.setText(v.getVoiture_num());
+				/*textField.setText(v.getVoiture_num());
 				textField_1.setText(v.getVoiture_couleur());
 				textField_2.setText(v.getVoiture_lien_img());
 				textField_3.setText(Integer.toString(v.getVoiture_nbreTour_par_relai()));
-				textField_4.setText(v.getVoiture_temps_estime_partour());
+				textField_4.setText(v.getVoiture_temps_estime_partour());*/
 				removeAll();
 				repaint();
 				int ligne = table.getSelectedRow();

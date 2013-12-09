@@ -17,6 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
 
+import principal.Course;
+import principal.Evenement;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -29,13 +32,18 @@ public class CaracteristiquesCourse extends JPanel {
 	private JTextField textnbToursMax;
 	private JTextField textDureeMaxPilote;
 	private JTextField textDureeConsécutiveMaxPilote;
+	private Course c = null;
+	private Evenement event = null;
+	
 
 	/**
 	 * Create the panel.
 	 */
-	public CaracteristiquesCourse() {
+	public CaracteristiquesCourse(Evenement e, Course course) {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
+		this.event = e;
+		this.c = course;
 		JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
@@ -129,7 +137,7 @@ public class CaracteristiquesCourse extends JPanel {
 		textDureeConsécutiveMaxPilote.setBounds(501, 267, 130, 20);
 		desktopPane.add(textDureeConsécutiveMaxPilote);
 		
-		JLabel lblCommentairesSurLa = new JLabel("Commentaires");
+		JLabel lblCommentairesSurLa = new JLabel(Dico.dansLedico("Commentaires", Dico.langue));
 		lblCommentairesSurLa.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblCommentairesSurLa.setBounds(75, 356, 130, 22);
 		desktopPane.add(lblCommentairesSurLa);
@@ -147,7 +155,7 @@ public class CaracteristiquesCourse extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				CaracteristiquesEvent inter = new CaracteristiquesEvent();
+				CaracteristiquesEvent inter = new CaracteristiquesEvent(event);
 				add(inter);
 				validate();
 			}
@@ -165,7 +173,7 @@ public class CaracteristiquesCourse extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				InterCourse inter = new InterCourse();
+				InterCourse inter = new InterCourse(event, c);
 				add(inter);
 				validate();
 			}
@@ -175,12 +183,12 @@ public class CaracteristiquesCourse extends JPanel {
 		btnLancerLaCourse.setBounds(653, 485, 163, 65);
 		desktopPane.add(btnLancerLaCourse);
 		
-		JLabel lblSur = new JLabel("sur");
+		JLabel lblSur = new JLabel(Dico.dansLedico("sur", Dico.langue));
 		lblSur.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblSur.setBounds(107, 389, 130, 22);
 		desktopPane.add(lblSur);
 		
-		JLabel lblLaCourse = new JLabel("la course");
+		JLabel lblLaCourse = new JLabel(Dico.dansLedico("la course", Dico.langue));
 		lblLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblLaCourse.setBounds(90, 422, 130, 22);
 		desktopPane.add(lblLaCourse);
