@@ -32,7 +32,7 @@ public class FirstFenetre extends JPanel {
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblVousSouhaitez = new JLabel("Vous souhaitez :");
+		JLabel lblVousSouhaitez = new JLabel(Dico.dansLedico("Vous souhaitez :", Dico.langue));
 		lblVousSouhaitez.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblVousSouhaitez.setBounds(342, 198, 588, 53);
 		desktopPane.add(lblVousSouhaitez);
@@ -41,7 +41,7 @@ public class FirstFenetre extends JPanel {
 		/* BOUTONS DE LA FENETRE */
 		
 //bouton créer un événement		
-		JButton btnCreerEvent = new JButton("Creer un evenement");
+		JButton btnCreerEvent = new JButton(Dico.dansLedico("Creer un evenement", Dico.langue));
 		btnCreerEvent.setContentAreaFilled(false);
 		btnCreerEvent.setBorderPainted(false);
 		Icon loginIcon2 = new ImageIcon("icones/flag.png");

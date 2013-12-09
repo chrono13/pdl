@@ -41,9 +41,9 @@ public class Dico {
 		put("Retour",    "Back");
 		put("Course",    "Race");
 		put("Caracteristiques",    "Features");
-		put("Nom de la course",    "Name of the race");
-		put("Nom du circuit",    "Name of the track");
-		put("Longueur du circuit (m)",    "Track Length (m)");
+		put("Nom de la course :",    "Name of the race :");
+		put("Nom du circuit :",    "Name of the track :");
+		put("Longueur du circuit (m) :",    "Track Length (m) :");
 		put("Voiture(s)",    "Car(s)");
 		put("Seance d'essai",    "Test session");
 		put("Importer une voiture",    "Load a car");
@@ -108,6 +108,9 @@ public class Dico {
 		put("Nom de l'essai",    "Name of the test");
 		put("Commentaires sur l'essai :",    "Comments about the test :");
 		put("Prenom",    "First name");
+		put("Commentaires",    "Comments");
+		put("sur",    "about");
+		put("la course",    "the race");
 		put("",    "");
 		put("",    "");
 	}};
@@ -122,6 +125,7 @@ public class Dico {
 		put("Allemand",    "Deutsch");
 		put("Anglais",    "English");
 		put("Valider",    "Freigeben");
+		put("Vous souhaitez :",    "Sie wollen :");
 		put("Creer une course",    "Ein Rennen schaffen");
 		put("Creer une voiture",    "Ein Auto schaffen");
 		put("Gestion de la course",    "Rennensverwaltung");
@@ -131,9 +135,9 @@ public class Dico {
 		put("Retour",    "Z\u00FCr\u00FCck");
 		put("Course",    "Rennen");
 		put("Caracteristiques",    "Besonderheiten");
-		put("Nom de la course",    "Rennensname");
-		put("Nom du circuit",    "Spursname");
-		put("Longueur du circuit (m)",    "Longe des Umkreises(m)");
+		put("Nom de la course :",    "Rennensname :");
+		put("Nom du circuit :",    "Spursname :");
+		put("Longueur du circuit (m) :",    "Longe des Umkreises (m) :");
 		put("Voiture(s)",    "Auto(s)");
 		put("Seance d'essai",    "Versuchssession");
 		put("Importer une voiture",    "Ein auto laden");
@@ -196,7 +200,7 @@ public class Dico {
 		put("Creer un evenement",    "Ein Ereignis schaffen");
 		put("Nom de l'essai",    "Versuchsname");
 		put("Prenom",    "Vorname");
-		put("",    "");
+		put("Commentaires",    "Rennenskomment\u00E4ren");
 		put("",    "");
 		put("",    "");
 	}};
@@ -212,7 +216,8 @@ public class Dico {
 		put("Allemand",    "Allemand");
 		put("Anglais",    "Anglais");
 		put("Valider",    "Valider");
-		put("Creer une course",    "Cr\u00E9er une course");
+		put("Vous souhaitez :",    "Vous souhaitez :");
+		put("Creer une course :",    "Cr\u00E9er une course :");
 		put("Creer une voiture",    "Cr\u00E9er une Voiture");
 		put("Gestion de la course",    "Gestion de la course");
 		put("Gestion de la course",    "Gestion de la course");
@@ -221,9 +226,9 @@ public class Dico {
 		put("Retour",    "Retour");
 		put("Course",    "Course");
 		put("Caracteristiques",    "Caract\u00E9ristiques");
-		put("Nom de la course",    "Nom de la course");
-		put("Nom du circuit",    "Nom du circuit");
-		put("Longueur du circuit (m)",    "Longueur du circuit (m)");
+		put("Nom de la course :",    "Nom de la course :");
+		put("Nom du circuit :",    "Nom du circuit :");
+		put("Longueur du circuit (m) :",    "Longueur du circuit (m) :");
 		put("Voiture(s)",    "Voiture(s)");
 		put("Seance d'essai",    "S\u00E9ance d'essai");
 		put("Importer une voiture",    "Importer une voiture");
@@ -287,6 +292,10 @@ public class Dico {
 		put("Nom de l'essai :",    "Nom de l'essai :");
 		put("Commentaires sur l'essai :",    "Commentaires sur l'essai :");
 		put("Prenom",    "Pr\u00E9nom");
+		put("Commentaires",    "Commentaires");
+		put("sur",    "sur");
+		put("la course",    "la course");
+		put("",    "");
 		put("",    "");
 	}};
 

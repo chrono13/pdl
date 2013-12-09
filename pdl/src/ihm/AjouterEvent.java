@@ -33,22 +33,22 @@ setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
-		JLabel lblAjouterEvent = new JLabel("Ajouter un evenement");
+		JLabel lblAjouterEvent = new JLabel(Dico.dansLedico("Ajouter un evenement", Dico.langue));
 		lblAjouterEvent.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblAjouterEvent.setBounds(274, 0, 751, 44);
 		desktopPane.add(lblAjouterEvent);
 		
-		JLabel lblNomDeLa = new JLabel("Nom de la course :");
+		JLabel lblNomDeLa = new JLabel(Dico.dansLedico("Nom de la course :", Dico.langue));
 		lblNomDeLa.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNomDeLa.setBounds(10, 123, 266, 14);
 		desktopPane.add(lblNomDeLa);
-		
-		JLabel lblNomDuCircuit = new JLabel("Nom du circuit :");
+	
+		JLabel lblNomDuCircuit = new JLabel(Dico.dansLedico("Nom du circuit :", Dico.langue));
 		lblNomDuCircuit.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNomDuCircuit.setBounds(10, 236, 266, 14);
 		desktopPane.add(lblNomDuCircuit);
 		
-		JLabel lblLongueurDuCircuit = new JLabel("Longueur du circuit (m) :");
+		JLabel lblLongueurDuCircuit = new JLabel(Dico.dansLedico("Longueur du circuit (m) :", Dico.langue));
 		lblLongueurDuCircuit.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblLongueurDuCircuit.setBounds(10, 337, 266, 28);
 		desktopPane.add(lblLongueurDuCircuit);
@@ -69,7 +69,7 @@ setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		nomCircuit.setBounds(310, 230, 330, 28);
 		desktopPane.add(nomCircuit);
 		
-		JButton btnSuivant = new JButton("Suivant   ");
+		JButton btnSuivant = new JButton(Dico.dansLedico("Suivant", Dico.langue));
 		btnSuivant.setContentAreaFilled(false);
 		btnSuivant.setBorderPainted(false);
 		btnSuivant.setHorizontalTextPosition(SwingConstants.LEFT);;
