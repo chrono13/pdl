@@ -31,6 +31,7 @@ import javax.swing.JSeparator;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
 import principal.Course;
 import principal.Essai;
@@ -335,6 +336,46 @@ public class CaracteristiquesEvent extends JPanel {
 
 		// Bouton Importer Voiture
 		JButton btnImporterVoiture = new JButton(Dico.dansLedico("Importer une voiture", Dico.langue));
+		btnImporterVoiture.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//chargement event
+				// création de la boîte de dialogue
+				
+				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
+				JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
+				File fichier=null;
+				String namefile = "";
+				String pathname= "";
+				if (dialogue.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
+					fichier = dialogue.getSelectedFile();
+					namefile = fichier.getName();// on recupere le nom du fichier
+					pathname = fichier.getParent();// on recupere le chemein du fichier
+				}
+				String nomdufichier = pathname+"\\"+namefile;// on ajoute l'extension xml au fihcier
+				if (fichier==null){// si on clique sur annuler!
+					return;
+				}
+				// récupération du fichier sélectionné
+				else {
+					try {	
+						
+						File file = new File(nomdufichier);
+						JAXBContext jaxbContext = JAXBContext.newInstance(Voiture.class);
+						Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+						Voiture voiture = (Voiture) jaxbUnmarshaller.unmarshal(file);
+						event.ajouterVoiture(voiture);
+						removeAll();
+						repaint();
+						CaracteristiquesEvent inter7 = new CaracteristiquesEvent(event);
+						add(inter7);
+						validate();
+					}
+					catch (JAXBException e2) {
+						e2.printStackTrace();
+					}
+				}
+			}
+		});
 		btnImporterVoiture.setContentAreaFilled(false);
 		btnImporterVoiture.setBorderPainted(false);
 		Icon loginIcon6 = new ImageIcon("icones/import.png");
