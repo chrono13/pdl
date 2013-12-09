@@ -120,9 +120,28 @@ public class AjouterEvent extends JPanel {
 			}
 		});
 		btnSuivant.setFont(new Font("Dialog", Font.PLAIN, 14));
-		btnSuivant.setBounds(369, 442, 175, 44);
+		btnSuivant.setBounds(513, 441, 175, 44);
 		desktopPane.add(btnSuivant);
 		
+		
+		//bouton retour
+		JButton btnRetour = new JButton(Dico.dansLedico("Retour", Dico.langue));
+		btnRetour.setContentAreaFilled(false);
+		btnRetour.setBorderPainted(false);
+		Icon loginIcon10 = new ImageIcon("icones/previous.png");
+		btnRetour.setIcon(loginIcon10);
+		btnRetour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				removeAll();
+				repaint();
+				GestionEvent inter7 = new GestionEvent();
+				add(inter7);
+				validate();
+			}
+		});
+		btnRetour.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		btnRetour.setBounds(282, 441, 148, 44);
+		desktopPane.add(btnRetour);
 	}
 }
 /**/
