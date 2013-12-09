@@ -281,14 +281,14 @@ public class VoitureAvecEvent extends JPanel {
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (v.listPiloteVide()){// on informe que la voiture n'as pas de pilotes
-					JOptionPane.showMessageDialog(desktopPane,Dico.dansLedico("Attention", Dico.langue), Dico.dansLedico("Vous n'avez aucun pilote", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez aucun pilote", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 				}
 				if (numVoiture == null || numVoiture.getText().equals("")  || couleurVoiture.getText().equals("") 
 						|| couleurVoiture == null || imageVoiture == null || imageVoiture.getText().equals("")
 						|| nbTours == null || nbTours.getText().equals("0") || textField_4== null || textField_4.getText().equals(""))
 
 				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
-					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout rempli !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément dans le voiture alors on avertit le client
 				}
 				else {

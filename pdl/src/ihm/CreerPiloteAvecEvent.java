@@ -57,17 +57,17 @@ public class CreerPiloteAvecEvent extends JPanel {
 		desktopPane.add(lblInformationDuPilote);
 		
 		JLabel lblNom = new JLabel(Dico.dansLedico("Nom et prenom :", Dico.langue));
-		lblNom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblNom.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblNom.setBounds(170, 236, 219, 23);
 		desktopPane.add(lblNom);
 		
 		JLabel lblCouleurDuCasque = new JLabel(Dico.dansLedico("Couleur du casque", Dico.langue));
-		lblCouleurDuCasque.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblCouleurDuCasque.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblCouleurDuCasque.setBounds(170, 300, 120, 23);
 		desktopPane.add(lblCouleurDuCasque);
 		
 		JLabel lblImageDuPilote = new JLabel(Dico.dansLedico("Image du pilote", Dico.langue));
-		lblImageDuPilote.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblImageDuPilote.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblImageDuPilote.setBounds(170, 365, 120, 23);
 		desktopPane.add(lblImageDuPilote);
 		

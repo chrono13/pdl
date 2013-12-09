@@ -114,7 +114,7 @@ public class VoitureSansEvent extends JPanel {
 		lblLienVersLimage.setBounds(10, 137, 196, 14);
 		desktopPane.add(lblLienVersLimage);
 
-		JLabel lblNombreDeTours = new JLabel(Dico.dansLedico("Nombre de tours par relais :", Dico.langue));
+		JLabel lblNombreDeTours = new JLabel(Dico.dansLedico("Nombre de tour(s) par relai :", Dico.langue));
 		lblNombreDeTours.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNombreDeTours.setBounds(10, 203, 258, 14);
 		desktopPane.add(lblNombreDeTours);
@@ -124,9 +124,9 @@ public class VoitureSansEvent extends JPanel {
 		lblTempsEstimPar.setBounds(459, 203, 258, 14);
 		desktopPane.add(lblTempsEstimPar);
 
-		JLabel lblPilotes = new JLabel(Dico.dansLedico("Pilotes", Dico.langue));
+		JLabel lblPilotes = new JLabel(Dico.dansLedico("Pilote(s)", Dico.langue));
 		lblPilotes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblPilotes.setBounds(113, 303, 104, 14);
+		lblPilotes.setBounds(10, 304, 104, 14);
 		desktopPane.add(lblPilotes);
 
 		JLabel lblPiloteAuDopart = new JLabel(Dico.dansLedico("Pilote au depart :", Dico.langue));
@@ -180,9 +180,9 @@ public class VoitureSansEvent extends JPanel {
 			textField_4.setText(v.getVoiture_temps_estime_partour());
 		}
 		
-		String [] entete =  {"Nom et prenom", "Couleur Casque", "Lien image" };
+		String [] entete =  {Dico.dansLedico("Nom et prenom", Dico.langue), Dico.dansLedico("Couleur du casque", Dico.langue), Dico.dansLedico("Lien vers l'image", Dico.langue) };
 		table = new JTable();
-		table.setBounds(10, 325, 410, 214);
+		table.setBounds(10, 328, 483, 255);
 		
 		final DefaultTableModel model = new DefaultTableModel() {
 			
@@ -226,9 +226,10 @@ public class VoitureSansEvent extends JPanel {
 		// Bouton Sauvegarder
 		JButton btnSauvegarder = new JButton(Dico.dansLedico("Sauvegarder", Dico.langue));
 		btnSauvegarder.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		Icon loginIcon1 = new ImageIcon("icones/disquette$.png");
+		btnSauvegarder.setContentAreaFilled(false);
+		btnSauvegarder.setBorderPainted(false);
+		Icon loginIcon1 = new ImageIcon("icones/save.png");
 		btnSauvegarder.setIcon(loginIcon1);
-		btnSauvegarder.setBounds(541, 355, 137, 74);
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				/*verification si l'ensemble des cellules est rempli*/
@@ -306,7 +307,7 @@ public class VoitureSansEvent extends JPanel {
 				}
 			}
 		});
-		btnSauvegarder.setBounds(557, 448, 137, 74);
+		btnSauvegarder.setBounds(557, 448, 200, 74);
 		desktopPane.add(btnSauvegarder);
 
 		
@@ -314,8 +315,10 @@ public class VoitureSansEvent extends JPanel {
 		// annuler
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		Icon loginIcon2 = new ImageIcon("");
-		btnAnnuler.setIcon(loginIcon2);
+		btnAnnuler.setContentAreaFilled(false);
+		btnAnnuler.setBorderPainted(false);
+		Icon loginIcon10 = new ImageIcon("icones/previous.png");
+		btnAnnuler.setIcon(loginIcon10);
 		btnAnnuler.setBounds(763, 355, 130, 74);
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -332,12 +335,10 @@ public class VoitureSansEvent extends JPanel {
 
 
 		// Ajouter un pilote
-		JButton btnAjouterPilote = new JButton("");
+		JButton btnAjouterPilote = new JButton(Dico.dansLedico("Ajouter / Modifier", Dico.langue));
+		btnAjouterPilote.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnAjouterPilote.setBorderPainted(false);
-		btnAjouterPilote.setIgnoreRepaint(true);
 		btnAjouterPilote.setContentAreaFilled(false);
-		btnAjouterPilote.setForeground(new Color(240, 255, 255));
-		btnAjouterPilote.setBackground(new Color(240, 255, 255));
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
 		btnAjouterPilote.setIcon(loginIcon3);
 		btnAjouterPilote.addActionListener(new ActionListener() {
@@ -385,10 +386,17 @@ public class VoitureSansEvent extends JPanel {
 				validate();
 			}
 		});
-		btnAjouterPilote.setBounds(175, 303, 33, 18);
+		btnAjouterPilote.setBounds(120, 302, 190, 18);
 		desktopPane.add(btnAjouterPilote);
 		
-		JButton button_supprimerpilote = new JButton("");
+		JButton button_supprimerpilote = new JButton(Dico.dansLedico("Supprimer", Dico.langue));
+		button_supprimerpilote.setFont(new Font("Dialog", Font.PLAIN, 14));
+		button_supprimerpilote.setBorderPainted(false);
+		button_supprimerpilote.setContentAreaFilled(false);
+		Icon loginIcon5 = new ImageIcon("icones/suppr.png");
+		button_supprimerpilote.setIcon(loginIcon5);
+		button_supprimerpilote.setBounds(376, 297, 133, 29);
+		desktopPane.add(button_supprimerpilote);
 		button_supprimerpilote.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int ligne = table.getSelectedRow();
@@ -409,9 +417,9 @@ public class VoitureSansEvent extends JPanel {
 					// on notify la table comme quoi un pilote n'est plus
 			}
 		});
-	
-		button_supprimerpilote.setBounds(227, 298, 41, 23);
-		desktopPane.add(button_supprimerpilote);
-		
+
 	}
+	
+	
+	
 }

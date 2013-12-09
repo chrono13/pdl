@@ -183,7 +183,7 @@ public class CaracteristiquesCourse extends JPanel {
 						|| textnbToursMax == null || textnbToursMax.getText().equals("0"))
 				
 				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
-					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément dans le voiture alors on avertit le client
 				}
 				else {// si tous les informations sont remplies alors on prend les informations
@@ -201,14 +201,14 @@ public class CaracteristiquesCourse extends JPanel {
 					 
 					}catch(NumberFormatException  e2)
 					{
-						JOptionPane.showMessageDialog(desktopPane, "Une donnee n'est pas numerique !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Nombre de tour(s) incorrect !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 						return;}
 					c.setSession_nbre_tours_max(Integer.parseInt(textnbToursMax.getText()));
 					if (chckbxDpartAutomatique.isSelected()){
 						c.setSession_departauto(true);
 					}
 					if (chckbxParNombreDe.isSelected() && chckbxParTemps.isSelected()){
-						JOptionPane.showMessageDialog(desktopPane, "Seulement une case doit etre cochee", "Attention", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Seulement une case doit etre cochee", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 					else {

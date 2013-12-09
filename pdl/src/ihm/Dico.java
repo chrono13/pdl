@@ -136,8 +136,9 @@ public class Dico {
 		put("Informations generales",    "General informations");
 		put("Tour",    "Lap");
 		put("Top depart pour toutes les voitures",    "Start for all cars");
-		put("",    "");
-		put("",    "");
+		put("Nombre de tour(s) incorrect !!!!!",    "Incorrect number of lap(s) !!!!!");
+		put("Seulement une case doit etre cochee",    "You must check only one box");
+		put("Choisir au moins un essai a lancer",     "Select at least one test to run");
 		put("",    "");
 		put("",    "");
 	}};
@@ -254,8 +255,9 @@ public class Dico {
 		put("Informations generales",    "Allgemeine Informationen");
 		put("Tour",    "Runder");
 		put("Top depart pour toutes les voitures",    "Start f\u00FCr alle Autos");
-		put("",    "");
-		put("",    "");
+		put("Nombre de tour(s) incorrect !!!!!",    "Inkorrekt Runderzahl !!!!!");
+		put("Seulement une case doit etre cochee",    "Sie M\u00FC nur ein Feld ankreuzen");
+		put("Choisir au moins un essai a lancer",     "W\u00E4hlen Sie mindesten einen Test zu laufen");
 	}};
 
 
@@ -298,7 +300,7 @@ public class Dico {
 		put("Nombre de tour(s)",    "Nombre de tour(s)");
 		put("Temps estime par tour :",    "Temps estim\u00E9 par tour :");
 		put("Pilote(s)",    "Pilote(s)");
-		put("Pilote au depart :",    "Pilote au depart :");
+		put("Pilote au depart :",    "Pilote au d\u00E9part :");
 		put("Ajouter un pilote",    "Ajouter un pilote");
 		put("Informations sur le pilote",    "Informations sur le pilote");
 		put("Nom et prenom :",    "Nom et pr\u00E9nom :");
@@ -373,9 +375,9 @@ public class Dico {
 		put("Informations generales",    "Informations g\u00E9n\u00E9rales");
 		put("Tour",    "Tour");
 		put("Top depart pour toutes les voitures",    "Top d\u00E9part pour toutes les voitures");
-		put("",    "");
-		put("",    "");
-		put("",    "");
+		put("Nombre de tour(s) incorrect !!!!!",    "Nombre de tour(s) incorrect !!!!!");
+		put("Seulement une case doit etre cochee",    "Seulement une case doit \u00EAtre coch\u00E9e");
+		put("Choisir au moins un essai a lancer",    "Choisir au moins un essai a lancer");
 		put("",    "");
 		put("",    "");
 	}};

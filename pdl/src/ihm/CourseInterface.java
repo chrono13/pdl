@@ -33,7 +33,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollBar;
 
 import principal.Evenement;
-import principal.Heure;
+//import principal.Heure;
 import principal.Pilote;
 import principal.Session;
 import principal.TimeManager;
