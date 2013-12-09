@@ -241,13 +241,12 @@ public class CaracteristiquesEvent extends JPanel {
 			}
 		};
 		model2.addColumn("nom de l'essai");
-		if (!event.listVoitureVide()) {
+		if (!event.listEssaiVide()) {
 			Iterator <Essai> it = event.getEssais().iterator();
-
 			while(it.hasNext()) {
 				Essai s1 = it.next();
-				//String nom = s1.
-				//model2.addRow(new Object [] {nom});
+				String nom_essai = s1.getSession_nom();
+				model2.addRow(new Object [] {nom_essai});
 			}
 		}
 		table_essais.setModel(model2);
@@ -261,9 +260,18 @@ public class CaracteristiquesEvent extends JPanel {
 		btnAjouterEssai.setIcon(loginIcon3);
 		btnAjouterEssai.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Essai ess = new Essai();
+				int ligne = table_essais.getSelectedRow();
+				if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+					int i = 0;
+					Iterator<Essai> it = event.getEssais().iterator();
+					while(it.hasNext() && i<=ligne){
+						ess =it.next();
+						i++;
+					}
+				}	
 				removeAll();
 				repaint();
-				Essai ess = new Essai();
 				CaracteristiquesEssai inter7 = new CaracteristiquesEssai(event, ess);
 				add(inter7);
 				validate();
@@ -278,6 +286,24 @@ public class CaracteristiquesEvent extends JPanel {
 
 		//Bouton Supprimer Essai
 		JButton btnSupprimerEssai = new JButton("Supprimer");
+		btnSupprimerEssai.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int ligne = table_essais.getSelectedRow();
+				Essai essai = new Essai();
+				if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+					int i = 0;
+					Iterator<Essai> it = event.getEssais().iterator();
+					while(it.hasNext() && i<=ligne){
+						essai = it.next();
+						if (i == ligne) {
+							it.remove();
+						}
+						i++;
+					}
+				}
+				model.removeRow(ligne);
+			}
+		});
 		btnSupprimerEssai.setContentAreaFilled(false);
 		Icon loginIcon4 = new ImageIcon("icones/suppr.png");
 		btnSupprimerEssai.setIcon(loginIcon4);
@@ -329,14 +355,28 @@ public class CaracteristiquesEvent extends JPanel {
 					JOptionPane.showMessageDialog(desktopPane, "Vous devez au moins avoir une voiture active!!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				else {
-					removeAll();
-					repaint();
+				else {// pour lancer un essai on doit au moins selectionner un essai
+					int ligne = table_essais.getSelectedRow();
 					Essai essai = new Essai();
-					//Course course = new Course();
-					InterCourse inter7 = new InterCourse(event, essai);
-					add(inter7);
-					validate();
+					if (ligne == -1){
+						JOptionPane.showMessageDialog(desktopPane, "Coisir au moins un essai a lancer", "Attention", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					else {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+						int i = 0;
+						Iterator<Essai> it = event.getEssais().iterator();
+						while(it.hasNext() && i<=ligne){
+							essai = it.next();
+							i++;
+						}
+						removeAll();
+						repaint();
+						//Course course = new Course();
+						CourseInterface inter7 = new CourseInterface(event, essai);
+						add(inter7);
+						validate();
+					}
+					
 				}
 			}
 		});

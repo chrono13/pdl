@@ -168,6 +168,7 @@ public class InterCourse extends JPanel {
 		textPane_2.setBounds(206, 175, 42, 25);
 		desktopPane_3.add(textPane_2);
 		
+		
 		JTextPane textPane = new JTextPane();
 		textPane.setEditable(false);
 		textPane.setBounds(206, 95, 42, 25);

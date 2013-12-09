@@ -13,6 +13,7 @@ import java.awt.Font;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
@@ -44,7 +45,7 @@ public class CaracteristiquesCourse extends JPanel {
 		
 		this.event = e;
 		this.c = course;
-		JDesktopPane desktopPane = new JDesktopPane();
+		final JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
@@ -73,7 +74,7 @@ public class CaracteristiquesCourse extends JPanel {
 		lblNewLabel.setBounds(193, 200, 256, 14);
 		desktopPane.add(lblNewLabel);
 		
-		JCheckBox chckbxDpartAutomatique = new JCheckBox("Depart automatique");
+		final JCheckBox chckbxDpartAutomatique = new JCheckBox("Depart automatique");
 		chckbxDpartAutomatique.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxDpartAutomatique.setBackground(SystemColor.activeCaption);
 		chckbxDpartAutomatique.setForeground(new Color(0, 0, 0));
@@ -85,13 +86,13 @@ public class CaracteristiquesCourse extends JPanel {
 		lblTypeDeFin.setBounds(501, 149, 117, 19);
 		desktopPane.add(lblTypeDeFin);
 		
-		JCheckBox chckbxParNombreDe = new JCheckBox("Par nombre de tours");
+		final JCheckBox chckbxParNombreDe = new JCheckBox("Par nombre de tours");
 		chckbxParNombreDe.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxParNombreDe.setBackground(SystemColor.activeCaption);
 		chckbxParNombreDe.setBounds(609, 136, 198, 23);
 		desktopPane.add(chckbxParNombreDe);
 		
-		JCheckBox chckbxParTemps = new JCheckBox("Par temps");
+		final JCheckBox chckbxParTemps = new JCheckBox("Par temps");
 		chckbxParTemps.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		chckbxParTemps.setBackground(SystemColor.activeCaption);
 		chckbxParTemps.setBounds(609, 162, 163, 23);
@@ -142,7 +143,7 @@ public class CaracteristiquesCourse extends JPanel {
 		lblCommentairesSurLa.setBounds(75, 356, 130, 22);
 		desktopPane.add(lblCommentairesSurLa);
 		
-		JTextPane txtpnCommentairesCourse = new JTextPane();
+		final JTextPane txtpnCommentairesCourse = new JTextPane();
 		txtpnCommentairesCourse.setBounds(208, 310, 574, 164);
 		desktopPane.add(txtpnCommentairesCourse);
 		
@@ -171,11 +172,57 @@ public class CaracteristiquesCourse extends JPanel {
 		btnLancerLaCourse.setIcon(loginIcon1);
 		btnLancerLaCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				removeAll();
-				repaint();
-				InterCourse inter = new InterCourse(event, c);
-				add(inter);
-				validate();
+				// recuperation des informations lie a a course
+				if (txtNomcourse == null || txtNomcourse.getText().equals("")  || txtHeuredbut.getText().equals("") 
+						|| txtHeuredbut == null || txtHeurefin == null || txtHeurefin.getText().equals("")
+						|| textDureeMaxPilote == null || textDureeMaxPilote.getText().equals("") 
+						|| textDureeConsécutiveMaxPilote == null || textDureeConsécutiveMaxPilote.getText().equals("") 
+						|| textnbToursMax == null || textnbToursMax.getText().equals("0"))
+				
+				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
+					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					return;// si il manque au moins un élément dans le voiture alors on avertit le client
+				}
+				else {// si tous les informations sont remplies alors on prend les informations
+					if (!txtpnCommentairesCourse.getText().equals("")){
+						c.setSession_commentaire(txtpnCommentairesCourse.getText());
+					}
+					c.setSession_nom(txtNomcourse.getText());
+					c.setSession_heuredebut(txtHeuredbut.getText());
+					c.setSession_heurefin(txtHeurefin.getText());
+					c.setSession_dureemaxconsecutiveparpilote(textDureeConsécutiveMaxPilote.getText());
+					c.setSession_dureetotalemaxpilote(textDureeMaxPilote.getText());
+					try
+					{
+					     int i=Integer.decode(textnbToursMax.getText());// verifie si la saisie de la longueur est un entier
+					 
+					}catch(NumberFormatException  e2)
+					{
+						JOptionPane.showMessageDialog(desktopPane, "Une donnee n'est pas numerique !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+						return;}
+					c.setSession_nbre_tours_max(Integer.parseInt(textnbToursMax.getText()));
+					if (chckbxDpartAutomatique.isSelected()){
+						c.setSession_departauto(true);
+					}
+					if (chckbxParNombreDe.isSelected() && chckbxParTemps.isSelected()){
+						JOptionPane.showMessageDialog(desktopPane, "Seulement une case doit etre cochee", "Attention", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					else {
+						if (chckbxParNombreDe.isSelected()){
+							c.setSession_typefin(false);
+						}
+						if (chckbxParTemps.isSelected()){
+							c.setSession_typefin(true);
+						}
+					}
+					removeAll();
+					repaint();
+					CourseInterface inter = new CourseInterface(event, c);
+					add(inter);
+					validate();
+				}
+				
 			}
 		});
 		btnLancerLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));

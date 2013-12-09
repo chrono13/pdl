@@ -3,12 +3,17 @@ package ihm;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.JTextPane;
+import javax.swing.table.DefaultTableModel;
 
-class Chrono extends JPanel implements Runnable{
+public class Chrono extends JPanel implements Runnable{
     Font f;
     Color bd,lt,dk;
     int h,m,s,c;
@@ -216,6 +221,25 @@ class Chrono extends JPanel implements Runnable{
     	repaint();
 	}
 	
-            
+	public String tops() {
+		runner = new Thread(this);
+		// TODO Auto-generated method stub
+		String res="";
+		if (!on){
+        	on = true;
+        	runner.start();
+        }
+        else {
+        	res =time;// on recupere le temps entre deux tops
+        	on = false;
+        	runner = null;
+        	h = m = s = c = 0;
+        	time = setTime(0,0,0,0);// reinitialisation du temps a zero
+        	lcd = setLCD();
+        	repaint();
+        	on = true;
+        }
+		return res;
+	}
 }
 
