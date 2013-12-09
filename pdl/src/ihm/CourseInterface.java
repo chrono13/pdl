@@ -17,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextPane;
+import javax.swing.Timer;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -157,6 +158,7 @@ public class CourseInterface extends JPanel {
 				desktopPane_2.add(heureactu);
 				heureactu.setColumns(10);
 				heureactu.setText("");
+				
 		
 				heurefin = new JTextField();
 				heurefin.setEditable(false);
@@ -359,7 +361,7 @@ public class CourseInterface extends JPanel {
 		
 		
 		
-		JButton btnTopDepartPour = new JButton("Top depart pour toutes les voitures");
+		final JButton btnTopDepartPour = new JButton("Top depart pour toutes les voitures");
 		btnTopDepartPour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// lance tout les tops des voitures
@@ -371,6 +373,8 @@ public class CourseInterface extends JPanel {
 						TimeManager tManager = chronos.get(voiture.getVoiture_num());
 						tManager.getChronoTop().top(); 
 						tManager.getChronoGlobal().top();
+						lancement=false;
+						btnTopDepartPour.setEnabled(true);
 					}
 				}
 			}
