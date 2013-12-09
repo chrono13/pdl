@@ -114,6 +114,7 @@ public class AjouterEvent extends JPanel {
 					CaracteristiquesEvent inter4 = new CaracteristiquesEvent(event);
 					add(inter4);
 					validate();
+					//icic est kavishan beau gosse
 				}
 				
 			}
