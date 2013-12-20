@@ -3,11 +3,10 @@
  */
 package principal;
 
-import javax.swing.JPanel;
+import ihm.Chrono;
+
 import javax.swing.JTable;
 import javax.swing.JTextField;
-
-import ihm.Chrono;
 
 
 

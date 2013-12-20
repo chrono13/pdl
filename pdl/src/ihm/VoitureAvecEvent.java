@@ -1,34 +1,28 @@
 package ihm;
 
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-
+import java.awt.BorderLayout;
 import java.awt.Color;
-
-import javax.swing.JDesktopPane;
-
-import java.awt.SystemColor;
-
-import javax.swing.JTextField;
-
 import java.awt.Font;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
-
-import java.awt.event.ActionListener;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.Iterator;
 
+import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JDesktopPane;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -165,8 +159,13 @@ public class VoitureAvecEvent extends JPanel {
 			verrou = true;
 		}
 
+		
+		JPanel panetable = new JPanel();
+		panetable.setBounds(10, 328, 483, 255);
 		table = new JTable();
-		table.setBounds(10, 328, 483, 255);
+		panetable.setLayout(new BorderLayout());
+		panetable.add(new JScrollPane(table));
+		desktopPane.add(panetable);
 		final DefaultTableModel model = new DefaultTableModel() {
 
 			@Override
@@ -176,8 +175,7 @@ public class VoitureAvecEvent extends JPanel {
 
 
 		};
-		model.addColumn(Dico.dansLedico("Nom et prenom", Dico.langue));
-		//model.setColumnIdentifiers(entete);
+		model.addColumn(Dico.dansLedico("Nom et prenom :", Dico.langue));
 		if (!v.listPiloteVide()) {
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 
@@ -189,7 +187,7 @@ public class VoitureAvecEvent extends JPanel {
 		}
 
 		table.setModel(model);
-		desktopPane.add(table);
+		
 
 
 

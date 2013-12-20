@@ -1,7 +1,5 @@
 package principal;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann

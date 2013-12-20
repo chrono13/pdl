@@ -1,33 +1,28 @@
 package ihm;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-import javax.swing.JDesktopPane;
-
-import java.awt.SystemColor;
-
-import javax.swing.JLabel;
-
-import java.awt.Font;
-
-import javax.swing.JTextField;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.Iterator;
 
-import javax.swing.JTextPane;
-import javax.swing.JFormattedTextField;
+import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDesktopPane;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JTable;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JSeparator;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -37,8 +32,6 @@ import principal.Course;
 import principal.Essai;
 import principal.Evenement;
 import principal.Voiture;
-
-import javax.swing.JTable;
 
 /**
  * Classe permettant de définir les caractéristique de l'évènement créé
@@ -152,8 +145,12 @@ public class CaracteristiquesEvent extends JPanel {
 		/******* BOUTONS DE LA PAGE *******/
 
 		// remplir  la table des voiture
+		JPanel panetablebis = new JPanel();
+		panetablebis.setBounds(20, 239, 319, 259);
 		table_voiture = new JTable();
-		table_voiture.setBounds(20, 239, 319, 259);
+		panetablebis.setLayout(new BorderLayout());
+		panetablebis.add(new JScrollPane(table_voiture));
+		desktopPane.add(panetablebis);
 		final DefaultTableModel model = new DefaultTableModel() {
 
 			@Override
@@ -173,7 +170,7 @@ public class CaracteristiquesEvent extends JPanel {
 		}
 
 		table_voiture.setModel(model);
-		desktopPane.add(table_voiture);
+		//desktopPane.add(table_voiture);
 
 
 		//Bouton Ajouter voiture
@@ -239,8 +236,12 @@ public class CaracteristiquesEvent extends JPanel {
 		desktopPane.add(btnSupprimer);
 
 		// contructions table essai
+		JPanel panetable = new JPanel();
+		panetable.setBounds(377, 239, 341, 259);
 		table_essais = new JTable();
-		table_essais.setBounds(377, 239, 341, 259);
+		panetable.setLayout(new BorderLayout());
+		panetable.add(new JScrollPane(table_essais));
+		desktopPane.add(panetable);
 		final DefaultTableModel model2 = new DefaultTableModel() {
 			@Override
 			public boolean isCellEditable(int x, int y) {
@@ -258,7 +259,7 @@ public class CaracteristiquesEvent extends JPanel {
 			}
 		}
 		table_essais.setModel(model2);
-		desktopPane.add(table_essais);
+		//desktopPane.add(table_essais);
 
 		//Bouton Ajouter Essai		
 		JButton btnAjouterEssai = new JButton(Dico.dansLedico("Ajouter", Dico.langue));

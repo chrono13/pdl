@@ -1,9 +1,10 @@
 package ihm;
 
-import javax.rmi.CORBA.Util;
-import javax.swing.JPanel;
-
-import java.awt.SystemColor;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.BoxLayout;
 import javax.swing.Icon;
@@ -12,17 +13,12 @@ import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import principal.Evenement;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
-import java.awt.Color;
-import java.io.File;
 
 /**
  * Classe permettant de charger ou d'ajouter un évènement

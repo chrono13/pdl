@@ -1,29 +1,25 @@
 package ihm;
 
-import javax.swing.JPanel;
-import javax.swing.JDesktopPane;
-import javax.swing.BoxLayout;
-
-import java.awt.SystemColor;
-
-import javax.swing.JLabel;
-
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-import javax.swing.JButton;
 
 import principal.Essai;
 import principal.Evenement;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
 
 /**
  * Classe permettant d'ajouter, modifier ou renseigner les caractéristique d'un essai

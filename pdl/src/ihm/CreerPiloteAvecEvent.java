@@ -1,7 +1,7 @@
 package ihm;
 
+import java.awt.Color;
 import java.awt.Font;
-import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,8 +18,6 @@ import javax.swing.JTextField;
 import principal.Evenement;
 import principal.Pilote;
 import principal.Voiture;
-
-import java.awt.Color;
 
 /**
  * Classe permettant d'ajouter un nouveau pilote lorsque on a déja

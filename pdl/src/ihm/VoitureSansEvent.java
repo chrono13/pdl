@@ -1,56 +1,36 @@
 package ihm;
 
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
-
-import javax.swing.JDesktopPane;
-
-import java.awt.SystemColor;
-
-import javax.swing.JTextField;
-
+import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.Iterator;
 
+import javax.swing.BoxLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JComponent;
+import javax.swing.JComboBox;
+import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.UIManager;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
 import javax.swing.JTable;
-import javax.swing.filechooser.FileFilter;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
-import org.xml.sax.XMLFilter;
-
 import principal.Pilote;
-import principal.Variable_appli;
 import principal.Voiture;
-
-import java.awt.Cursor;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Iterator;
-import java.util.Locale;
 
 /**
  * Classe permettant la création d'une voiture lorsque l'on a pas encore créer d'évènement
@@ -185,10 +165,13 @@ public class VoitureSansEvent extends JPanel {
 			textField_4.setText(v.getVoiture_temps_estime_partour());
 		}
 		
-		String [] entete =  {Dico.dansLedico("Nom et prenom", Dico.langue), Dico.dansLedico("Couleur du casque", Dico.langue), Dico.dansLedico("Lien vers l'image", Dico.langue) };
-		table = new JTable();
-		table.setBounds(10, 328, 483, 255);
 		
+		JPanel panetable = new JPanel();
+		panetable.setBounds(10, 328, 483, 255);
+		table = new JTable();
+		panetable.setLayout(new BorderLayout());
+		panetable.add(new JScrollPane(table));
+		desktopPane.add(panetable);
 		final DefaultTableModel model = new DefaultTableModel() {
 			
 			@Override
@@ -198,11 +181,9 @@ public class VoitureSansEvent extends JPanel {
 			
 			
 		};
-		model.addColumn(Dico.dansLedico("Nom et prenom", Dico.langue));
-		model.addColumn(Dico.dansLedico("Couleur Casque", Dico.langue));
-		model.addColumn(Dico.dansLedico("Lien image", Dico.langue));
-		
-		model.setColumnIdentifiers(entete);
+		model.addColumn(Dico.dansLedico("Nom et prenom :", Dico.langue));
+		model.addColumn(Dico.dansLedico("Couleur du casque" +" :", Dico.langue));
+		model.addColumn(Dico.dansLedico("Lien vers l'image :", Dico.langue));
 		
 		if (!v.listPiloteVide()) {
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
@@ -217,15 +198,7 @@ public class VoitureSansEvent extends JPanel {
 		}
 
 		table.setModel(model);
-		//desktopPane.setLayout(new BorderLayout());
 		
-		//JScrollPane scroll = new JScrollPane();
-		//scroll.setViewportView(table);
-		desktopPane.add(table);
-		//desktopPane.add(table.getTableHeader());//, BorderLayout.NORTH);
-		
-		
-
 		/* BOUTONS DE LA FENETRE */
 
 		// Bouton Sauvegarder

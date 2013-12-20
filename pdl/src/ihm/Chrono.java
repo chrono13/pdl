@@ -1,17 +1,13 @@
 package ihm;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.JTextPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  * Classe permettant de gérer les chronomètres
