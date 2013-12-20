@@ -21,6 +21,12 @@ import principal.Voiture;
 
 import java.awt.Color;
 
+/**
+ * Classe permettant d'ajouter un nouveau pilote lorsque on a déja
+ * crée un évènement
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class CreerPiloteAvecEvent extends JPanel {
 	/**

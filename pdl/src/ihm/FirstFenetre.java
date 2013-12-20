@@ -19,6 +19,11 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Component;
 
+/**
+ * Classe permettant le choix entre créer un évènement ou créer une voiture
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class FirstFenetre extends JPanel {
 

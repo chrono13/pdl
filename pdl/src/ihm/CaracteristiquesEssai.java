@@ -25,6 +25,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+/**
+ * Classe permettant d'ajouter, modifier ou renseigner les caractéristique d'un essai
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class CaracteristiquesEssai extends JPanel {
 	private JTextField txtNomcourse;

@@ -25,6 +25,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+/**
+ * Classe permettant de modifier, d'ajouter ou de renseigner les caractéristiques d'une course
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class CaracteristiquesCourse extends JPanel {
 	private JTextField txtNomcourse;

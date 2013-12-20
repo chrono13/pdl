@@ -20,6 +20,11 @@ import principal.Evenement;
 
 import java.awt.Component;
 
+/**
+ * Classe permettant de créer un nouvel évènement
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class AjouterEvent extends JPanel {
 

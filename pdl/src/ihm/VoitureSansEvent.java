@@ -52,6 +52,11 @@ import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.Locale;
 
+/**
+ * Classe permettant la création d'une voiture lorsque l'on a pas encore créer d'évènement
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class VoitureSansEvent extends JPanel {
 	private JTextField textField;
