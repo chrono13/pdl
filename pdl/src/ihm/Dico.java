@@ -68,7 +68,6 @@ public class Dico {
 		put("Fichier",    "File");
 		put("Francais",    "French");
 		put("Gestion de la course",    "Race management");
-		put("Heure",    "Hour");
 		put("Heure :",    "Hour :");
 		put("Heure actuelle",    "Current hour");
 		put("Heure de debut :",    "Post time :");
@@ -133,7 +132,7 @@ public class Dico {
 		put("Temps :",    "Time :");
 		put("Temps :",    "Time :");
 		put("Temps ecoule depuis le depart",    "Spent time since the departure");
-		put("Temps ecoule",    "Spent time");
+		put("Temps ecoule :",    "Spent time :");
 		put("Temps estime par tour :",    "Estimated time for a lap :");
 		put("Temps par tour",    "Time for a lap");
 		put("Temps restant a courir",    "Remaining time");
@@ -207,7 +206,6 @@ public class Dico {
 		put("Francais",    "Franz\u00F6sisch");
 		put("Gestion de la course",    "Rennensverwaltung");
 		put("Gestion de la course",    "Sie Wollen :");
-		put("Heure",    "Hour");
 		put("Heure :",    "Uhr :");
 		put("Heure actuelle",    "gegenwärtige Stunde");
 		put("Heure de debut :",    "Startzeit :");
@@ -268,9 +266,8 @@ public class Dico {
 		put("Supprimer TOP",    "TOP abschaffen");
 		put("Supprimer",    "Abschaffen");
 		put("Temps :",    "Zeit :");
-		put("Temps :",    "Zeit :");
 		put("Temps ecoule depuis le depart",    "Zeit seit dem Start vergangen");
-		put("Temps ecoule",    "Vergangen Zeit");
+		put("Temps ecoule :",    "Vergangen Zeit :");
 		put("Temps estime par tour :",    "geschatzte Zeit pro Zug :");
 		put("Temps par tour",    "Runde");
 		put("Temps restant a courir",    "Restaufzeit");
@@ -345,7 +342,6 @@ public class Dico {
 		put("Francais",    "Fran\u00E7ais");
 		put("Gestion de la course",    "Gestion de la course");
 		put("Gestion de la course",    "Gestion de la course");
-		put("Heure",    "Hour");
 		put("Heure :",    "Heure :");
 		put("Heure actuelle",    "Heure actuelle");
 		put("Heure de debut :",    "Heure de d\u00E9but :");
@@ -407,9 +403,8 @@ public class Dico {
 		put("Supprimer",    "Supprimer");
 		put("sur",    "sur");
 		put("Temps :",    "Temps :");
-		put("Temps :",    "Temps :");
 		put("Temps ecoule depuis le depart",    "Temps \u00E9coul\u00E9 depuis le d\u00E9part");
-		put("Temps ecoule",    "Temps \u00E9coul\u00E9");
+		put("Temps ecoule :",    "Temps \u00E9coul\u00E9 :");
 		put("Temps estime par tour :",    "Temps estim\u00E9 par tour :");
 		put("Temps par tour",    "Temps par tour");
 		put("Temps restant a courir",    "Temps restant a courir");
