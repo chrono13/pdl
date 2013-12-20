@@ -182,7 +182,7 @@ public class VoitureSansEvent extends JPanel {
 			
 		};
 		model.addColumn(Dico.dansLedico("Nom et prenom :", Dico.langue));
-		model.addColumn(Dico.dansLedico("Couleur du casque" +" :", Dico.langue));
+		model.addColumn(Dico.dansLedico("Couleur du casque", Dico.langue));
 		model.addColumn(Dico.dansLedico("Lien vers l'image :", Dico.langue));
 		
 		if (!v.listPiloteVide()) {
