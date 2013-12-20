@@ -140,7 +140,7 @@ public class AjouterEvent extends JPanel {
 			}
 		});
 		btnRetour.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		btnRetour.setBounds(282, 441, 148, 44);
+		btnRetour.setBounds(282, 441, 166, 44);
 		desktopPane.add(btnRetour);
 	}
 }

@@ -50,6 +50,7 @@ public class CourseInterface extends JPanel {
 	private JTextField heurefin;
 	private boolean lancement=true;
 	private int nb_tour = 0;
+	private Timer timer;
 	
 	/**
 	 * Create the panel.
@@ -152,13 +153,24 @@ public class CourseInterface extends JPanel {
 				desktopPane_2.add(lblHeureDeFin);
 		
 				heureactu = new JTextField();
-				heureactu.setEnabled(false);
-				heureactu.setEditable(false);
+				heureactu.setEditable(true);
 				heureactu.setBounds(172, 25, 86, 20);
 				desktopPane_2.add(heureactu);
 				heureactu.setColumns(10);
-				heureactu.setText("");
-				
+				int delay = 1000; //milliseconds
+				  ActionListener taskPerformer = new ActionListener() {
+				      public void actionPerformed(ActionEvent evt) {
+				         //heureactu.setText(java.util.Calendar.getInstance().getTime().toString());
+				         SimpleDateFormat formater = new SimpleDateFormat("H:mm:ss");
+				         heureactu.setText(formater.format(java.util.Calendar.getInstance().getTime()));
+				         System.out.println((formater.format(java.util.Calendar.getInstance().getTime())));
+				         System.out.println(car_name);
+				         heureactu.repaint();
+				      }
+				  };
+				  setVisible(true);
+				  timer = new Timer(delay, taskPerformer);
+				  timer.start();
 		
 				heurefin = new JTextField();
 				heurefin.setEditable(false);
@@ -375,7 +387,7 @@ public class CourseInterface extends JPanel {
 						tManager.getChronoTop().top(); 
 						tManager.getChronoGlobal().top();
 						lancement=false;
-						btnTopDepartPour.setEnabled(true);
+						btnTopDepartPour.setEnabled(false);
 					}
 				}
 			}

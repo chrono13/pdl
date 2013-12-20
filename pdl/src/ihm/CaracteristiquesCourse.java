@@ -230,7 +230,7 @@ public class CaracteristiquesCourse extends JPanel {
 		});
 		btnLancerLaCourse.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnLancerLaCourse.setToolTipText("");
-		btnLancerLaCourse.setBounds(653, 485, 163, 65);
+		btnLancerLaCourse.setBounds(653, 485, 191, 65);
 		desktopPane.add(btnLancerLaCourse);
 		
 		JLabel lblSur = new JLabel(Dico.dansLedico("sur", Dico.langue));
