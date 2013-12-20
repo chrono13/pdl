@@ -177,7 +177,7 @@ public class CaracteristiquesEvent extends JPanel {
 
 
 		//Bouton Ajouter voiture
-		JButton btnAjouterVoiture = new JButton(Dico.dansLedico("Ajouter", Dico.langue));
+		JButton btnAjouterVoiture = new JButton(Dico.dansLedico("", Dico.langue));//Ajouter
 		btnAjouterVoiture.setContentAreaFilled(false);
 		btnAjouterVoiture.setBorderPainted(false);
 		Icon loginIcon1 = new ImageIcon("icones/add.png");

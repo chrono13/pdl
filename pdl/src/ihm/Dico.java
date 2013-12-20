@@ -6,6 +6,11 @@ import java.util.Locale;
 import javax.swing.JComponent;
 import javax.swing.UIManager;
 
+/**
+ * Classe permettant de référencer tous les mots utilisés et leurs traductions
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class Dico {
 
