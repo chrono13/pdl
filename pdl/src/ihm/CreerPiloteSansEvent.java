@@ -49,19 +49,19 @@ public class CreerPiloteSansEvent extends JPanel {
 		lblInformationDuPilote.setBounds(182, 20, 711, 45);
 		desktopPane.add(lblInformationDuPilote);
 		
-		JLabel lblNom = new JLabel(Dico.dansLedico("Nom et prenom", Dico.langue));
-		lblNom.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		JLabel lblNom = new JLabel(Dico.dansLedico("Nom et prenom :", Dico.langue));
+		lblNom.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblNom.setBounds(182, 183, 198, 23);
 		desktopPane.add(lblNom);
 		
-		JLabel lblCouleurDuCasque = new JLabel(Dico.dansLedico("Couleur du casque", Dico.langue));
-		lblCouleurDuCasque.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
-		lblCouleurDuCasque.setBounds(182, 250, 120, 23);
+		JLabel lblCouleurDuCasque = new JLabel(Dico.dansLedico("Couleur du casque", Dico.langue) + " :");
+		lblCouleurDuCasque.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		lblCouleurDuCasque.setBounds(182, 250, 150, 23);
 		desktopPane.add(lblCouleurDuCasque);
 		
-		JLabel lblImageDuPilote = new JLabel(Dico.dansLedico("Image du pilote", Dico.langue));
-		lblImageDuPilote.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
-		lblImageDuPilote.setBounds(182, 313, 120, 23);
+		JLabel lblImageDuPilote = new JLabel(Dico.dansLedico("Image du pilote", Dico.langue) + " :");
+		lblImageDuPilote.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		lblImageDuPilote.setBounds(182, 313, 150, 23);
 		desktopPane.add(lblImageDuPilote);
 		
 		couleurCasque = new JTextField();
@@ -106,7 +106,7 @@ public class CreerPiloteSansEvent extends JPanel {
 				}
 				if (nomPilote == null || nomPilote.getText().equals("")  || couleurCasque.getText().equals("") 
 						|| couleurCasque == null || imagePilote == null || imagePilote.getText().equals("")) {
-					JOptionPane.showMessageDialog(desktopPane, "Vous n'avez pas tout remplies !!!!!", "Attention", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément chez le pilote alors on avertit le client
 				}
 				//évènement suite au "clic" sur le bouton ajouter/modifier

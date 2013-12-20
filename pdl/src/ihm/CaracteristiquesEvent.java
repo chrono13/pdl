@@ -282,7 +282,7 @@ public class CaracteristiquesEvent extends JPanel {
 		btnAjouterEssai.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjouterEssai.setForeground(Color.BLACK);
 		btnAjouterEssai.setBackground(SystemColor.activeCaption);
-		btnAjouterEssai.setBounds(500, 204, 112, 20);
+		btnAjouterEssai.setBounds(500, 204, 130, 20);
 		desktopPane.add(btnAjouterEssai);
 
 
@@ -292,7 +292,7 @@ public class CaracteristiquesEvent extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				int ligne = table_essais.getSelectedRow();
 				Essai essai = new Essai();
-				if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+				if (ligne !=-1) {// si rien n'est selectionne dans le tableau alors on ne rentre pas
 					int i = 0;
 					Iterator<Essai> it = event.getEssais().iterator();
 					while(it.hasNext() && i<=ligne){
@@ -401,7 +401,7 @@ public class CaracteristiquesEvent extends JPanel {
 					int ligne = table_essais.getSelectedRow();
 					Essai essai = new Essai();
 					if (ligne == -1){
-						JOptionPane.showMessageDialog(desktopPane, "Coisir au moins un essai a lancer", "Attention", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Choisir au moins un essai a lancer", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 					else {// si rien n'est selectionner dans le tableau alors on ne rentre pas
