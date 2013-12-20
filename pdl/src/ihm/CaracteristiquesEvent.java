@@ -262,7 +262,7 @@ public class CaracteristiquesEvent extends JPanel {
 		//desktopPane.add(table_essais);
 
 		//Bouton Ajouter Essai		
-		JButton btnAjouterEssai = new JButton(Dico.dansLedico("Ajouter", Dico.langue));
+		JButton btnAjouterEssai = new JButton(Dico.dansLedico("", Dico.langue));//Ajouter
 		btnAjouterEssai.setContentAreaFilled(false);
 		btnAjouterEssai.setBorderPainted(false);
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
@@ -401,7 +401,7 @@ public class CaracteristiquesEvent extends JPanel {
 		btnLancerLessai.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!event.auMoinsuneVoitureActive()){// si l'utilsateur n'a rentre aucun essai alors il n'as pas le droit de lancer l'essai
-					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous devez au moins avoir une voiture activee !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous devez au moins avoir une voiture activee !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				else {// pour lancer un essai on doit au moins selectionner un essai

@@ -107,7 +107,7 @@ public class CreerPiloteSansEvent extends JPanel {
 				}
 				if (nomPilote == null || nomPilote.getText().equals("")  || couleurCasque.getText().equals("") 
 						|| couleurCasque == null || imagePilote == null || imagePilote.getText().equals("")) {
-					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément chez le pilote alors on avertit le client
 				}
 				//évènement suite au "clic" sur le bouton ajouter/modifier
