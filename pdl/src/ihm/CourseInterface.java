@@ -43,13 +43,14 @@ import principal.Top;
 import principal.Voiture;
 
 public class CourseInterface extends JPanel {
-	
+
 	private Evenement event = null;
 	private Session session = null;
 	private JTextField heureactu;
 	private JTextField heurefin;
 	private boolean lancement=true;
 	private Timer timer;
+	private static Top tooop = null;
 
 	/**
 	 * Create the panel.
@@ -74,7 +75,7 @@ public class CourseInterface extends JPanel {
 		JMenuItem mntmRevenir = new JMenuItem(Dico.dansLedico("Retour", Dico.langue));
 		mntmRevenir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 			}
 		});
 		mnFichier.add(mntmRevenir);
@@ -119,11 +120,12 @@ public class CourseInterface extends JPanel {
 			Voiture voiture = new Voiture();
 			voiture = it.next();
 
-			
-			final TimeManager timeManager = new TimeManager(new Chrono(), new Chrono(), new JTable());
+
+			final TimeManager timeManager = new TimeManager(new Chrono(), new Chrono(), new JTable(), new JTextField());
 			final Chrono chr = timeManager.getChronoTop() ; //new Chrono();
 			final Chrono temps = timeManager.getChronoGlobal() ; // new Chrono();
 			final JTable table = timeManager.get_Table();//new Table();
+			final JTextField heureactu = timeManager.get_jtext();
 			final int nb_tour = timeManager.get_compteur();
 
 			chronos.put(voiture.getVoiture_num(), timeManager);
@@ -156,7 +158,7 @@ public class CourseInterface extends JPanel {
 				lblHeureDeFin.setBounds(10, 60, 124, 14);
 				desktopPane_2.add(lblHeureDeFin);
 
-				heureactu = new JTextField();
+				//heureactu = new JTextField();
 				heureactu.setEditable(false);
 				heureactu.setBounds(172, 25, 86, 20);
 				desktopPane_2.add(heureactu);
@@ -167,8 +169,6 @@ public class CourseInterface extends JPanel {
 						//heureactu.setText(java.util.Calendar.getInstance().getTime().toString());
 						SimpleDateFormat formater = new SimpleDateFormat("H:mm:ss");
 						heureactu.setText(formater.format(java.util.Calendar.getInstance().getTime()));
-						System.out.println((formater.format(java.util.Calendar.getInstance().getTime())));
-						System.out.println(car_name);
 						heureactu.repaint();
 					}
 				};
@@ -178,7 +178,6 @@ public class CourseInterface extends JPanel {
 
 				heurefin = new JTextField();
 				heurefin.setEditable(false);
-				heurefin.setEnabled(false);
 				heurefin.setBounds(172, 58, 86, 20);
 				desktopPane_2.add(heurefin);
 				heurefin.setColumns(10);
@@ -284,7 +283,7 @@ public class CourseInterface extends JPanel {
 				comboBox_etat.addItem("I");
 				comboBox_etat.addItem("O");
 				comboBox_etat.addItem("R");
-				
+
 				JTextPane textPane_1 = new JTextPane();
 				textPane_1.setEditable(false);
 				textPane_1.setBounds(206, 135, 42, 25);
@@ -338,7 +337,7 @@ public class CourseInterface extends JPanel {
 				});
 				btnStop.setBounds(10, 129, 89, 23);
 				desktopPane_2.add(btnStop);
-				
+
 				JButton btnTop = new JButton(Dico.dansLedico("TOP", Dico.langue));
 				btnTop.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -358,10 +357,11 @@ public class CourseInterface extends JPanel {
 							textPane_5.setText(time);
 							model.addRow((new Object [] {car_name, timeManager.get_compteur() , comboBox.getSelectedItem(), time, comboBox_etat.getSelectedItem() , heure,""}));
 							String pilotes = (String) comboBox.getSelectedItem();
-							Top t = new Top (car_name, nb_tour, pilotes, time, 'E', heure,"");
+							String etat = (String) comboBox_etat.getSelectedItem();
+							Top t = new Top (car_name, nb_tour, pilotes, time, etat, heure,"");
 							session.AddTop(t);
 							timeManager.set_compteur(timeManager.get_compteur()+1);
-							
+
 						}
 					}
 				});
@@ -374,11 +374,11 @@ public class CourseInterface extends JPanel {
 				chr.setBounds(120, 129, 138, 40);
 				desktopPane_2.add(chr);
 
-				
+
 
 
 				table.setModel(model);
-
+/*
 				JButton btnModifierTop = new JButton(Dico.dansLedico("Modifier TOP", Dico.langue));
 				btnModifierTop.setContentAreaFilled(false);
 				btnModifierTop.setBorderPainted(false);
@@ -388,7 +388,7 @@ public class CourseInterface extends JPanel {
 				btnModifierTop.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						int ligne = table.getSelectedRow();
-						Top toup = new Top ();
+						Top toup = null;
 						if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
 							int i = 0;
 							Iterator <Top> it = session.getTop().iterator();
@@ -396,17 +396,34 @@ public class CourseInterface extends JPanel {
 							while(it.hasNext() && i<=ligne){
 								toup = it.next();
 								if (i == ligne) {
-									modified = new ModificationTop(toup);
-									modified.setVisible(true);
 								}
 								i++;
+							}
+							
+							modified = new ModificationTop(toup);
+							modified.setVisible(true);
+							int cp = 0;
+							while (modified.isActive()) {
+								
+								cp++;
+							}
+							if (tooop!=null) {
+								model.setValueAt(tooop.getTop_comment(), ligne, 6);
+								model.setValueAt(tooop.getTop_etat(), ligne, 4 );	
+								model.setValueAt(tooop.getTop_heure_passage(), ligne, 5);
+								model.setValueAt(tooop.getTop_temps_tour(), ligne, 3);	
+								model.fireTableCellUpdated(ligne, 6);
+								model.fireTableCellUpdated(ligne, 5);
+								model.fireTableCellUpdated(ligne, 4);
+								model.fireTableCellUpdated(ligne, 3);
+								tooop = null;
 							}
 						}
 					}
 				});
 				btnModifierTop.setBounds(20, 251, 202, 23);
 				desktopPane_1.add(btnModifierTop);
-
+*/
 
 				JButton btnExportTableur = new JButton(Dico.dansLedico("Export tableur", Dico.langue));
 				btnExportTableur.addActionListener(new ActionListener() {
@@ -507,7 +524,7 @@ public class CourseInterface extends JPanel {
 		}
 
 
-		
+
 		final JButton btnTopDepartPour = new JButton(Dico.dansLedico("Top depart pour toutes les voitures", Dico.langue));
 		btnTopDepartPour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -528,6 +545,20 @@ public class CourseInterface extends JPanel {
 		});
 		btnTopDepartPour.setBounds(344, 23, 261, 23);
 		desktopPane.add(btnTopDepartPour);
+	}
+
+	/**
+	 * @return the tooop
+	 */
+	public Top getTooop() {
+		return tooop;
+	}
+
+	/**
+	 * @param tooop the tooop to set
+	 */
+	public static void setTooop(Top tooops) {
+		tooop = tooops;
 	}
 
 }
