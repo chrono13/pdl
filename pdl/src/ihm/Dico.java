@@ -83,7 +83,7 @@ public class Dico {
 		put("Informations sur le pilote",    "Pilot informations");
 		put("Informations",    "Informations");
 		put("la course",    "the race");
-		put("La longueur n'est pas numerique !!!!!",    "Track lenght must be a number !!!!!");
+		put("La longueur n'est pas numerique !",    "Track lenght must be a number !");
 		put("Lancer la course",    "Launch the race");
 		put("Lancer l'essai",    "Launch session");
 		put("l'essai",    "the test");
@@ -99,7 +99,7 @@ public class Dico {
 		put("Nom du circuit :",    "Name of the track :");
 		put("Nom et prenom :",    "Name and first name :");
 		put("Nombre de relai(s) incorrect",    "Incorrect number of relay(s)");
-		put("Nombre de tour(s) incorrect !!!!!",    "Incorrect number of lap(s) !!!!!");
+		put("Nombre de tour(s) incorrect !",    "Incorrect number of lap(s) !");
 		put("Nombre de tour(s) par relai :",    "Number of laps by relay :");
 		put("Nombre de tour(s) restant(s) :",      "Number of lap(s) left :");
 		put("Nombre de tour(s)",    "Number of laps");
@@ -143,10 +143,10 @@ public class Dico {
 		put("Valider",    "Enter");
 		put("Voiture activee",    "Activated car");
 		put("Voiture(s)",    "Car(s)");
-		put("Vous devez au moins avoir une voiture activee !!!!!",    "You must have at least one activated car !!!!!");
+		put("Vous devez au moins avoir une voiture activee !",    "You must have at least one activated car !");
 		put("Vous etes sur le point de lancer Chrono13",      "You are about to launch Chrono13");
 		put("Vous n'avez aucun pilote",    "You have no pilot");
-		put("Vous n'avez pas tout rempli !!!!!",    "You did not fill everything in !!!!!");
+		put("Vous n'avez pas tout rempli !",    "You did not fill everything in !");
 		put("Vous souhaitez :",    "You want :");
 		put("Vue",    "View");
 		put("",    "");
@@ -220,7 +220,7 @@ public class Dico {
 		put("Informations pilotes",    "Informationnen \u00FCber dem Rennfahrer");
 		put("Informations sur le pilote",    "Informationnen auf der Rennfahrer");
 		put("Informations",    "Informationnen");
-		put("La longueur n'est pas numerique !!!!!",    "Die Longe ist kein Numa !!!!!");
+		put("La longueur n'est pas numerique !",    "Die Longe ist kein Numa !");
 		put("Lancer la course",    "Die Rennen starten");
 		put("Lancer l'essai",    "Die Versuch starten");
 		put("l'essai",    "den Test");
@@ -237,7 +237,7 @@ public class Dico {
 		put("Nom et prenom :",    "Name und Vorname :");
 		put("Nombre de relai(s) incorrect",    "Inkorrekt Relaisnuma(s)");
 		put("Nombre de tour(s) / relais",    "Rundfahrtsanzahl");
-		put("Nombre de tour(s) incorrect !!!!!",    "Inkorrekt Runderzahl !!!!!");
+		put("Nombre de tour(s) incorrect !",    "Inkorrekt Runderzahl !");
 		put("Nombre de tour(s) par relai :",    "Runderzahl pro Relais :");
 		put("Nombre de tour(s) restant(s) :",    "Runderzahl zu fahren :");
 		put("Nombre de tours effectues :",    "Runderzahl gemacht :");
@@ -278,10 +278,10 @@ public class Dico {
 		put("Valider",    "Freigeben");
 		put("Voiture activee",    "tetiges Auto");
 		put("Voiture(s)",    "Auto(s)");
-		put("Vous devez au moins avoir une voiture activee !!!!!",    "Sie m\u00FCssen mindesten ein activiertes Auto haben !!!!!");
+		put("Vous devez au moins avoir une voiture activee !",    "Sie m\u00FCssen mindesten ein activiertes Auto haben !");
 		put("Vous etes sur le point de lancer Chrono13",      "Sie Fortgehen, um Chrono13 zu starten");
 		put("Vous n'avez aucun pilote",    "Sie haben kein Rennfahrer");
-		put("Vous n'avez pas tout rempli !!!!!",    "Sie haben nicht alles ausgefüllt !!!!!");
+		put("Vous n'avez pas tout rempli !",    "Sie haben nicht alles ausgefüllt !");
 		put("Vous souhaitez :",    "Sie wollen :");
 		put("Vue",    "Ansicht");
 		put("",    "");
@@ -357,7 +357,7 @@ public class Dico {
 		put("Informations sur le pilote",    "Informations sur le pilote");
 		put("Informations",    "Informations");
 		put("la course",    "la course");
-		put("La longueur n'est pas numerique !!!!!",    "La longueur n'est pas num\u00E9rique !!!!!");
+		put("La longueur n'est pas numerique !",    "La longueur n'est pas num\u00E9rique !");
 		put("Lancer la course",    "Lancer la course");
 		put("Lancer l'essai",    "Lancer l'essai");
 		put("l'essai",    "l'essai");
@@ -372,7 +372,7 @@ public class Dico {
 		put("Nom du circuit :",    "Nom du circuit :");
 		put("Nom et prenom :",    "Nom et pr\u00E9nom :");
 		put("Nombre de relai(s) incorrect",    "Nombre de relai(s) incorrect");
-		put("Nombre de tour(s) incorrect !!!!!",    "Nombre de tour(s) incorrect !!!!!");
+		put("Nombre de tour(s) incorrect !",    "Nombre de tour(s) incorrect !");
 		put("Nombre de tour(s) par relai :",    "Nombre de tour(s) par relai :");
 		put("Nombre de tour(s) restant(s) :",    "Nombre de tour(s) restant(s) :");
 		put("Nombre de tour(s)",    "Nombre de tour(s)");
@@ -415,10 +415,10 @@ public class Dico {
 		put("Valider",    "Valider");
 		put("Voiture activee",    "Voiture activ\u00E9e");
 		put("Voiture(s)",    "Voiture(s)");
-		put("Vous devez au moins avoir une voiture activee !!!!!",    "Vous devez au moins avoir une voiture activ\u00E9e !!!!!");
+		put("Vous devez au moins avoir une voiture activee !",    "Vous devez au moins avoir une voiture activ\u00E9e !");
 		put("Vous etes sur le point de lancer Chrono13",      "Vous \u00EAtes sur le point de lancer Chrono13");
 		put("Vous n'avez aucun pilote",    "Vous n'avez aucun pilote");
-		put("Vous n'avez pas tout rempli !!!!!",    "Vous n'avez pas tout rempli !!!!!");
+		put("Vous n'avez pas tout rempli !",    "Vous n'avez pas tout rempli !");
 		put("Vous souhaitez :",    "Vous souhaitez :");
 		put("Vue",    "Vue");
 		put("",    "");

@@ -443,7 +443,7 @@ public class CaracteristiquesEvent extends JPanel {
 		btnLancerLaCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!event.auMoinsuneVoitureActive()){// si l'utilsateur n'a rentre aucune voiture alors il n'as pas le droit de lancer la course
-					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous devez avoir au moins une voiture activee !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous devez au moins avoir une voiture activee !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				else {
