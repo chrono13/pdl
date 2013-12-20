@@ -387,6 +387,21 @@ public class CourseInterface extends JPanel {
 				btnModifierTop.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnModifierTop.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
+						int ligne = table.getSelectedRow();
+						Top toup = new Top ();
+						if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+							int i = 0;
+							Iterator <Top> it = session.getTop().iterator();
+							ModificationTop modified;
+							while(it.hasNext() && i<=ligne){
+								toup = it.next();
+								if (i == ligne) {
+									modified = new ModificationTop(toup);
+									modified.setVisible(true);
+								}
+								i++;
+							}
+						}
 					}
 				});
 				btnModifierTop.setBounds(20, 251, 202, 23);
@@ -464,7 +479,6 @@ public class CourseInterface extends JPanel {
 				btnSupprimerTop.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						int ligne = table.getSelectedRow();
-						System.out.println(ligne);
 						Top toup = new Top ();
 						if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
 							int i = 0;
@@ -476,8 +490,6 @@ public class CourseInterface extends JPanel {
 								}
 								i++;
 							}
-							int lou = model.getRowCount();
-							System.out.println(ligne);
 							model.removeRow(ligne);
 						}
 
