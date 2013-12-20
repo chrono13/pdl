@@ -47,6 +47,7 @@ public class Dico {
 		put("Choisir au moins un essai a lancer",     "Select at least one test to run");
 		put("Choix de la langue",    "Choose your language");
 		put("Classement",    "Ranking");
+		put("Commentaires :",    "Comments");
 		put("Commentaires sur la course :",    "Comments about the race :");
 		put("Commentaires sur l'essai :",    "Comments about the test :");
 		put("Commentaires",    "Comments");
@@ -62,10 +63,13 @@ public class Dico {
 		put("Duree totale maximum par pilote :",    "Total maximum duration for a pilot :");
 		put("Edition",    "Edit");
 		put("Etat :",    "State :");
+		put("Etat :",    "State :");
 		put("Export Tableur",    "Export Table");
 		put("Fichier",    "File");
 		put("Francais",    "French");
 		put("Gestion de la course",    "Race management");
+		put("Heure",    "Hour");
+		put("Heure :",    "Hour :");
 		put("Heure actuelle",    "Current hour");
 		put("Heure de debut :",    "Post time :");
 		put("Heure de fin :",    "End time :");
@@ -87,6 +91,7 @@ public class Dico {
 		put("Lien vers l'image :",    "link to the picture :");
 		put("Liste des tops",    "Top List");
 		put("Longueur du circuit (m) :",    "Track Length (m) :");
+		put("Modifications Tops",    "Tops modifications");
 		put("Modifier TOP",    "Modify TOP");
 		put("Modifier",    "Modify");
 		put("Nom de la course :",    "Name of the race :");
@@ -112,6 +117,7 @@ public class Dico {
 		put("Prenom",    "First name");
 		put("Que souhaitez-vous faire ?",    "What do you want to do ?");
 		put("Realise par Kavishan, Kevin, Philippe et Yann",    "Undertaken by Kavishan, Kevin, Philippe and Yann");
+		put("Relais :",    "Relay :");
 		put("Retour",    "Back");
 		put("rien",    "nothing");
 		put("Sauvegarder",    "Save");
@@ -124,6 +130,7 @@ public class Dico {
 		put("Supprimer TOP",    "Delete TOP");
 		put("Supprimer",    "Delete");
 		put("sur",    "about");
+		put("Temps :",    "Time :");
 		put("Temps :",    "Time :");
 		put("Temps ecoule depuis le depart",    "Spent time since the departure");
 		put("Temps ecoule",    "Spent time");
@@ -143,12 +150,6 @@ public class Dico {
 		put("Vous n'avez pas tout rempli !!!!!",    "You did not fill everything in !!!!!");
 		put("Vous souhaitez :",    "You want :");
 		put("Vue",    "View");
-		put("Modifications Tops",    "Tops modifications");
-		put("Temps :",    "Time :");
-		put("Heure :",    "Hour :");
-		put("Relais :",    "Relay :");
-		put("Etat :",    "State :");
-		put("Commentaires :",    "Comments");
 		put("",    "");
 		put("",    "");
 		put("",    "");
@@ -185,6 +186,7 @@ public class Dico {
 		put("Choisir au moins un essai a lancer",     "W\u00E4hlen Sie mindesten einen Test zu laufen");
 		put("Choix de la langue",    "Wahl der Sprache");
 		put("Classement",    "Einordnen");
+		put("Commentaires :",    "Komment\u00E4ren");
 		put("Commentaires sur la course :",    "Kommentar auf der Renn");
 		put("Commentaires",    "Rennenskomment\u00E4ren");
 		put("Continuer", "Weitergehen");
@@ -199,11 +201,14 @@ public class Dico {
 		put("Duree totale maximum par pilote :",    "Total maximal Zeit f\u00FCr einen Rennfahrer :");
 		put("Edition",    "Ausgabe");
 		put("Etat :",    "Stand :");
+		put("Etat :",    "Stand :");
 		put("Export Tableur",    "Tabelle Export");
 		put("Fichier",    "Datei");
 		put("Francais",    "Franz\u00F6sisch");
 		put("Gestion de la course",    "Rennensverwaltung");
 		put("Gestion de la course",    "Sie Wollen :");
+		put("Heure",    "Hour");
+		put("Heure :",    "Uhr :");
 		put("Heure actuelle",    "gegenwärtige Stunde");
 		put("Heure de debut :",    "Startzeit :");
 		put("Heure de fin :",    "Endzeit :");
@@ -224,6 +229,7 @@ public class Dico {
 		put("Lien vers l'image :",    "Link zum Bild :");
 		put("Liste des tops",    "Toplist");
 		put("Longueur du circuit (m) :",    "Longe des Umkreises (m) :");
+		put("Modifications Tops",    "Tops Modifikationnen");
 		put("Modifier TOP",    "TOP modifizieren");
 		put("Modifier",    "Modifizieren");
 		put("Nom de la course :",    "Rennensname :");
@@ -249,6 +255,7 @@ public class Dico {
 		put("Prenom",    "Vorname");
 		put("Que souhaitez-vous faire ?",    "Was wollen Sie tun ?");
 		put("Realise par Kavishan, Kevin, Philippe et Yann",    "Ein Gesuch von Kavishan, Kevin, Philippe and Yann");
+		put("Relais :",    "Relais :");
 		put("Retour",    "Z\u00FCr\u00FCck");
 		put("rien",    "nichts");
 		put("Sauvegarder",    "Spreichern");
@@ -260,6 +267,7 @@ public class Dico {
 		put("Suppression",    "Abschaffung");
 		put("Supprimer TOP",    "TOP abschaffen");
 		put("Supprimer",    "Abschaffen");
+		put("Temps :",    "Zeit :");
 		put("Temps :",    "Zeit :");
 		put("Temps ecoule depuis le depart",    "Zeit seit dem Start vergangen");
 		put("Temps ecoule",    "Vergangen Zeit");
@@ -279,12 +287,6 @@ public class Dico {
 		put("Vous n'avez pas tout rempli !!!!!",    "Sie haben nicht alles ausgefüllt !!!!!");
 		put("Vous souhaitez :",    "Sie wollen :");
 		put("Vue",    "Ansicht");
-		put("Modifications Tops",    "Tops Modifikationnen");
-		put("Temps :",    "Zeit :");
-		put("Heure :",    "Uhr :");
-		put("Relais :",    "Relais :");
-		put("Etat :",    "Stand :");
-		put("Commentaires :",    "Komment\u00E4ren");
 		put("",    "");
 		put("",    "");
 		put("",    "");
@@ -321,6 +323,7 @@ public class Dico {
 		put("Choisir au moins un essai a lancer",    "Choisir au moins un essai a lancer");
 		put("Choix de la langue",    "Choix de la langue");
 		put("Classement",    "Classement");
+		put("Commentaires :",    "Commentaires :");
 		put("Commentaires sur la course :",    "Commentaires sur la course :");
 		put("Commentaires sur l'essai :",    "Commentaires sur l'essai :");
 		put("Commentaires",    "Commentaires");
@@ -336,11 +339,14 @@ public class Dico {
 		put("Duree totale maximum par pilote :",    "Dur\u00E9e totale maximum par pilote :");
 		put("Edition",    "Edition");
 		put("Etat :",    "Etat :");
+		put("Etat :",    "Etat :");
 		put("Export Tableur",    "Export Tableur");
 		put("Fichier",    "Fichier");
 		put("Francais",    "Fran\u00E7ais");
 		put("Gestion de la course",    "Gestion de la course");
 		put("Gestion de la course",    "Gestion de la course");
+		put("Heure",    "Hour");
+		put("Heure :",    "Heure :");
 		put("Heure actuelle",    "Heure actuelle");
 		put("Heure de debut :",    "Heure de d\u00E9but :");
 		put("Heure de fin :",    "Heure de fin :");
@@ -362,6 +368,7 @@ public class Dico {
 		put("Lien vers l'image :",    "Lien vers l'image :");
 		put("Liste des tops",    "Liste des tops");
 		put("Longueur du circuit (m) :",    "Longueur du circuit (m) :");
+		put("Modifications Tops",    "Modifications Tops");
 		put("Modifier TOP",    "Modifier TOP");
 		put("Modifier",    "Modifier");
 		put("Nom de la course :",    "Nom de la course :");
@@ -386,6 +393,7 @@ public class Dico {
 		put("Prenom",    "Pr\u00E9nom");
 		put("Que souhaitez-vous faire ?",    "Que souhaitez-vous faire ?");
 		put("Realise par Kavishan, Kevin, Philippe et Yann",    "R\u00E9alis\u00E9 par Kavishan, Kevin, Philippe et Yann");
+		put("Relais :",    "Relais :");
 		put("Retour",    "Retour");
 		put("rien",    "rien");
 		put("Sauvegarder",    "Sauvegarder");
@@ -398,6 +406,7 @@ public class Dico {
 		put("Supprimer TOP",    "Supprimer TOP");
 		put("Supprimer",    "Supprimer");
 		put("sur",    "sur");
+		put("Temps :",    "Temps :");
 		put("Temps :",    "Temps :");
 		put("Temps ecoule depuis le depart",    "Temps \u00E9coul\u00E9 depuis le d\u00E9part");
 		put("Temps ecoule",    "Temps \u00E9coul\u00E9");
@@ -417,12 +426,6 @@ public class Dico {
 		put("Vous n'avez pas tout rempli !!!!!",    "Vous n'avez pas tout rempli !!!!!");
 		put("Vous souhaitez :",    "Vous souhaitez :");
 		put("Vue",    "Vue");
-		put("Modifications Tops",    "Modifications Tops");
-		put("Temps :",    "Temps :");
-		put("Heure :",    "Heure :");
-		put("Relais :",    "Relais :");
-		put("Etat :",    "Etat :");
-		put("Commentaires :",    "Commentaires :");
 		put("",    "");
 		put("",    "");
 		put("",    "");
