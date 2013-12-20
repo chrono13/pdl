@@ -3,49 +3,41 @@ package principal;
 
 public class Top {
 	
-	private int top_num_voiture;
-	private int top_nombreTourPilote_dansrelai;
+	private String top_num_voiture;
 	private int top_nbretour_debcourse;
 	private String top_temps_tour;
+	private String top_pilote;
 	private char top_etat;
 	private String top_heure_passage;
 	private String top_heure_passage_milli; 
+	private String top_comment;
 	
 	public Top() {
-		this.top_num_voiture = 0;
-		this.top_nombreTourPilote_dansrelai = 0;
+		this.top_num_voiture = "";
 		this.top_nbretour_debcourse = 0;
 		this.top_temps_tour = "";
+		this.top_pilote = null;
 		this.top_etat = ' ';
 		this.top_heure_passage = "";
-		this.top_heure_passage_milli = "";
+		this.top_comment = "";
 	}
 	
-	public Top (int top_num_voiture, int top_nombreTourPilote_dansrelai, int top_nbretour_debcourse, String top_temps_tour, char top_etat, String top_heure_passage, String top_heure_passage_milli ) {
+	public Top (String top_num_voiture, int nb_tour, String p, String temps, char etat, String heure, String Commentaire ) {
 		this.top_num_voiture = top_num_voiture;
-		this.top_nombreTourPilote_dansrelai = top_nombreTourPilote_dansrelai;
-		this.top_nbretour_debcourse = top_nbretour_debcourse;
-		this.top_temps_tour = top_temps_tour;
-		this.top_etat = top_etat;
-		this.top_heure_passage = top_heure_passage;
-		this.top_heure_passage_milli = top_heure_passage_milli;
+		this.top_nbretour_debcourse = nb_tour;
+		this.top_pilote = p;
+		this.top_temps_tour = temps;
+		this.top_etat = etat;
+		this.top_heure_passage = heure;
+		this.top_comment = Commentaire;
 	}
 
-	public int getTop_num_voiture() {
+	public String getTop_num_voiture() {
 		return top_num_voiture;
 	}
 
-	public void setTop_num_voiture(int top_num_voiture) {
+	public void setTop_num_voiture(String top_num_voiture) {
 		this.top_num_voiture = top_num_voiture;
-	}
-
-	public int getTop_nombreTourPilote_dansrelai() {
-		return top_nombreTourPilote_dansrelai;
-	}
-
-	public void setTop_nombreTourPilote_dansrelai(
-			int top_nombreTourPilote_dansrelai) {
-		this.top_nombreTourPilote_dansrelai = top_nombreTourPilote_dansrelai;
 	}
 
 	public int getTop_nbretour_debcourse() {
@@ -86,6 +78,34 @@ public class Top {
 
 	public void setTop_heure_passage_milli(String top_heure_passage_milli) {
 		this.top_heure_passage_milli = top_heure_passage_milli;
+	}
+
+	/**
+	 * @return the top_pilote
+	 */
+	public String getTop_pilote() {
+		return top_pilote;
+	}
+
+	/**
+	 * @param top_pilote the top_pilote to set
+	 */
+	public void setTop_pilote(String top_pilote) {
+		this.top_pilote = top_pilote;
+	}
+
+	/**
+	 * @return the top_comment
+	 */
+	public String getTop_comment() {
+		return top_comment;
+	}
+
+	/**
+	 * @param top_comment the top_comment to set
+	 */
+	public void setTop_comment(String top_comment) {
+		this.top_comment = top_comment;
 	}
 	
 	

@@ -381,7 +381,7 @@ public class CaracteristiquesEvent extends JPanel {
 		Icon loginIcon6 = new ImageIcon("icones/import.png");
 		btnImporterVoiture.setIcon(loginIcon6);
 		btnImporterVoiture.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		btnImporterVoiture.setBounds(61, 494, 192, 49);
+		btnImporterVoiture.setBounds(61, 494, 229, 49);
 		desktopPane.add(btnImporterVoiture);
 
 

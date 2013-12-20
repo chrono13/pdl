@@ -364,11 +364,6 @@ public class VoitureSansEvent extends JPanel {
 					String fiel4 = textField.getText();
 					v.setVoiture_temps_estime_partour(fiel4);;
 				}
-				/*textField.setText(v.getVoiture_num());
-				textField_1.setText(v.getVoiture_couleur());
-				textField_2.setText(v.getVoiture_lien_img());
-				textField_3.setText(Integer.toString(v.getVoiture_nbreTour_par_relai()));
-				textField_4.setText(v.getVoiture_temps_estime_partour());*/
 				removeAll();
 				repaint();
 				int ligne = table.getSelectedRow();
@@ -411,10 +406,11 @@ public class VoitureSansEvent extends JPanel {
 							}
 							i++;
 						}
+						model.removeRow(ligne);
+						comboBox.removeItemAt(ligne);
+						// on notify la table comme quoi un pilote n'est plus
 					}
-					model.removeRow(ligne);
-					comboBox.removeItemAt(ligne);
-					// on notify la table comme quoi un pilote n'est plus
+					
 			}
 		});
 

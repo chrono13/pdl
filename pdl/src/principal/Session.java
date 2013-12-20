@@ -1,5 +1,8 @@
 package principal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Session {
 
 	private String session_nom;
@@ -12,6 +15,7 @@ public class Session {
 	private String session_dureemaxconsecutiveparpilote;
 	private String session_commentaire;
 	private boolean session_type;// si 1 c'est une course sinon c'est un essai
+	private List <Top> listTop = new ArrayList <Top>();
 	
 	public Session() {
 		this.session_nom="";
@@ -86,6 +90,18 @@ public class Session {
 	}
 	public void setSession_type(boolean session_type) {
 		this.session_type = session_type;
+	}
+	public void AddTop(Top t) {
+		this.listTop.add(t);
+	}
+	
+	public void DeleteTop(Top t) {
+		this.listTop.remove(t);
+	}
+	
+	
+	public List<Top> getTop() {
+		return this.listTop;
 	}
 	
 	

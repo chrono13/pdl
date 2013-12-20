@@ -143,6 +143,19 @@ public class Dico {
 		put("Supprimer TOP",    "Delete TOP");
 		put("Imprimer",    "Print");
 		put("Export Tableur",    "Export Table");
+		put("Modifications Tops",    "Tops modifications");
+		put("Temps :",    "Time :");
+		put("Heure :",    "Hour :");
+		put("Relais :",    "Relay :");
+		put("Etat :",    "State :");
+		put("Commentaires :",    "Comments");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
 		put("",    "");
 	}};
 
@@ -265,6 +278,21 @@ public class Dico {
 		put("Supprimer TOP",    "TOP abschaffen");
 		put("Imprimer",    "Drucken");
 		put("Export Tableur",    "Tabelle Export");
+		put("Modifications Tops",    "Tops Modifikationnen");
+		put("Temps :",    "Zeit :");
+		put("Heure :",    "Uhr :");
+		put("Relais :",    "Relais :");
+		put("Etat :",    "Stand :");
+		put("Commentaires :",    "Komment\u00E4ren");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+
 	}};
 
 
@@ -389,6 +417,18 @@ public class Dico {
 		put("Supprimer TOP",    "Supprimer TOP");
 		put("Imprimer",    "Imprimer");
 		put("Export Tableur",    "Export Tableur");
+		put("Modifications Tops",    "Modifications Tops");
+		put("Temps :",    "Temps :");
+		put("Heure :",    "Heure :");
+		put("Relais :",    "Relais :");
+		put("Etat :",    "Etat :");
+		put("Commentaires :",    "Commentaires :");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
 		put("",    "");
 	}};
 

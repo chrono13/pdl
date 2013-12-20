@@ -413,10 +413,11 @@ public class VoitureAvecEvent extends JPanel {
 						}
 						i++;
 					}
+					model.removeRow(ligne);
+					comboBox.removeItemAt(ligne);
+					// on notify la table comme quoi un pilote n'est plus
 				}
-				model.removeRow(ligne);
-				comboBox.removeItemAt(ligne);
-				// on notify la table comme quoi un pilote n'est plus
+				
 			}
 		});
 		btnSupprimer.setFont(new Font("Dialog", Font.PLAIN, 14));
