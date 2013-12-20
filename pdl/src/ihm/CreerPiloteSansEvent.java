@@ -22,6 +22,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+/**
+ * Classe permettant d'ajouter un nouvel évènement
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class CreerPiloteSansEvent extends JPanel {
 	private JTextField couleurCasque;

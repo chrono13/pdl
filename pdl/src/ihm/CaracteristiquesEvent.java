@@ -40,6 +40,12 @@ import principal.Voiture;
 
 import javax.swing.JTable;
 
+/**
+ * Classe permettant de définir les caractéristique de l'évènement créé
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
+
 public class CaracteristiquesEvent extends JPanel {
 
 	private Evenement event = null;

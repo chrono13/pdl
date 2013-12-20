@@ -19,7 +19,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
-
+/**
+ * Classe permettant de choisir le langage de l'application au lancement
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class Language extends JPanel {
 

@@ -24,6 +24,11 @@ import java.awt.Font;
 import java.awt.Color;
 import java.io.File;
 
+/**
+ * Classe permettant de charger ou d'ajouter un évènement
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class GestionEvent extends JPanel {
 

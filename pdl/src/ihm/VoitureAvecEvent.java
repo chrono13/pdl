@@ -38,6 +38,11 @@ import principal.Evenement;
 import principal.Pilote;
 import principal.Voiture;
 
+/**
+ * Classe permettant la création d'une voiture lorsqu'un évènement à déja été créé
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 
 public class VoitureAvecEvent extends JPanel {
 	private JTextField numVoiture;
