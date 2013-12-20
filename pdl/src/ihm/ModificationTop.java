@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -49,7 +50,7 @@ public class ModificationTop extends JFrame {
 
 		this.tops = toup;
 
-		JDesktopPane desktopPane = new JDesktopPane();
+		final JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(245, 255, 250));
 		contentPane.add(desktopPane);
 
@@ -85,7 +86,7 @@ public class ModificationTop extends JFrame {
 		lblEtat.setBounds(6, 147, 127, 22);
 		desktopPane.add(lblEtat);
 
-		JComboBox <String> comboBoxEtat = new JComboBox <String>();
+		final JComboBox <String> comboBoxEtat = new JComboBox <String>();
 		comboBoxEtat.setBounds(150, 147, 195, 27);
 		desktopPane.add(comboBoxEtat);
 		comboBoxEtat.addItem("I");
@@ -99,7 +100,7 @@ public class ModificationTop extends JFrame {
 		desktopPane.add(lblCommentaires);
 
 
-		JTextArea textArea = new JTextArea();
+		final JTextArea textArea = new JTextArea();
 		textArea.setBounds(160, 200, 296, 97);
 		desktopPane.add(textArea);
 		if (!toup.getTop_comment().equals("")) {
@@ -124,7 +125,20 @@ public class ModificationTop extends JFrame {
 		JButton btnValider = new JButton(Dico.dansLedico("Valider", Dico.langue));
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				if (textField == null || textField.getText().equals("") ) {
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					return;// si il manque au moins un élément chez le pilote alors on avertit le client
+				}
+				if (!textArea.getText().equals("")) {
+					tops.setTop_comment(textArea.getText());
+				}
+				String etat = (String) comboBoxEtat.getSelectedItem();
+				tops.setTop_etat(etat);
+				tops.setTop_heure_passage(textField_1.getText());
+				tops.setTop_temps_tour(textField.getText());
+				CourseInterface.setTooop(tops);
+				((Window) contentPane.getTopLevelAncestor()).dispose();
+			
 			}
 		});
 		btnValider.setFont(new Font("Dialog", Font.PLAIN, 14));

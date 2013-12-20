@@ -11,7 +11,7 @@ public class Top {
 	private int top_nbretour_debcourse;
 	private String top_temps_tour;
 	private String top_pilote;
-	private char top_etat;
+	private String top_etat;
 	private String top_heure_passage;
 	private String top_heure_passage_milli; 
 	private String top_comment;
@@ -21,12 +21,12 @@ public class Top {
 		this.top_nbretour_debcourse = 0;
 		this.top_temps_tour = "";
 		this.top_pilote = null;
-		this.top_etat = ' ';
+		this.top_etat = "";
 		this.top_heure_passage = "";
 		this.top_comment = "";
 	}
 	
-	public Top (String top_num_voiture, int nb_tour, String p, String temps, char etat, String heure, String Commentaire ) {
+	public Top (String top_num_voiture, int nb_tour, String p, String temps, String etat, String heure, String Commentaire ) {
 		this.top_num_voiture = top_num_voiture;
 		this.top_nbretour_debcourse = nb_tour;
 		this.top_pilote = p;
@@ -60,11 +60,11 @@ public class Top {
 		this.top_temps_tour = top_temps_tour;
 	}
 
-	public char getTop_etat() {
+	public String getTop_etat() {
 		return top_etat;
 	}
 
-	public void setTop_etat(char top_etat) {
+	public void setTop_etat(String top_etat) {
 		this.top_etat = top_etat;
 	}
 

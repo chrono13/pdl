@@ -5,6 +5,7 @@ package principal;
 
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 import ihm.Chrono;
 
@@ -21,12 +22,14 @@ public class TimeManager {
 	private Chrono _top;
 	private Chrono _global;
 	private JTable _panel;
+	private JTextField _jtext;
 	private int _compteur;
 
-	public TimeManager(Chrono top, Chrono global, JTable jTable) {
+	public TimeManager(Chrono top, Chrono global, JTable jTable, JTextField jTextField) {
 		_top = top ; 
 		_global = global ; 
 		_panel = jTable;
+		_jtext = jTextField;
 		_compteur = 0;
 	}
 
@@ -64,6 +67,15 @@ public class TimeManager {
 	public void set_compteur(int _compteur) {
 		this._compteur = _compteur;
 	}
+
+	/**
+	 * @return the _jtext
+	 */
+	public JTextField get_jtext() {
+		return _jtext;
+	}
+
+
 
 
 
