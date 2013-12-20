@@ -99,7 +99,7 @@ public class AjouterEvent extends JPanel {
 				//évènement suite au "clic" sur le boutton ajouter un évènement
 				if (nomCourse==null || nomCircuit==null || longueurCircuit==null || nomCourse.getText().equals("")
 						|| nomCircuit.getText().equals("") || longueurCircuit.getText().equals("0") || longueurCircuit.getText().equals("")) {
-					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément dans l'evenement alors on avertit le client
 				}
 				else {
@@ -109,7 +109,7 @@ public class AjouterEvent extends JPanel {
 					 
 					}catch(NumberFormatException  e)
 					{
-						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("La longueur n'est pas numerique !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("La longueur n'est pas numerique !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 						return;}
 					event.setEven_longueur_circuit(Integer.parseInt(longueurCircuit.getText()));
 					event.setEven_nom(nomCourse.getText());

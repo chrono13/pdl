@@ -99,7 +99,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 				}
 				if (textField == null || textField.getText().equals("")  || textField_2.getText().equals("") 
 						|| textField_2 == null || textField_3 == null || textField_3.getText().equals("")) {
-					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément chez le pilote alors on avertit le client
 				}
 				//évènement suite au "clic" sur le bouton ajouter/modifier

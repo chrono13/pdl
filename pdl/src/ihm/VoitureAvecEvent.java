@@ -209,7 +209,7 @@ public class VoitureAvecEvent extends JPanel {
 						|| nbTours == null || nbTours.getText().equals("0") || textField_4== null || textField_4.getText().equals(""))
 
 				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
-					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément dans le voiture alors on avertit le client
 				}
 				else {
@@ -229,7 +229,7 @@ public class VoitureAvecEvent extends JPanel {
 
 					}catch(NumberFormatException  e)
 					{
-						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Nombre de relai(s) incorrect !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Nombre de relai(s) incorrect !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 					// nous fixons le pilote actuelle
@@ -293,7 +293,7 @@ public class VoitureAvecEvent extends JPanel {
 						|| nbTours == null || nbTours.getText().equals("0") || textField_4== null || textField_4.getText().equals(""))
 
 				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
-					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément dans le voiture alors on avertit le client
 				}
 				else {
@@ -306,7 +306,7 @@ public class VoitureAvecEvent extends JPanel {
 
 					}catch(NumberFormatException  e1)
 					{
-						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Nombre de relai(s) incorrect !!!!!", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Nombre de relai(s) incorrect !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 					// nous fixons le pilote actuelle
