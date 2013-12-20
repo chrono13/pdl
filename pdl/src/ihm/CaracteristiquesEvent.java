@@ -261,7 +261,7 @@ public class CaracteristiquesEvent extends JPanel {
 		desktopPane.add(table_essais);
 
 		//Bouton Ajouter Essai		
-		JButton btnAjouterEssai = new JButton(Dico.dansLedico("Ajouter", Dico.langue));
+		JButton btnAjouterEssai = new JButton(Dico.dansLedico("", Dico.langue));//Ajouter
 		btnAjouterEssai.setContentAreaFilled(false);
 		btnAjouterEssai.setBorderPainted(false);
 		Icon loginIcon3 = new ImageIcon("icones/add.png");
