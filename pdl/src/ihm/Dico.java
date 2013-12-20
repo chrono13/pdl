@@ -84,7 +84,7 @@ public class Dico {
 		put("Edition",    "Edit");
 		put("Vue",    "View");
 		put("Aide",    "Help");
-		put("Temps",    "Time");
+		put("Temps :",    "Time :");
 		put("Heure",    "Hour");
 		put("Temps ecoule depuis le depart",    "Spent time since the departure");
 		put("Nombre de tour(s) restant(s) :",      "Number of lap(s) left :");
@@ -93,8 +93,8 @@ public class Dico {
 		put("Temps par tour",    "Time for a lap");
 		put("STOP",    "STOP");
 		put("Informations pilotes",    "About pilots");
-		put("Panneau de la voiture",    "Car board");
-		put("Etat",    "State");
+		put("Panneau de la voiture :",    "Car board");
+		put("Etat :",    "State :");
 		put("Informations",    "Informations");
 		put("Pilote actuel",    "Current pilot");
 		put("Nombre de tour(s) par relai :",    "Number of laps by relay :");
@@ -139,7 +139,10 @@ public class Dico {
 		put("Nombre de tour(s) incorrect !!!!!",    "Incorrect number of lap(s) !!!!!");
 		put("Seulement une case doit etre cochee",    "You must check only one box");
 		put("Choisir au moins un essai a lancer",     "Select at least one test to run");
-		put("",    "");
+		put("Modifier TOP",    "Modify TOP");
+		put("Supprimer TOP",    "Delete TOP");
+		put("Imprimer",    "Print");
+		put("Export Tableur",    "Export Table");
 		put("",    "");
 	}};
 
@@ -206,7 +209,7 @@ public class Dico {
 		put("Edition",    "Ausgabe");
 		put("Vue",    "Ansicht");
 		put("Aide",    "Hilfe");
-		put("Temps",    "Zeit");
+		put("Temps :",    "Zeit :");
 		put("Heure",    "Uhr");
 		put("Temps ecoule depuis le depart",    "Zeit seit dem Start vergangen");
 		put("Temps restant a courir",    "Restaufzeit");
@@ -214,8 +217,8 @@ public class Dico {
 		put("Temps par tour",    "Runde");
 		put("STOP",    "STOP");
 		put("Informations pilotes",    "Informationnen \u00FCber dem Rennfahrer");
-		put("Panneau de la voiture",    "Autosinformationnen");
-		put("Etat",    "Stand");
+		put("Panneau de la voiture :",    "Autosinformationnen");
+		put("Etat :",    "Stand :");
 		put("Informations",    "Informationnen");
 		put("Pilote actuel",    "Aktual Rennfahrer");
 		put("Nombre de tour(s) par relai :",    "Runderzahl pro Relais :");
@@ -258,6 +261,10 @@ public class Dico {
 		put("Nombre de tour(s) incorrect !!!!!",    "Inkorrekt Runderzahl !!!!!");
 		put("Seulement une case doit etre cochee",    "Sie M\u00FC nur ein Feld ankreuzen");
 		put("Choisir au moins un essai a lancer",     "W\u00E4hlen Sie mindesten einen Test zu laufen");
+		put("Modifier TOP",    "TOP modifizieren");
+		put("Supprimer TOP",    "TOP abschaffen");
+		put("Imprimer",    "Drucken");
+		put("Export Tableur",    "Tabelle Export");
 	}};
 
 
@@ -324,7 +331,7 @@ public class Dico {
 		put("Edition",    "Edition");
 		put("Vue",    "Vue");
 		put("Aide",    "Aide");
-		put("Temps",    "Temps");
+		put("Temps :",    "Temps :");
 		put("Heure",    "Heure");
 		put("Temps ecoule depuis le depart",    "Temps \u00E9coul\u00E9 depuis le d\u00E9part");
 		put("Temps restant a courir",    "Temps restant a courir");
@@ -332,8 +339,8 @@ public class Dico {
 		put("Temps par tour",    "Temps par tour");
 		put("STOP",    "STOP");
 		put("Informations pilotes",    "Informations pilotes");
-		put("Panneau de la voiture",    "Panneau de la voiture");
-		put("Etat",    "Etat");
+		put("Panneau de la voiture :",    "Panneau de la voiture :");
+		put("Etat :",    "Etat :");
 		put("Informations",    "Informations");
 		put("Pilote actuel",    "Pilote actuel");
 		put("Nombre de tour(s) par relai :",    "Nombre de tour(s) par relai :");
@@ -378,7 +385,10 @@ public class Dico {
 		put("Nombre de tour(s) incorrect !!!!!",    "Nombre de tour(s) incorrect !!!!!");
 		put("Seulement une case doit etre cochee",    "Seulement une case doit \u00EAtre coch\u00E9e");
 		put("Choisir au moins un essai a lancer",    "Choisir au moins un essai a lancer");
-		put("",    "");
+		put("Modifier TOP",    "Modifier TOP");
+		put("Supprimer TOP",    "Supprimer TOP");
+		put("Imprimer",    "Imprimer");
+		put("Export Tableur",    "Export Tableur");
 		put("",    "");
 	}};
 
