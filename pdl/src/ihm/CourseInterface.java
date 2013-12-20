@@ -146,12 +146,12 @@ public class CourseInterface extends JPanel {
 				desktopPane_1.add(desktopPane_2);
 
 
-				JLabel lblHeureActuelle = new JLabel("Heure");
+				JLabel lblHeureActuelle = new JLabel(Dico.dansLedico("Heure", Dico.langue));
 				lblHeureActuelle.setFont(new Font("Segoe UI", Font.BOLD, 12));
 				lblHeureActuelle.setBounds(10, 27, 102, 14);
 				desktopPane_2.add(lblHeureActuelle);
 
-				JLabel lblHeureDeFin = new JLabel("Heure de fin");
+				JLabel lblHeureDeFin = new JLabel(Dico.dansLedico("Heure de fin :", Dico.langue));
 				lblHeureDeFin.setFont(new Font("Segoe UI", Font.BOLD, 12));
 				lblHeureDeFin.setBounds(10, 60, 124, 14);
 				desktopPane_2.add(lblHeureDeFin);
@@ -184,7 +184,7 @@ public class CourseInterface extends JPanel {
 				heurefin.setColumns(10);
 				heurefin.setText(session.getSession_heurefin());
 
-				JLabel lblTempscoul = new JLabel("Temps ecoul\u00E9");
+				JLabel lblTempscoul = new JLabel(Dico.dansLedico("Temps ecoule", Dico.langue));
 				lblTempscoul.setFont(new Font("Segoe UI", Font.BOLD, 12));
 				lblTempscoul.setBounds(10, 92, 124, 14);
 				desktopPane_2.add(lblTempscoul);
@@ -244,7 +244,7 @@ public class CourseInterface extends JPanel {
 				desktopPane_4.setBounds(612, 25, 290, 220);
 				desktopPane_1.add(desktopPane_4);
 
-				JLabel lblPiloteActuel = new JLabel("Pilote(s)");
+				JLabel lblPiloteActuel = new JLabel(Dico.dansLedico("Pilote(s)", Dico.langue));
 				lblPiloteActuel.setFont(new Font("Segoe UI", Font.BOLD, 12));
 				lblPiloteActuel.setBounds(10, 56, 95, 14);
 				desktopPane_4.add(lblPiloteActuel);
@@ -259,7 +259,7 @@ public class CourseInterface extends JPanel {
 				lblNombreDeTours.setBounds(10, 136, 157, 14);
 				desktopPane_4.add(lblNombreDeTours);
 
-				JLabel lblNombreDeTours_1 = new JLabel("Nombre de tours effectues :");
+				JLabel lblNombreDeTours_1 = new JLabel(Dico.dansLedico("Nombre de tours effectues :", Dico.langue));
 				lblNombreDeTours_1.setFont(new Font("Segoe UI", Font.BOLD, 12));
 				lblNombreDeTours_1.setBounds(10, 175, 168, 14);
 				desktopPane_4.add(lblNombreDeTours_1);
@@ -328,7 +328,7 @@ public class CourseInterface extends JPanel {
 
 
 				/*bouton et chrono de la partie temps*/
-				JButton btnStop = new JButton("STOP");
+				JButton btnStop = new JButton(Dico.dansLedico("STOP", Dico.langue));
 				btnStop.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						chr.stop();
@@ -339,7 +339,7 @@ public class CourseInterface extends JPanel {
 				btnStop.setBounds(10, 129, 89, 23);
 				desktopPane_2.add(btnStop);
 				
-				JButton btnTop = new JButton("TOP");
+				JButton btnTop = new JButton(Dico.dansLedico("TOP", Dico.langue));
 				btnTop.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 
@@ -379,7 +379,7 @@ public class CourseInterface extends JPanel {
 
 				table.setModel(model);
 
-				JButton btnModifierTop = new JButton("Modifier TOP");
+				JButton btnModifierTop = new JButton(Dico.dansLedico("Modifier TOP", Dico.langue));
 				btnModifierTop.setContentAreaFilled(false);
 				btnModifierTop.setBorderPainted(false);
 				Icon loginIcon10 = new ImageIcon("icones/edit.png");
@@ -393,7 +393,7 @@ public class CourseInterface extends JPanel {
 				desktopPane_1.add(btnModifierTop);
 
 
-				JButton btnExportTableur = new JButton("Export tableur");
+				JButton btnExportTableur = new JButton(Dico.dansLedico("Export tableur", Dico.langue));
 				btnExportTableur.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
@@ -440,7 +440,7 @@ public class CourseInterface extends JPanel {
 
 
 
-				JButton btnImprimer = new JButton("Imprimer");
+				JButton btnImprimer = new JButton(Dico.dansLedico("Imprimer", Dico.langue));
 				btnImprimer.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						try {
@@ -460,7 +460,7 @@ public class CourseInterface extends JPanel {
 				desktopPane_1.add(btnImprimer);
 
 				//desktopPane_1.add(table)
-				JButton btnSupprimerTop = new JButton("Supprimer TOP");
+				JButton btnSupprimerTop = new JButton(Dico.dansLedico("Supprimer TOP", Dico.langue));
 				btnSupprimerTop.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						int ligne = table.getSelectedRow();
