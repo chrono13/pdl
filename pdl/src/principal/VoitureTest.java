@@ -10,6 +10,11 @@ import javax.xml.bind.Marshaller;
 
 import org.junit.Test;
 
+/**
+ *@author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
+
 public class VoitureTest {
 
 	@Test 

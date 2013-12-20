@@ -148,7 +148,7 @@ public class CourseInterface extends JPanel {
 				desktopPane_1.add(desktopPane_2);
 
 
-				JLabel lblHeureActuelle = new JLabel(Dico.dansLedico("Heure", Dico.langue));
+				JLabel lblHeureActuelle = new JLabel(Dico.dansLedico("Heure :", Dico.langue));
 				lblHeureActuelle.setFont(new Font("Segoe UI", Font.BOLD, 12));
 				lblHeureActuelle.setBounds(10, 27, 102, 14);
 				desktopPane_2.add(lblHeureActuelle);
@@ -183,7 +183,7 @@ public class CourseInterface extends JPanel {
 				heurefin.setColumns(10);
 				heurefin.setText(session.getSession_heurefin());
 
-				JLabel lblTempscoul = new JLabel(Dico.dansLedico("Temps ecoule", Dico.langue));
+				JLabel lblTempscoul = new JLabel(Dico.dansLedico("Temps ecoule :", Dico.langue));
 				lblTempscoul.setFont(new Font("Segoe UI", Font.BOLD, 12));
 				lblTempscoul.setBounds(10, 92, 124, 14);
 				desktopPane_2.add(lblTempscoul);

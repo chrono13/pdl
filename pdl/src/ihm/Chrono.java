@@ -13,6 +13,12 @@ import javax.swing.JTable;
 import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * Classe permettant de gérer les chronomètres
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
+
 public class Chrono extends JPanel implements Runnable{
     Font f;
     Color bd,lt,dk;

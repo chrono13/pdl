@@ -3,6 +3,11 @@ package principal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *@author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
+
 public class Session {
 
 	private String session_nom;
