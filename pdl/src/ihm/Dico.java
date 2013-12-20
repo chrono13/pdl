@@ -143,6 +143,21 @@ public class Dico {
 		put("Vous n'avez pas tout rempli !!!!!",    "You did not fill everything in !!!!!");
 		put("Vous souhaitez :",    "You want :");
 		put("Vue",    "View");
+		put("Modifications Tops",    "Tops modifications");
+		put("Temps :",    "Time :");
+		put("Heure :",    "Hour :");
+		put("Relais :",    "Relay :");
+		put("Etat :",    "State :");
+		put("Commentaires :",    "Comments");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+
 	}};
 
 	public static final Hashtable<String, String> dico_allemand = new Hashtable<String,String>() {{
@@ -264,6 +279,20 @@ public class Dico {
 		put("Vous n'avez pas tout rempli !!!!!",    "Sie haben nicht alles ausgefüllt !!!!!");
 		put("Vous souhaitez :",    "Sie wollen :");
 		put("Vue",    "Ansicht");
+		put("Modifications Tops",    "Tops Modifikationnen");
+		put("Temps :",    "Zeit :");
+		put("Heure :",    "Uhr :");
+		put("Relais :",    "Relais :");
+		put("Etat :",    "Stand :");
+		put("Commentaires :",    "Komment\u00E4ren");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
 	}};
 
 
@@ -388,6 +417,18 @@ public class Dico {
 		put("Vous n'avez pas tout rempli !!!!!",    "Vous n'avez pas tout rempli !!!!!");
 		put("Vous souhaitez :",    "Vous souhaitez :");
 		put("Vue",    "Vue");
+		put("Modifications Tops",    "Modifications Tops");
+		put("Temps :",    "Temps :");
+		put("Heure :",    "Heure :");
+		put("Relais :",    "Relais :");
+		put("Etat :",    "Etat :");
+		put("Commentaires :",    "Commentaires :");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
+		put("",    "");
 		put("",    "");
 	}};
 
