@@ -154,7 +154,7 @@ public class CaracteristiquesCourse extends JPanel {
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
-		Icon loginIcon2 = new ImageIcon("icones/previous.png");
+		Icon loginIcon2 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnAnnuler.setIcon(loginIcon2);
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -172,7 +172,7 @@ public class CaracteristiquesCourse extends JPanel {
 		JButton btnLancerLaCourse = new JButton(Dico.dansLedico("Lancer la course", Dico.langue));
 		btnLancerLaCourse.setContentAreaFilled(false);
 		btnLancerLaCourse.setBorderPainted(false);
-		Icon loginIcon1 = new ImageIcon("icones/lancer.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/lancer.png"));
 		btnLancerLaCourse.setIcon(loginIcon1);
 		btnLancerLaCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

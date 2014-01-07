@@ -213,7 +213,7 @@ public class VoitureSansEvent extends JPanel {
 		btnSauvegarder.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnSauvegarder.setContentAreaFilled(false);
 		btnSauvegarder.setBorderPainted(false);
-		Icon loginIcon1 = new ImageIcon("icones/save.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/save.png"));
 		btnSauvegarder.setIcon(loginIcon1);
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -274,7 +274,7 @@ public class VoitureSansEvent extends JPanel {
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
-		Icon loginIcon10 = new ImageIcon("icones/previous.png");
+		Icon loginIcon10 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnAnnuler.setIcon(loginIcon10);
 		btnAnnuler.setBounds(763, 355, 130, 74);
 		btnAnnuler.addActionListener(new ActionListener() {
@@ -296,7 +296,7 @@ public class VoitureSansEvent extends JPanel {
 		btnAjouterPilote.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnAjouterPilote.setBorderPainted(false);
 		btnAjouterPilote.setContentAreaFilled(false);
-		Icon loginIcon3 = new ImageIcon("icones/add.png");
+		Icon loginIcon3 = new ImageIcon(getClass().getResource("/icones/add.png"));
 		btnAjouterPilote.setIcon(loginIcon3);
 		btnAjouterPilote.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -345,7 +345,7 @@ public class VoitureSansEvent extends JPanel {
 		button_supprimerpilote.setFont(new Font("Dialog", Font.PLAIN, 14));
 		button_supprimerpilote.setBorderPainted(false);
 		button_supprimerpilote.setContentAreaFilled(false);
-		Icon loginIcon5 = new ImageIcon("icones/suppr.png");
+		Icon loginIcon5 = new ImageIcon(getClass().getResource("/icones/suppr.png"));
 		button_supprimerpilote.setIcon(loginIcon5);
 		button_supprimerpilote.setBounds(376, 297, 133, 29);
 		desktopPane.add(button_supprimerpilote);

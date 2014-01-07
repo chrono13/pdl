@@ -69,7 +69,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		
 		couleurCasque = new JTextField();
 		couleurCasque.setEditable(false);
-		couleurCasque.setBounds(551, 251, 270, 20);
+		couleurCasque.setBounds(551, 251, 104, 20);
 		desktopPane.add(couleurCasque);
 		couleurCasque.setColumns(10);
 					
@@ -100,7 +100,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		JButton btnAjoutermodifier = new JButton(Dico.dansLedico("Ajouter / Modifier", Dico.langue));
 		btnAjoutermodifier.setContentAreaFilled(false);
 		btnAjoutermodifier.setBorderPainted(false);
-		Icon loginIcon1 = new ImageIcon("icones/add.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/add.png"));
 		btnAjoutermodifier.setIcon(loginIcon1);
 		btnAjoutermodifier.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnAjoutermodifier.addActionListener(new ActionListener() {
@@ -147,7 +147,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		btnRetour.setContentAreaFilled(false);
 		btnRetour.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnRetour.setFont(new Font("Dialog", Font.PLAIN, 14));
-		Icon loginIcon2 = new ImageIcon("icones/previous.png");
+		Icon loginIcon2 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnRetour.setIcon(loginIcon2);
 		btnRetour.setBorderPainted(false);
 		btnRetour.addActionListener(new ActionListener() {
@@ -163,6 +163,10 @@ public class CreerPiloteSansEvent extends JPanel {
 		desktopPane.add(btnRetour);
 		
 		JButton btnColorSelect = new JButton("");
+		btnColorSelect.setContentAreaFilled(false);
+		btnColorSelect.setBorderPainted(false);
+		Icon loginIcon3 = new ImageIcon(getClass().getResource("/icones/color.png"));
+		btnColorSelect.setIcon(loginIcon3);
 		btnColorSelect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre choix des couleurs
@@ -171,7 +175,7 @@ public class CreerPiloteSansEvent extends JPanel {
 				colorie_casque = Integer.toString(couleur.getRGB());	
 			}
 		});
-		btnColorSelect.setBounds(487, 250, 42, 23);
+		btnColorSelect.setBounds(686, 242, 56, 31);
 		desktopPane.add(btnColorSelect);
 
 	}

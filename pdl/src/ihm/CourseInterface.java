@@ -52,6 +52,7 @@ public class CourseInterface extends JPanel {
 	private Timer timer;
 	private static Top tooop = null;
 	private JTextField textField_commentaire;
+	private JTextField textField;
 
 	/**
 	 * Create the panel.
@@ -307,10 +308,11 @@ public class CourseInterface extends JPanel {
 				lblCommentaire.setBounds(10, 286, 124, 14);
 				desktopPane_1.add(lblCommentaire);
 				
-				textField_commentaire = new JTextField();
-				textField_commentaire.setBounds(159, 280, 443, 20);
-				desktopPane_1.add(textField_commentaire);
-				textField_commentaire.setColumns(10);
+				final JTextField commentari = new JTextField();
+				commentari.setBounds(159, 286, 400, 20);
+				commentari.setColumns(10);
+				desktopPane_1.add(commentari);
+				
 
 				JPanel panetable = new JPanel();
 				panetable.setBounds(10, 311, 892, 190);
@@ -365,10 +367,9 @@ public class CourseInterface extends JPanel {
 							String time = chr.tops();
 							textPane_5.setText(time);
 							String comm = "";
-							System.out.println(textField_commentaire.getText());
-							if (!textField_commentaire.getText().equals("")) {
-								comm = textField_commentaire.getText();
-								textField_commentaire.repaint();
+							comm = commentari.getText();
+							if (!comm.equals("")) {
+								commentari.setText("");
 							}
 							model.addRow((new Object [] {car_name, timeManager.get_compteur() , comboBox.getSelectedItem(), time, comboBox_etat.getSelectedItem() , heure, comm}));
 							String pilotes = (String) comboBox.getSelectedItem();
@@ -478,7 +479,7 @@ public class CourseInterface extends JPanel {
 				});
 				btnExportTableur.setContentAreaFilled(false);
 				btnExportTableur.setBorderPainted(false);
-				Icon loginIcon12 = new ImageIcon("icones/tableur.png");
+				Icon loginIcon12 = new ImageIcon(getClass().getResource("/icones/tableur.png"));
 				btnExportTableur.setIcon(loginIcon12);
 				btnExportTableur.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnExportTableur.setBounds(464, 251, 202, 23);
@@ -500,7 +501,7 @@ public class CourseInterface extends JPanel {
 				});
 				btnImprimer.setContentAreaFilled(false);
 				btnImprimer.setBorderPainted(false);
-				Icon loginIcon13 = new ImageIcon("icones/print.png");
+				Icon loginIcon13 = new ImageIcon(getClass().getResource("/icones/print.png"));
 				btnImprimer.setIcon(loginIcon13);
 				btnImprimer.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnImprimer.setBounds(686, 251, 202, 23);
@@ -529,7 +530,7 @@ public class CourseInterface extends JPanel {
 				});
 				btnSupprimerTop.setContentAreaFilled(false);
 				btnSupprimerTop.setBorderPainted(false);
-				Icon loginIcon11 = new ImageIcon("icones/suppr.png");
+				Icon loginIcon11 = new ImageIcon(getClass().getResource("/icones/suppr.png"));
 				btnSupprimerTop.setIcon(loginIcon11);
 				btnSupprimerTop.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnSupprimerTop.setBounds(242, 251, 202, 23);
@@ -566,6 +567,8 @@ public class CourseInterface extends JPanel {
 		});
 		btnTopDepartPour.setBounds(344, 23, 261, 23);
 		desktopPane.add(btnTopDepartPour);
+		
+		
 	}
 
 	/**

@@ -37,18 +37,18 @@ public class Lancement extends JPanel {
 		JLabel lblBonjour = new JLabel("Bonjour");
 		lblBonjour.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBonjour.setFont(new Font("Vrinda", Font.BOLD, 35));
-		lblBonjour.setBounds(366, 60, 218, 56);
+		lblBonjour.setBounds(331, 49, 218, 56);
 		desktopPane.add(lblBonjour);
 		
 		JLabel lblVoulezvousLancerLapplication = new JLabel("Application PDL-Chrono13 ");
 		lblVoulezvousLancerLapplication.setHorizontalAlignment(SwingConstants.CENTER);
 		lblVoulezvousLancerLapplication.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
-		lblVoulezvousLancerLapplication.setBounds(229, 216, 492, 39);
+		lblVoulezvousLancerLapplication.setBounds(-35, 228, 492, 39);
 		desktopPane.add(lblVoulezvousLancerLapplication);
 		
 		JLabel lblRealiseeParKavishan = new JLabel("R\u00E9alis\u00E9 par Kavishan, Kevin, Philippe et Yann");
 		lblRealiseeParKavishan.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRealiseeParKavishan.setBounds(318, 281, 313, 14);
+		lblRealiseeParKavishan.setBounds(57, 359, 313, 14);
 		desktopPane.add(lblRealiseeParKavishan);
 		
 		
@@ -69,9 +69,14 @@ public class Lancement extends JPanel {
 				validate();
 			}
 		});
-		btnContinuer.setBounds(397, 339, 156, 56);
+		btnContinuer.setBounds(133, 463, 156, 56);
 		desktopPane.add(btnContinuer);
+		
+		JLabel course = new JLabel("");
+		Icon loginIcon2 = new ImageIcon(getClass().getResource("/icones/race.jpg"));
+		course.setIcon(loginIcon2);
+		course.setBounds(395, 194, 486, 364);
+		desktopPane.add(course);
 
 	}
-
 }

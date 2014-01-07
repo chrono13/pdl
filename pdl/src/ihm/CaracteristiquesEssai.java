@@ -175,7 +175,7 @@ public class CaracteristiquesEssai extends JPanel {
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
-		Icon loginIcon2 = new ImageIcon("icones/previous.png");
+		Icon loginIcon2 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnAnnuler.setIcon(loginIcon2);
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -193,7 +193,7 @@ public class CaracteristiquesEssai extends JPanel {
 		JButton btnValider = new JButton(Dico.dansLedico("Valider", Dico.langue));
 		btnValider.setContentAreaFilled(false);
 		btnValider.setBorderPainted(false);
-		Icon loginIcon1 = new ImageIcon("icones/valid.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/valid.png"));
 		btnValider.setIcon(loginIcon1);
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
