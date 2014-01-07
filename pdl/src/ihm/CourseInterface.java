@@ -51,6 +51,7 @@ public class CourseInterface extends JPanel {
 	private boolean lancement=true;
 	private Timer timer;
 	private static Top tooop = null;
+	private JTextField textField_commentaire;
 
 	/**
 	 * Create the panel.
@@ -302,9 +303,17 @@ public class CourseInterface extends JPanel {
 				desktopPane_4.add(textPane);
 				textPane.setText(Integer.toString(voiture.getVoiture_nbreTour_par_relai()));
 
+				JLabel lblCommentaire = new JLabel(Dico.dansLedico("Commentaires :", Dico.langue));
+				lblCommentaire.setBounds(10, 286, 124, 14);
+				desktopPane_1.add(lblCommentaire);
+				
+				textField_commentaire = new JTextField();
+				textField_commentaire.setBounds(159, 280, 443, 20);
+				desktopPane_1.add(textField_commentaire);
+				textField_commentaire.setColumns(10);
 
 				JPanel panetable = new JPanel();
-				panetable.setBounds(10, 285, 892, 208);
+				panetable.setBounds(10, 311, 892, 190);
 				//table = new JTable();
 				panetable.setLayout(new BorderLayout());
 				panetable.add(new JScrollPane(table));
@@ -355,10 +364,16 @@ public class CourseInterface extends JPanel {
 							String heure = formater.format(madate);
 							String time = chr.tops();
 							textPane_5.setText(time);
-							model.addRow((new Object [] {car_name, timeManager.get_compteur() , comboBox.getSelectedItem(), time, comboBox_etat.getSelectedItem() , heure,""}));
+							String comm = "";
+							System.out.println(textField_commentaire.getText());
+							if (!textField_commentaire.getText().equals("")) {
+								comm = textField_commentaire.getText();
+								textField_commentaire.repaint();
+							}
+							model.addRow((new Object [] {car_name, timeManager.get_compteur() , comboBox.getSelectedItem(), time, comboBox_etat.getSelectedItem() , heure, comm}));
 							String pilotes = (String) comboBox.getSelectedItem();
 							String etat = (String) comboBox_etat.getSelectedItem();
-							Top t = new Top (car_name, nb_tour, pilotes, time, etat, heure,"");
+							Top t = new Top (car_name, nb_tour, pilotes, time, etat, heure,comm);
 							session.AddTop(t);
 							timeManager.set_compteur(timeManager.get_compteur()+1);
 
@@ -519,12 +534,18 @@ public class CourseInterface extends JPanel {
 				btnSupprimerTop.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnSupprimerTop.setBounds(242, 251, 202, 23);
 				desktopPane_1.add(btnSupprimerTop);
+				
 			}
 
 		}
 
 
 
+		
+			
+		
+		
+		
 		final JButton btnTopDepartPour = new JButton(Dico.dansLedico("Top depart pour toutes les voitures", Dico.langue));
 		btnTopDepartPour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -560,5 +581,4 @@ public class CourseInterface extends JPanel {
 	public static void setTooop(Top tooops) {
 		tooop = tooops;
 	}
-
 }

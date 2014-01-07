@@ -35,6 +35,7 @@ import javax.xml.bind.Unmarshaller;
 import principal.Course;
 import principal.Essai;
 import principal.Evenement;
+import principal.SauvegarderXML;
 import principal.Voiture;
 
 /**
@@ -391,6 +392,10 @@ public class CaracteristiquesEvent extends JPanel {
 					pathname = fichier.getParent();// on recupere le chemein du fichier
 				}
 				String nomdufichier = pathname+"\\"+namefile;// on ajoute l'extension xml au fihcier
+				if (!nomdufichier.contains(".xml")){
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Choisir un fichier xml", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 				if (fichier==null){// si on clique sur annuler!
 					return;
 				}
@@ -409,8 +414,8 @@ public class CaracteristiquesEvent extends JPanel {
 						add(inter7);
 						validate();
 					}
-					catch (JAXBException e2) {
-						e2.printStackTrace();
+					catch (Exception e2) {
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Fichier incorrect", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}
@@ -499,29 +504,7 @@ public class CaracteristiquesEvent extends JPanel {
 		JButton btnSauvegarder = new JButton(Dico.dansLedico("Sauvegarder", Dico.langue));
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
-				JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
-				File fichier;
-				String namefile = "";
-				String pathname= "";
-				if (dialogue.showSaveDialog(null)==JFileChooser.APPROVE_OPTION){
-					fichier = dialogue.getSelectedFile();
-					namefile = fichier.getName();// on recupere le nom du fichier
-					pathname = fichier.getParent();// on recupere le chemein du fichier
-				}
-				String nomdufichier = pathname+"/"+namefile+".xml";// on ajoute l'extension xml au fihcier
-				if (!nomdufichier.equals("/.xml")){// verifie que lors du choix de l'emplacement si on fait annuler on arrete l'enregistrement
-					File file = new File(nomdufichier);//sauvegarde dans l'explorateur le fichier
-					JAXBContext jaxbContext;
-					try {
-						jaxbContext = JAXBContext.newInstance(Evenement.class);// on fait un xml par rapport a la classse evenement
-						Marshaller m = jaxbContext.createMarshaller();// marshaller permet de passer d'une classe a un xml
-						m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-						m.marshal(event, file);// genere le fichier de sauvegarde
-					} catch (JAXBException e1) {
-						e1.printStackTrace();
-					}
-				}
+				SauvegarderXML.sauvegarder(Evenement.class, event);
 			}
 		});// une fois sauvegarder on reste sur la page
 		btnSauvegarder.setContentAreaFilled(false);

@@ -1,4 +1,4 @@
-package principal;
+package test;
 
 import java.io.File;
 
@@ -7,6 +7,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
 import org.junit.Test;
+
+import principal.Pilote;
+import principal.Voiture;
 
 /**
  *@author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
