@@ -9,6 +9,7 @@ import javax.swing.BoxLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JColorChooser;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -28,6 +29,7 @@ public class CreerPiloteSansEvent extends JPanel {
 	private JTextField couleurCasque;
 	private JTextField imagePilote;
 	private JTextField nomPilote;
+	private String colorie_casque = null;
 	
 	private Voiture v;
 	private Pilote p;
@@ -66,6 +68,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		desktopPane.add(lblImageDuPilote);
 		
 		couleurCasque = new JTextField();
+		couleurCasque.setEditable(false);
 		couleurCasque.setBounds(551, 251, 270, 20);
 		desktopPane.add(couleurCasque);
 		couleurCasque.setColumns(10);
@@ -84,7 +87,10 @@ public class CreerPiloteSansEvent extends JPanel {
 			verrou = true;
 			nomPilote.setText(p.getPilote_nomprenom());
 			imagePilote.setText(p.getPilote_lien_sur_img());
-			couleurCasque.setText(p.getPilote_couleur());
+			colorie_casque = p.getPilote_couleur();
+		}
+		if (colorie_casque!= null) {
+			couleurCasque.setBackground(Color.decode(colorie_casque));
 		}
 		
 		/* BOUTONS DE LA FENETRE */
@@ -105,8 +111,8 @@ public class CreerPiloteSansEvent extends JPanel {
 				if (verrou) {// si le pilote existait déja est que le modifie alors on supprime son ancien item afin d'en refaire un nouveau
 					v.voiture_remove_pilote(p);
 				}
-				if (nomPilote == null || nomPilote.getText().equals("")  || couleurCasque.getText().equals("") 
-						|| couleurCasque == null || imagePilote == null || imagePilote.getText().equals("")) {
+				if (nomPilote == null || nomPilote.getText().equals("")  
+						|| colorie_casque == null || imagePilote == null || imagePilote.getText().equals("")) {
 					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément chez le pilote alors on avertit le client
 				}
@@ -115,8 +121,8 @@ public class CreerPiloteSansEvent extends JPanel {
 					nom = nomPilote.getText();
 					p.setPilote_nomprenom(nom);
 				}
-				if (couleurCasque != null && !couleurCasque.getText().equals("")) {
-					casque = couleurCasque.getText();
+				if (colorie_casque != null ) {
+					casque = colorie_casque;
 					p.setPilote_couleur(casque);
 				}
 				if (imagePilote != null && !imagePilote.getText().equals("")) {
@@ -155,6 +161,18 @@ public class CreerPiloteSansEvent extends JPanel {
 		});
 		btnRetour.setBounds(584, 490, 150, 45);
 		desktopPane.add(btnRetour);
+		
+		JButton btnColorSelect = new JButton("");
+		btnColorSelect.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre choix des couleurs
+				Color couleur = JColorChooser.showDialog (null, "couleur du casque", Color.WHITE);
+				couleurCasque.setBackground(couleur);// on affecte la couleur choisit comme background du textarea
+				colorie_casque = Integer.toString(couleur.getRGB());	
+			}
+		});
+		btnColorSelect.setBounds(487, 250, 42, 23);
+		desktopPane.add(btnColorSelect);
 
 	}
 }

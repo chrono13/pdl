@@ -2,12 +2,15 @@ package ihm;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.BoxLayout;
 import javax.swing.Icon;
@@ -22,6 +25,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -44,6 +48,7 @@ public class CaracteristiquesEvent extends JPanel {
 	private Evenement event = null;
 	private JTable table_voiture;
 	private JTable table_essais;
+	private List<Integer> ma_liste= new ArrayList<Integer>();
 	/**
 	 * Create the panel.
 	 */
@@ -158,6 +163,11 @@ public class CaracteristiquesEvent extends JPanel {
 				return false ; 
 			}
 		};
+
+
+
+
+
 		model.addColumn(Dico.dansLedico("Nom et prenom :", Dico.langue));
 		//model.setColumnIdentifiers(entete);
 		if (!event.listVoitureVide()) {
@@ -166,10 +176,32 @@ public class CaracteristiquesEvent extends JPanel {
 				Voiture v1 = it.next();
 				String nom = v1.getVoiture_num();
 				model.addRow(new Object [] {nom});
+				if (v1.isVoiture_active()) {
+					ma_liste.add(model.getRowCount()-1);
+				}
+			}
+		}
+
+
+		class MonCellRenderers extends DefaultTableCellRenderer {// specification de la couleur de fond lorsqu'une voiture est active ou non
+
+			public Component getTableCellRendererComponent(JTable table, Object value,
+				boolean isSelected, boolean hasFocus, int row, int column) {
+				Component cell = super.getTableCellRendererComponent(table, value,
+						isSelected, hasFocus, row, column);// pour une cellule donnee
+					
+					if (ma_liste.contains(row)){// si la ligne est contenu dans la liste des indices des voitures active alors couleur vert
+						cell.setBackground(Color.GREEN);
+					}
+					else {// sinon couleur de fond rouge 
+						cell.setBackground(Color.RED);
+					}					
+				return cell;
 			}
 		}
 
 		table_voiture.setModel(model);
+		table_voiture.setDefaultRenderer(Object.class, new MonCellRenderers());
 		//desktopPane.add(table_voiture);
 
 
@@ -347,7 +379,7 @@ public class CaracteristiquesEvent extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				//chargement event
 				// création de la boîte de dialogue
-				
+
 				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
 				JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
 				File fichier=null;
@@ -365,7 +397,7 @@ public class CaracteristiquesEvent extends JPanel {
 				// récupération du fichier sélectionné
 				else {
 					try {	
-						
+
 						File file = new File(nomdufichier);
 						JAXBContext jaxbContext = JAXBContext.newInstance(Voiture.class);
 						Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -425,7 +457,7 @@ public class CaracteristiquesEvent extends JPanel {
 						add(inter7);
 						validate();
 					}
-					
+
 				}
 			}
 		});
