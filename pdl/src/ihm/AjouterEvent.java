@@ -36,32 +36,32 @@ public class AjouterEvent extends JPanel {
 	public AjouterEvent(Evenement e) {
 		this.event=e;
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-		
+
 		final JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
-		
+
 		JLabel lblAjouterEvent = new JLabel(Dico.dansLedico("Ajouter un evenement", Dico.langue));
 		lblAjouterEvent.setFont(new Font("Vrinda", Font.BOLD, 35));
 		lblAjouterEvent.setBounds(274, 0, 751, 44);
 		desktopPane.add(lblAjouterEvent);
-		
+
 		JLabel lblNomDeLa = new JLabel(Dico.dansLedico("Nom de la course :", Dico.langue));
 		lblNomDeLa.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNomDeLa.setBounds(10, 123, 266, 14);
 		desktopPane.add(lblNomDeLa);
-	
+
 		JLabel lblNomDuCircuit = new JLabel(Dico.dansLedico("Nom du circuit :", Dico.langue));
 		lblNomDuCircuit.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNomDuCircuit.setBounds(10, 236, 266, 14);
 		desktopPane.add(lblNomDuCircuit);
-		
+
 		JLabel lblLongueurDuCircuit = new JLabel(Dico.dansLedico("Longueur du circuit (m) :", Dico.langue));
 		lblLongueurDuCircuit.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblLongueurDuCircuit.setBounds(10, 337, 266, 28);
 		desktopPane.add(lblLongueurDuCircuit);
-		
-		
+
+
 		nomCourse = new JTextField();
 		nomCourse.setBounds(310, 123, 330, 28);
 		desktopPane.add(nomCourse);
@@ -69,7 +69,7 @@ public class AjouterEvent extends JPanel {
 		if (!event.getEven_nom().equals("")){
 			nomCourse.setText(event.getEven_nom());
 		}
-		
+
 		longueurCircuit = new JTextField();
 		longueurCircuit.setColumns(10);
 		longueurCircuit.setBounds(310, 338, 330, 28);
@@ -77,7 +77,7 @@ public class AjouterEvent extends JPanel {
 		if (!(event.getEven_longueur_circuit()==0)){
 			longueurCircuit.setText(Integer.toString(event.getEven_longueur_circuit()));
 		}
-		
+
 		nomCircuit = new JTextField();
 		nomCircuit.setColumns(10);
 		nomCircuit.setBounds(310, 230, 330, 28);
@@ -85,7 +85,7 @@ public class AjouterEvent extends JPanel {
 		if (!event.getEven_nom_circuit().equals("")){
 			nomCircuit.setText(event.getEven_nom_circuit());
 		}
-		
+
 		JButton btnSuivant = new JButton(Dico.dansLedico("Suivant", Dico.langue));
 		btnSuivant.setContentAreaFilled(false);
 		btnSuivant.setBorderPainted(false);
@@ -103,8 +103,8 @@ public class AjouterEvent extends JPanel {
 				else {
 					try
 					{
-					     int i=Integer.decode(longueurCircuit.getText());// verifie si la saisie de la longueur est un entier
-					 
+						int i=Integer.decode(longueurCircuit.getText());// verifie si la saisie de la longueur est un entier
+
 					}catch(NumberFormatException  e)
 					{
 						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("La longueur n'est pas numerique !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
@@ -117,16 +117,15 @@ public class AjouterEvent extends JPanel {
 					CaracteristiquesEvent inter4 = new CaracteristiquesEvent(event);
 					add(inter4);
 					validate();
-					//icic est kavishan beau gosse
 				}
-				
+
 			}
 		});
 		btnSuivant.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnSuivant.setBounds(513, 441, 175, 44);
 		desktopPane.add(btnSuivant);
-		
-		
+
+
 		//bouton retour
 		JButton btnRetour = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnRetour.setContentAreaFilled(false);
