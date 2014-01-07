@@ -57,8 +57,8 @@ public class Lancement extends JPanel {
 		btnContinuer.setContentAreaFilled(false);
 		btnContinuer.setBorderPainted(false);
 		btnContinuer.setContentAreaFilled(false);
-		btnContinuer.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/valid.png"));
+		btnContinuer.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/flag2.png"));
 		btnContinuer.setIcon(loginIcon1);
 		btnContinuer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -69,7 +69,7 @@ public class Lancement extends JPanel {
 				validate();
 			}
 		});
-		btnContinuer.setBounds(133, 463, 156, 56);
+		btnContinuer.setBounds(78, 462, 218, 56);
 		desktopPane.add(btnContinuer);
 		
 		JLabel course = new JLabel("");
