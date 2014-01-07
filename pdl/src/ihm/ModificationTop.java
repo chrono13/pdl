@@ -16,9 +16,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 import principal.Top;
 
@@ -28,15 +30,16 @@ public class ModificationTop extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private Top tops = null;
-
+	private DefaultTableModel mod = null;
 
 
 	/**
 	 * Create the frame.
 	 * @param toup 
 	 */
-	public ModificationTop(Top toup) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public ModificationTop(Top toup, DefaultTableModel model, final int ligne, final JTable table) {
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.mod = model;
 		setBounds(100, 100, 636, 430);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -132,6 +135,21 @@ public class ModificationTop extends JFrame {
 				tops.setTop_heure_passage(textField_1.getText());
 				tops.setTop_temps_tour(textField.getText());
 				CourseInterface.setTooop(tops);
+				
+				
+				
+				
+				mod.setValueAt(tops.getTop_comment(), ligne, 6);
+				mod.setValueAt(tops.getTop_etat(), ligne, 4 );	
+				mod.setValueAt(tops.getTop_heure_passage(), ligne, 5);
+				mod.setValueAt(tops.getTop_temps_tour(), ligne, 3);	
+				mod.fireTableCellUpdated(ligne, 6);
+				mod.fireTableCellUpdated(ligne, 5);
+				mod.fireTableCellUpdated(ligne, 4);
+				mod.fireTableCellUpdated(ligne, 3);
+				
+				CourseInterface.updatetable(mod, table);
+				
 				((Window) contentPane.getTopLevelAncestor()).dispose();
 			
 			}
@@ -145,4 +163,6 @@ public class ModificationTop extends JFrame {
 		desktopPane.add(btnValider);
 
 	}
+	
+	
 }

@@ -44,10 +44,11 @@ public class Language extends JPanel {
 		comboBox.setBounds(367, 194, 216, 54);
 		desktopPane.add(comboBox);
 		comboBox.addItem("Fran\u00E7ais");
-		comboBox.addItem("English");
 		comboBox.addItem("Deutsch");
+		comboBox.addItem("English");
+		comboBox.addItem("Espa\u00F1ol");
 		comboBox.addItem("Italiano");
-		comboBox.addItem("Espanol");
+		
 		
 		/* BOUTONS DE LA FENETRE */
 		

@@ -201,7 +201,7 @@ public class Chrono extends JPanel implements Runnable{
         	runner.start();
         }
         else {
-        	System.out.println(time);// on recupere le temps entre deux tops
+        	//System.out.println(time);// on recupere le temps entre deux tops
         	on = false;
         	runner = null;
         	h = m = s = c = 0;
@@ -214,7 +214,7 @@ public class Chrono extends JPanel implements Runnable{
 
 	public void stop() {
 		// TODO Auto-generated method stub
-		System.out.println(time);// on recupere le temps entre deux tops
+		//System.out.println(time);// on recupere le temps entre deux tops
     	on = false;
     	runner = null;
     	h = m = s = c = 0;

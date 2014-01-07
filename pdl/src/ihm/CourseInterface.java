@@ -52,6 +52,7 @@ public class CourseInterface extends JPanel {
 	private Timer timer;
 	private static Top tooop = null;
 	private JTextField textField_commentaire;
+	private JTextField textField;
 
 	/**
 	 * Create the panel.
@@ -307,10 +308,11 @@ public class CourseInterface extends JPanel {
 				lblCommentaire.setBounds(10, 286, 124, 14);
 				desktopPane_1.add(lblCommentaire);
 				
-				textField_commentaire = new JTextField();
-				textField_commentaire.setBounds(159, 280, 443, 20);
-				desktopPane_1.add(textField_commentaire);
-				textField_commentaire.setColumns(10);
+				final JTextField commentari = new JTextField();
+				commentari.setBounds(159, 286, 400, 20);
+				commentari.setColumns(10);
+				desktopPane_1.add(commentari);
+				
 
 				JPanel panetable = new JPanel();
 				panetable.setBounds(10, 311, 892, 190);
@@ -365,10 +367,9 @@ public class CourseInterface extends JPanel {
 							String time = chr.tops();
 							textPane_5.setText(time);
 							String comm = "";
-							System.out.println(textField_commentaire.getText());
-							if (!textField_commentaire.getText().equals("")) {
-								comm = textField_commentaire.getText();
-								textField_commentaire.repaint();
+							comm = commentari.getText();
+							if (!comm.equals("")) {
+								commentari.setText("");
 							}
 							model.addRow((new Object [] {car_name, timeManager.get_compteur() , comboBox.getSelectedItem(), time, comboBox_etat.getSelectedItem() , heure, comm}));
 							String pilotes = (String) comboBox.getSelectedItem();
@@ -393,7 +394,9 @@ public class CourseInterface extends JPanel {
 
 
 				table.setModel(model);
-/*
+
+				
+				
 				JButton btnModifierTop = new JButton(Dico.dansLedico("Modifier TOP", Dico.langue));
 				btnModifierTop.setContentAreaFilled(false);
 				btnModifierTop.setBorderPainted(false);
@@ -415,8 +418,11 @@ public class CourseInterface extends JPanel {
 								i++;
 							}
 							
-							modified = new ModificationTop(toup);
+							modified = new ModificationTop(toup, model, ligne, table);
 							modified.setVisible(true);
+							
+							/*
+							
 							int cp = 0;
 							while (modified.isActive()) {
 								
@@ -432,13 +438,13 @@ public class CourseInterface extends JPanel {
 								model.fireTableCellUpdated(ligne, 4);
 								model.fireTableCellUpdated(ligne, 3);
 								tooop = null;
-							}
+							}*/
 						}
 					}
 				});
 				btnModifierTop.setBounds(20, 251, 202, 23);
 				desktopPane_1.add(btnModifierTop);
-*/
+
 
 				JButton btnExportTableur = new JButton(Dico.dansLedico("Export tableur", Dico.langue));
 				btnExportTableur.addActionListener(new ActionListener() {
@@ -566,6 +572,8 @@ public class CourseInterface extends JPanel {
 		});
 		btnTopDepartPour.setBounds(344, 23, 261, 23);
 		desktopPane.add(btnTopDepartPour);
+		
+		
 	}
 
 	/**
@@ -580,5 +588,9 @@ public class CourseInterface extends JPanel {
 	 */
 	public static void setTooop(Top tooops) {
 		tooop = tooops;
+	}
+	
+	public static void updatetable(DefaultTableModel model, JTable table) {
+		table.setModel(model);
 	}
 }
