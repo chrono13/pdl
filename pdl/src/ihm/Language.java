@@ -46,7 +46,7 @@ public class Language extends JPanel {
 		comboBox.addItem("Fran\u00E7ais");
 		comboBox.addItem("Deutsch");
 		comboBox.addItem("English");
-		comboBox.addItem("Espanol");
+		comboBox.addItem("Espa\u00F1ol");
 		comboBox.addItem("Italiano");
 		
 		
