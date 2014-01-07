@@ -47,7 +47,7 @@ public class FirstFenetre extends JPanel {
 		JButton btnCreerEvent = new JButton(Dico.dansLedico("Creer un evenement", Dico.langue));
 		btnCreerEvent.setContentAreaFilled(false);
 		btnCreerEvent.setBorderPainted(false);
-		Icon loginIcon2 = new ImageIcon("icones/flag.png");
+		Icon loginIcon2 = new ImageIcon(getClass().getResource("/icones/flag.png"));
 		btnCreerEvent.setIcon(loginIcon2);
 		btnCreerEvent.setVerticalTextPosition(SwingConstants.BOTTOM);
 		btnCreerEvent.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -69,7 +69,7 @@ public class FirstFenetre extends JPanel {
 		JButton btnCreerVoiture = new JButton(Dico.dansLedico("Creer une voiture", Dico.langue));
 		btnCreerVoiture.setContentAreaFilled(false);
 		btnCreerVoiture.setBorderPainted(false);
-		Icon loginIcon3 = new ImageIcon("icones/car.png");
+		Icon loginIcon3 = new ImageIcon(getClass().getResource("/icones/car.png"));
 		btnCreerVoiture.setIcon(loginIcon3);
 		btnCreerVoiture.setVerticalTextPosition(SwingConstants.BOTTOM);
 		btnCreerVoiture.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -92,7 +92,7 @@ public class FirstFenetre extends JPanel {
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
-		Icon loginIcon1 = new ImageIcon("icones/previous.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnAnnuler.setIcon(loginIcon1);
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAnnuler.addActionListener(new ActionListener() {

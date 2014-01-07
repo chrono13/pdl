@@ -90,7 +90,7 @@ public class AjouterEvent extends JPanel {
 		btnSuivant.setContentAreaFilled(false);
 		btnSuivant.setBorderPainted(false);
 		btnSuivant.setHorizontalTextPosition(SwingConstants.LEFT);;
-		Icon loginIcon1 = new ImageIcon("icones/next.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/next.png"));
 		btnSuivant.setIcon(loginIcon1);
 		btnSuivant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -131,7 +131,7 @@ public class AjouterEvent extends JPanel {
 		JButton btnRetour = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnRetour.setContentAreaFilled(false);
 		btnRetour.setBorderPainted(false);
-		Icon loginIcon10 = new ImageIcon("icones/previous.png");
+		Icon loginIcon10 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnRetour.setIcon(loginIcon10);
 		btnRetour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

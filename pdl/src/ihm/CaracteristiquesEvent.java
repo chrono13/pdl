@@ -210,7 +210,7 @@ public class CaracteristiquesEvent extends JPanel {
 		JButton btnAjouterVoiture = new JButton(Dico.dansLedico("", Dico.langue));//Ajouter
 		btnAjouterVoiture.setContentAreaFilled(false);
 		btnAjouterVoiture.setBorderPainted(false);
-		Icon loginIcon1 = new ImageIcon("icones/add.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/add.png"));
 		btnAjouterVoiture.setIcon(loginIcon1);
 		btnAjouterVoiture.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjouterVoiture.addActionListener(new ActionListener() {
@@ -263,7 +263,7 @@ public class CaracteristiquesEvent extends JPanel {
 		btnSupprimer.setContentAreaFilled(false);
 		btnSupprimer.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnSupprimer.setBorderPainted(false);
-		Icon loginIcon2 = new ImageIcon("icones/suppr.png");
+		Icon loginIcon2 = new ImageIcon(getClass().getResource("/icones/suppr.png"));
 		btnSupprimer.setIcon(loginIcon2);
 		btnSupprimer.setBounds(207, 199, 148, 29);
 		desktopPane.add(btnSupprimer);
@@ -298,7 +298,7 @@ public class CaracteristiquesEvent extends JPanel {
 		JButton btnAjouterEssai = new JButton(Dico.dansLedico("", Dico.langue));//Ajouter
 		btnAjouterEssai.setContentAreaFilled(false);
 		btnAjouterEssai.setBorderPainted(false);
-		Icon loginIcon3 = new ImageIcon("icones/add.png");
+		Icon loginIcon3 = new ImageIcon(getClass().getResource("/icones/add.png"));
 		btnAjouterEssai.setIcon(loginIcon3);
 		btnAjouterEssai.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -347,7 +347,7 @@ public class CaracteristiquesEvent extends JPanel {
 			}
 		});
 		btnSupprimerEssai.setContentAreaFilled(false);
-		Icon loginIcon4 = new ImageIcon("icones/suppr.png");
+		Icon loginIcon4 = new ImageIcon(getClass().getResource("/icones/suppr.png"));
 		btnSupprimerEssai.setIcon(loginIcon4);
 		btnSupprimerEssai.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnSupprimerEssai.setBorderPainted(false);
@@ -369,7 +369,7 @@ public class CaracteristiquesEvent extends JPanel {
 		btnEdit.setContentAreaFilled(false);
 		btnEdit.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnEdit.setBorderPainted(false);
-		Icon loginIcon5 = new ImageIcon("icones/edit.png");
+		Icon loginIcon5 = new ImageIcon(getClass().getResource("/icones/edit.png"));
 		btnEdit.setIcon(loginIcon5);
 		btnEdit.setBounds(716, 92, 148, 29);
 		desktopPane.add(btnEdit);
@@ -422,7 +422,7 @@ public class CaracteristiquesEvent extends JPanel {
 		});
 		btnImporterVoiture.setContentAreaFilled(false);
 		btnImporterVoiture.setBorderPainted(false);
-		Icon loginIcon6 = new ImageIcon("icones/import.png");
+		Icon loginIcon6 = new ImageIcon(getClass().getResource("/icones/import.png"));
 		btnImporterVoiture.setIcon(loginIcon6);
 		btnImporterVoiture.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnImporterVoiture.setBounds(61, 494, 229, 49);
@@ -433,7 +433,7 @@ public class CaracteristiquesEvent extends JPanel {
 		JButton btnLancerLessai = new JButton(Dico.dansLedico("Lancer l'essai", Dico.langue));
 		btnLancerLessai.setContentAreaFilled(false);
 		btnLancerLessai.setBorderPainted(false);
-		Icon loginIcon7 = new ImageIcon("icones/lancerEssai.png");
+		Icon loginIcon7 = new ImageIcon(getClass().getResource("/icones/lancerEssai.png"));
 		btnLancerLessai.setIcon(loginIcon7);
 		btnLancerLessai.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -476,7 +476,7 @@ public class CaracteristiquesEvent extends JPanel {
 		JButton btnLancerLaCourse = new JButton(Dico.dansLedico("Lancer la course", Dico.langue));
 		btnLancerLaCourse.setContentAreaFilled(false);
 		btnLancerLaCourse.setBorderPainted(false);
-		Icon loginIcon8 = new ImageIcon("icones/lancer.png");
+		Icon loginIcon8 = new ImageIcon(getClass().getResource("/icones/lancer.png"));
 		btnLancerLaCourse.setIcon(loginIcon8);
 		btnLancerLaCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -509,7 +509,7 @@ public class CaracteristiquesEvent extends JPanel {
 		});// une fois sauvegarder on reste sur la page
 		btnSauvegarder.setContentAreaFilled(false);
 		btnSauvegarder.setBorderPainted(false);
-		Icon loginIcon9 = new ImageIcon("icones/save.png");
+		Icon loginIcon9 = new ImageIcon(getClass().getResource("/icones/save.png"));
 		btnSauvegarder.setIcon(loginIcon9);
 		btnSauvegarder.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnSauvegarder.setBounds(740, 305, 173, 44);
@@ -520,7 +520,7 @@ public class CaracteristiquesEvent extends JPanel {
 		JButton btnRetour = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnRetour.setContentAreaFilled(false);
 		btnRetour.setBorderPainted(false);
-		Icon loginIcon10 = new ImageIcon("icones/previous.png");
+		Icon loginIcon10 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnRetour.setIcon(loginIcon10);
 		btnRetour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

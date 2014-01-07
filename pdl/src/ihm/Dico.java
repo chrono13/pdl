@@ -47,7 +47,7 @@ public class Dico {
 		put("Caracteristiques de l'evenement",    "Features of the event");
 		put("Caracteristiques",    "Features");
 		put("Charger un evenement",    "Load an event");
-		put("Choisir un fichier xml", "");
+		put("Choisir un fichier xml", "Choose an xml file");
 		put("Charger une course",    "Load a race");
 		put("Choisir au moins un essai a lancer",     "Select at least one test to run");
 		put("Choix de la langue",    "Choose your language");
@@ -455,10 +455,9 @@ public class Dico {
 		put("Caracteristiques de l'evenement",    "Caracter\u00EDsticas del hecho");
 		put("Caracteristiques",    "Caracter\u00EDsticas");
 		put("Charger un evenement",    "Cargar un evento");
-		put("Choisir un fichier xml", "");
 		put("Charger une course",    "Cargar una carrera");
-		put("Choisir un fichier xml", "");
 		put("Choisir au moins un essai a lancer",    "Elija por lo menos una medida para comenzar");
+		put("Choisir un fichier xml", "Elija un archivo xml");
 		put("Choix de la langue",    "Selecci\u00F3n del idioma");
 		put("Classement",    "Clasificaci\u00F3n");
 		put("Commentaires :",    "Comentario :");
@@ -591,7 +590,7 @@ public class Dico {
 		put("Caracteristiques de l'essai",    "Caract\u00E9ristiques de l'essai");
 		put("Caracteristiques de l'evenement",    "Caract\u00E9ristiques de l'\u00E9v\u00E9nement");
 		put("Caracteristiques",    "Caract\u00E9ristiques");
-		put("Charger un evenement",    "Charger un \u009Ev\u009Enement");
+		put("Charger un evenement",    "Charger un \u00E9v\u00E9nement");
 		put("Choisir un fichier xml", "");
 		put("Charger une course",    "Cargar una carrera");
 		put("Choisir au moins un essai a lancer",    "Choisir au moins un essai a lancer");
@@ -615,9 +614,8 @@ public class Dico {
 		put("Etat :",    "Etat :");
 		put("Export Tableur",    "Export Tableur");
 		put("Fichier",    "Fichier");
-		put("Fichier incorrect", "");
+		put("Fichier incorrect", "Fichier incorrect");
 		put("Francais",    "Fran\u00E7ais");
-		put("Gestion de la course",    "Gestion de la course");
 		put("Gestion de la course",    "Gestion de la course");
 		put("Heure :",    "Heure :");
 		put("Heure actuelle",    "Heure actuelle");

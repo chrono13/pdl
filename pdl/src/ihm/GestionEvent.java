@@ -51,7 +51,7 @@ public class GestionEvent extends JPanel {
 		JButton btnAjouterEvent = new JButton(Dico.dansLedico("Ajouter un evenement", Dico.langue));
 		btnAjouterEvent.setContentAreaFilled(false);
 		btnAjouterEvent.setBorderPainted(false);
-		Icon loginIcon1 = new ImageIcon("icones/add.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/add.png"));
 		btnAjouterEvent.setIcon(loginIcon1);
 		btnAjouterEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAjouterEvent.addActionListener(new ActionListener() {
@@ -74,7 +74,7 @@ public class GestionEvent extends JPanel {
 		JButton btnChargerEvent = new JButton(Dico.dansLedico("Charger un evenement", Dico.langue));
 		btnChargerEvent.setContentAreaFilled(false);
 		btnChargerEvent.setBorderPainted(false);
-		Icon loginIcon6 = new ImageIcon("icones/import.png");
+		Icon loginIcon6 = new ImageIcon(getClass().getResource("/icones/import.png"));
 		btnChargerEvent.setIcon(loginIcon6);
 		btnChargerEvent.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnChargerEvent.addActionListener(new ActionListener() {
@@ -128,7 +128,7 @@ public class GestionEvent extends JPanel {
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
-		Icon loginIcon10 = new ImageIcon("icones/previous.png");
+		Icon loginIcon10 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnAnnuler.setIcon(loginIcon10);
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAnnuler.addActionListener(new ActionListener() {
