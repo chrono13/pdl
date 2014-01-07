@@ -722,7 +722,7 @@ public class Dico {
 		else if (langue == "Italiano") {
 			resultat = dico_italien.get(base);
 		}
-		else if (langue == "Espanol") {
+		else if (langue == "Espa\u00F1ol") {
 			resultat = dico_espagnol.get(base);
 		}
 		else {
@@ -743,7 +743,7 @@ public class Dico {
 			JComponent.setDefaultLocale(Locale.GERMAN);
 		}
 		
-		else if (langue == "Espanol") {
+		else if (langue == "Espa\u00F1ol") {
 			Locale.setDefault(new Locale("es", "ES"));
 			UIManager.getDefaults().setDefaultLocale(new Locale("es", "ES"));
 			JComponent.setDefaultLocale(new Locale("es", "ES"));
