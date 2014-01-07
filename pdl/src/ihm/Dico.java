@@ -19,7 +19,7 @@ public class Dico {
 	public Dico (){
 
 	}
-	public String getlangue() {
+	public static String getlangue() {
 		return langue;
 	}
 

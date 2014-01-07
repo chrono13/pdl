@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -33,7 +34,7 @@ public class GestionEvent extends JPanel {
 	public GestionEvent() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
-		JDesktopPane desktopPane = new JDesktopPane();
+		final JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(new Color(240, 255, 255));
 		add(desktopPane);
 		
@@ -90,6 +91,10 @@ public class GestionEvent extends JPanel {
 					pathname = fichier.getParent();// on recupere le chemein du fichier
 				}
 				String nomdufichier = pathname+"\\"+namefile;// on ajoute l'extension xml au fihcier
+				if (!nomdufichier.contains(".xml")){
+					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Choisir un fichier xml", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 				if (fichier==null){// si on clique sur annuler!
 					return;
 				}
@@ -107,8 +112,8 @@ public class GestionEvent extends JPanel {
 						add(inter7);
 						validate();
 					}
-					catch (JAXBException e2) {
-						e2.printStackTrace();
+					catch (Exception e2) {
+						JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Fichier incorrect", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}
