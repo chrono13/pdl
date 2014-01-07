@@ -89,7 +89,7 @@ public class CreerPiloteSansEvent extends JPanel {
 			imagePilote.setText(p.getPilote_lien_sur_img());
 			colorie_casque = p.getPilote_couleur();
 		}
-		if (colorie_casque!= null) {
+		if (colorie_casque!= null && !colorie_casque.equals("") ) {
 			couleurCasque.setBackground(Color.decode(colorie_casque));
 		}
 		
@@ -121,7 +121,7 @@ public class CreerPiloteSansEvent extends JPanel {
 					nom = nomPilote.getText();
 					p.setPilote_nomprenom(nom);
 				}
-				if (colorie_casque != null ) {
+				if (colorie_casque != null && !colorie_casque.equals("") ) {
 					casque = colorie_casque;
 					p.setPilote_couleur(casque);
 				}

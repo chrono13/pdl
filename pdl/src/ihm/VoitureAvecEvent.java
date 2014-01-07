@@ -14,6 +14,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
@@ -48,6 +49,7 @@ public class VoitureAvecEvent extends JPanel {
 	private Voiture v = null;
 	private Evenement event = null;
 	private boolean verrou= false;
+	private String colorie_casque = null;
 	/**
 	 * Create the panel.
 	 */
@@ -131,6 +133,7 @@ public class VoitureAvecEvent extends JPanel {
 		numVoiture.setColumns(10);
 
 		couleurVoiture = new JTextField();
+		couleurVoiture.setEditable(false);
 		couleurVoiture.setBounds(568, 68, 290, 20);
 		desktopPane.add(couleurVoiture);
 		couleurVoiture.setColumns(10);
@@ -152,13 +155,16 @@ public class VoitureAvecEvent extends JPanel {
 
 		if (v!=null) {
 			numVoiture.setText(v.getVoiture_num());
-			couleurVoiture.setText(v.getVoiture_couleur());
+			colorie_casque = v.getVoiture_couleur();
 			imageVoiture.setText(v.getVoiture_lien_img());
 			nbTours.setText(Integer.toString(v.getVoiture_nbreTour_par_relai()));
 			textField_4.setText(v.getVoiture_temps_estime_partour());
 			verrou = true;
 		}
-
+		if (!colorie_casque.equals("") && colorie_casque!= null) {
+			couleurVoiture.setBackground(Color.decode(colorie_casque));// on affecte la couleur choisit comme background du textarea
+		}
+		
 		
 		JPanel panetable = new JPanel();
 		panetable.setBounds(10, 328, 483, 255);
@@ -202,8 +208,8 @@ public class VoitureAvecEvent extends JPanel {
 		btnSauvegarder.setIcon(loginIcon1);
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (numVoiture == null || numVoiture.getText().equals("")  || couleurVoiture.getText().equals("") 
-						|| couleurVoiture == null || imageVoiture == null || imageVoiture.getText().equals("")
+				if (numVoiture == null || numVoiture.getText().equals("")  || colorie_casque.equals("") 
+						|| colorie_casque == null || imageVoiture == null || imageVoiture.getText().equals("")
 						|| nbTours == null || nbTours.getText().equals("0") || textField_4== null || textField_4.getText().equals(""))
 
 				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
@@ -213,7 +219,7 @@ public class VoitureAvecEvent extends JPanel {
 				else {
 					// fixation des informations de la voiture avant la sauvegarde
 					v.setVoiture_active(chckbxVoitureActive.isSelected());
-					v.setVoiture_couleur(couleurVoiture.getText());
+					v.setVoiture_couleur(colorie_casque);
 					v.setVoiture_lien_img(imageVoiture.getText());
 					v.setVoiture_nbreTour_par_relai(Integer.parseInt(nbTours.getText()));
 					v.setVoiture_num(numVoiture.getText());
@@ -286,8 +292,8 @@ public class VoitureAvecEvent extends JPanel {
 				if (v.listPiloteVide()){// on informe que la voiture n'as pas de pilotes
 					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez aucun pilote", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 				}
-				if (numVoiture == null || numVoiture.getText().equals("")  || couleurVoiture.getText().equals("") 
-						|| couleurVoiture == null || imageVoiture == null || imageVoiture.getText().equals("")
+				if (numVoiture == null || numVoiture.getText().equals("") || colorie_casque.equals("")  
+						|| colorie_casque == null || imageVoiture == null || imageVoiture.getText().equals("")
 						|| nbTours == null || nbTours.getText().equals("0") || textField_4== null || textField_4.getText().equals(""))
 
 				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
@@ -320,7 +326,7 @@ public class VoitureAvecEvent extends JPanel {
 						}
 					}
 					v.setVoiture_active(chckbxVoitureActive.isSelected());
-					v.setVoiture_couleur(couleurVoiture.getText());
+					v.setVoiture_couleur(colorie_casque);
 					v.setVoiture_lien_img(imageVoiture.getText());
 					v.setVoiture_nbreTour_par_relai(Integer.parseInt(nbTours.getText()));
 					v.setVoiture_num(numVoiture.getText());
@@ -369,23 +375,23 @@ public class VoitureAvecEvent extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				Pilote pil = new Pilote();
 				String nom ="";
-				if (!numVoiture.getText().equals("")) {
+				if (!numVoiture.getText().equals("") && numVoiture!= null) {
 					nom = numVoiture.getText();
 					v.setVoiture_num(nom);
 				}
-				if (!couleurVoiture.getText().equals("")) {
-					String field1 = couleurVoiture.getText();
+				if (colorie_casque != null && !colorie_casque.equals("") ) {
+					String field1 = colorie_casque;
 					v.setVoiture_couleur(field1);
 				}
-				if (!imageVoiture.getText().equals("")) {
+				if (!imageVoiture.getText().equals("") && imageVoiture!=null) {
 					String field2 = imageVoiture.getText();
 					v.setVoiture_lien_img(field2);
 				}
-				if (!nbTours.getText().equals("")) {
+				if (!nbTours.getText().equals("") && nbTours != null) {
 					int field3 = Integer.parseInt(nbTours.getText());
 					v.setVoiture_nbreTour_par_relai(field3);
 				}
-				if (!textField_4.getText().equals("")) {
+				if (!textField_4.getText().equals("") && textField_4 != null) {
 					String fiel4 = textField_4.getText();
 					v.setVoiture_temps_estime_partour(fiel4);;
 				}
@@ -437,23 +443,23 @@ public class VoitureAvecEvent extends JPanel {
 		btnModifier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nom ="";
-				if (!numVoiture.getText().equals("")) {
+				if (!numVoiture.getText().equals("") && numVoiture!= null) {
 					nom = numVoiture.getText();
 					v.setVoiture_num(nom);
 				}
-				if (!couleurVoiture.getText().equals("")) {
-					String field1 = couleurVoiture.getText();
+				if (colorie_casque!= null && !colorie_casque.equals("") ) {
+					String field1 = colorie_casque;
 					v.setVoiture_couleur(field1);
 				}
-				if (!imageVoiture.getText().equals("")) {
+				if (!imageVoiture.getText().equals("") && imageVoiture != null) {
 					String field2 = imageVoiture.getText();
 					v.setVoiture_lien_img(field2);
 				}
-				if (!nbTours.getText().equals("")) {
+				if (!nbTours.getText().equals("") && nbTours != null) {
 					int field3 = Integer.parseInt(nbTours.getText());
 					v.setVoiture_nbreTour_par_relai(field3);
 				}
-				if (!textField_4.getText().equals("")) {
+				if (!textField_4.getText().equals("") && textField_4 != null) {
 					String fiel4 = textField_4.getText();
 					v.setVoiture_temps_estime_partour(fiel4);;
 				}
@@ -481,5 +487,17 @@ public class VoitureAvecEvent extends JPanel {
 		btnModifier.setIcon(loginIcon6);
 		btnModifier.setBounds(221, 299, 145, 29);
 		desktopPane.add(btnModifier);
+		
+		JButton btnColorSelect = new JButton("");
+		btnColorSelect.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre choix des couleurs
+				Color couleur = JColorChooser.showDialog (null, Dico.dansLedico("Couleur du casque", Dico.langue), Color.WHITE);
+				couleurVoiture.setBackground(couleur);// on affecte la couleur choisit comme background du textarea
+				colorie_casque = Integer.toString(couleur.getRGB());
+			}
+		});
+		btnColorSelect.setBounds(880, 68, 46, 20);
+		desktopPane.add(btnColorSelect);
 	}
 }

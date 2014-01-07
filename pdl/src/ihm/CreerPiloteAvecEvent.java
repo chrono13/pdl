@@ -69,7 +69,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 		
 		JLabel lblCouleurDuCasque = new JLabel(Dico.dansLedico("Couleur du casque", Dico.langue));
 		lblCouleurDuCasque.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-		lblCouleurDuCasque.setBounds(170, 300, 120, 23);
+		lblCouleurDuCasque.setBounds(170, 300, 168, 23);
 		desktopPane.add(lblCouleurDuCasque);
 		
 		JLabel lblImageDuPilote = new JLabel(Dico.dansLedico("Image du pilote", Dico.langue));
@@ -97,7 +97,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 				if (verrou) {// si le pilote existait déja est que le modifie alors on supprime son ancien item afin d'en refaire un nouveau
 					v.voiture_remove_pilote(p);
 				}
-				if (textField == null || textField.getText().equals("")  
+				if (textField == null || textField.getText().equals("")   
 						|| colorie_casque == null || textField_3 == null || textField_3.getText().equals("")) {
 					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
 					return;// si il manque au moins un élément chez le pilote alors on avertit le client
@@ -107,7 +107,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 					nom = textField.getText();
 					p.setPilote_nomprenom(nom);
 				}
-				if (colorie_casque != null) {
+				if (colorie_casque != null || !colorie_casque.equals("") ) {
 					casque = colorie_casque;
 					p.setPilote_couleur(casque);
 				}
@@ -127,6 +127,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 		desktopPane.add(btnAjouterModifier);
 		
 		textField_2 = new JTextField();
+		textField_2.setEditable(false);
 		textField_2.setBounds(551, 300, 270, 20);
 		desktopPane.add(textField_2);
 		textField_2.setColumns(10);
@@ -143,7 +144,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 			textField_3.setText(p.getPilote_lien_sur_img());
 			colorie_casque = p.getPilote_couleur();
 		}
-		if ( colorie_casque != null) {
+		if ( colorie_casque != null && !colorie_casque.equals("") ) {
 			textField_2.setBackground(Color.decode(colorie_casque));// on affecte la couleur choisit comme background du textarea
 		}
 		
@@ -169,12 +170,12 @@ public class CreerPiloteAvecEvent extends JPanel {
 		btnColorSelect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre choix des couleurs
-				Color couleur = JColorChooser.showDialog (null, "couleur du casque", Color.WHITE);
+				Color couleur = JColorChooser.showDialog (null, Dico.dansLedico("Couleur du casque", Dico.langue), Color.WHITE);
 				textField_2.setBackground(couleur);// on affecte la couleur choisit comme background du textarea
 				colorie_casque = Integer.toString(couleur.getRGB());	
 			}
 		});
-		btnColorSelect.setBounds(487, 250, 42, 23);
+		btnColorSelect.setBounds(486, 300, 42, 23);
 		desktopPane.add(btnColorSelect);
 		
 	}

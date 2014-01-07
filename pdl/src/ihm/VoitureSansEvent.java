@@ -15,6 +15,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
@@ -45,6 +46,7 @@ public class VoitureSansEvent extends JPanel {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTable table;
+	private String colorie_casque = null;
 	
 	
 	private Voiture v = null;
@@ -139,6 +141,7 @@ public class VoitureSansEvent extends JPanel {
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(568, 68, 290, 20);
+		textField_1.setEditable(false);
 		desktopPane.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -157,12 +160,15 @@ public class VoitureSansEvent extends JPanel {
 		desktopPane.add(textField_4);
 		textField_4.setColumns(10);
 		
-		if (v!=null) {
+		if (v != null) {
 			textField.setText(v.getVoiture_num());
-			textField_1.setText(v.getVoiture_couleur());
+			colorie_casque = v.getVoiture_couleur();
 			textField_2.setText(v.getVoiture_lien_img());
 			textField_3.setText(Integer.toString(v.getVoiture_nbreTour_par_relai()));
 			textField_4.setText(v.getVoiture_temps_estime_partour());
+			if (!colorie_casque.equals("") && colorie_casque!=null) {
+				textField_1.setBackground(Color.decode(colorie_casque));
+			}
 		}
 		
 		
@@ -216,7 +222,7 @@ public class VoitureSansEvent extends JPanel {
 				}
 				if (textField == null || textField.getText().equals("")  || textField_2.getText().equals("") 
 						|| textField_2 == null || textField_4 == null || textField_4.getText().equals("")
-						|| textField_3 == null || textField_3.getText().equals("0") || textField_1== null || textField_1.getText().equals(""))
+						|| textField_3 == null || textField_3.getText().equals("0") || colorie_casque== null || colorie_casque.equals("") )
 				
 				{// si au moins un des champs principaux n'est pas remplies alors on a un message d'erreur
 					JOptionPane.showMessageDialog(desktopPane, Dico.dansLedico("Vous n'avez pas tout rempli !", Dico.langue), Dico.dansLedico("Attention", Dico.langue), JOptionPane.ERROR_MESSAGE);
@@ -225,7 +231,7 @@ public class VoitureSansEvent extends JPanel {
 				else {
 					// fixation des informations de la voiture avant la sauvegarde
 					v.setVoiture_active(chckbxVoitureActive.isSelected());
-					v.setVoiture_couleur(textField_1.getText());
+					v.setVoiture_couleur(colorie_casque);
 					v.setVoiture_lien_img(textField_2.getText());
 					v.setVoiture_nbreTour_par_relai(Integer.parseInt(textField_3.getText()));
 					v.setVoiture_num(textField.getText());
@@ -326,8 +332,8 @@ public class VoitureSansEvent extends JPanel {
 					nom = textField.getText();
 					v.setVoiture_num(nom);
 				}
-				if (!textField_1.getText().equals("")) {
-					String field1 = textField_1.getText();
+				if (colorie_casque != null && !colorie_casque.equals("") ) {
+					String field1 = colorie_casque;
 					v.setVoiture_couleur(field1);
 				}
 				if (!textField_2.getText().equals("")) {
@@ -391,6 +397,19 @@ public class VoitureSansEvent extends JPanel {
 					
 			}
 		});
+		
+		// bouton pour afficher la palette de couleur
+		JButton btnColorSelect = new JButton("");
+		btnColorSelect.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre choix des couleurs
+				Color couleur = JColorChooser.showDialog (null, Dico.dansLedico("Couleur du casque", Dico.langue), Color.WHITE);
+				textField_1.setBackground(couleur);// on affecte la couleur choisit comme background du textarea
+				colorie_casque = Integer.toString(couleur.getRGB());
+			}
+		});
+		btnColorSelect.setBounds(880, 68, 46, 20);
+		desktopPane.add(btnColorSelect);
 
 	}
 	
