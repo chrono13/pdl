@@ -394,7 +394,9 @@ public class CourseInterface extends JPanel {
 
 
 				table.setModel(model);
-/*
+
+				
+				
 				JButton btnModifierTop = new JButton(Dico.dansLedico("Modifier TOP", Dico.langue));
 				btnModifierTop.setContentAreaFilled(false);
 				btnModifierTop.setBorderPainted(false);
@@ -416,8 +418,11 @@ public class CourseInterface extends JPanel {
 								i++;
 							}
 							
-							modified = new ModificationTop(toup);
+							modified = new ModificationTop(toup, model, ligne, table);
 							modified.setVisible(true);
+							
+							/*
+							
 							int cp = 0;
 							while (modified.isActive()) {
 								
@@ -433,13 +438,13 @@ public class CourseInterface extends JPanel {
 								model.fireTableCellUpdated(ligne, 4);
 								model.fireTableCellUpdated(ligne, 3);
 								tooop = null;
-							}
+							}*/
 						}
 					}
 				});
 				btnModifierTop.setBounds(20, 251, 202, 23);
 				desktopPane_1.add(btnModifierTop);
-*/
+
 
 				JButton btnExportTableur = new JButton(Dico.dansLedico("Export tableur", Dico.langue));
 				btnExportTableur.addActionListener(new ActionListener() {
@@ -583,5 +588,9 @@ public class CourseInterface extends JPanel {
 	 */
 	public static void setTooop(Top tooops) {
 		tooop = tooops;
+	}
+	
+	public static void updatetable(DefaultTableModel model, JTable table) {
+		table.setModel(model);
 	}
 }
