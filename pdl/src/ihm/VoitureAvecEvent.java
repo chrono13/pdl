@@ -205,7 +205,7 @@ public class VoitureAvecEvent extends JPanel {
 		btnSauvegarder.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnSauvegarder.setBorderPainted(false);
 		btnSauvegarder.setContentAreaFilled(false);
-		Icon loginIcon1 = new ImageIcon("icones/save.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/save.png"));
 		btnSauvegarder.setIcon(loginIcon1);
 		btnSauvegarder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -263,7 +263,7 @@ public class VoitureAvecEvent extends JPanel {
 		btnValider.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnValider.setBorderPainted(false);
 		btnValider.setContentAreaFilled(false);
-		Icon loginIcon4 = new ImageIcon("icones/valid.png");
+		Icon loginIcon4 = new ImageIcon(getClass().getResource("/icones/valid.png"));
 		btnValider.setIcon(loginIcon4);
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -327,7 +327,7 @@ public class VoitureAvecEvent extends JPanel {
 		btnAnnuler.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnAnnuler.setBorderPainted(false);
 		btnAnnuler.setContentAreaFilled(false);
-		Icon loginIcon2 = new ImageIcon("icones/previous.png");
+		Icon loginIcon2 = new ImageIcon(getClass().getResource("/icones/previous.png"));
 		btnAnnuler.setIcon(loginIcon2);
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -347,7 +347,7 @@ public class VoitureAvecEvent extends JPanel {
 		btnAjouterPilote.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnAjouterPilote.setBorderPainted(false);
 		btnAjouterPilote.setContentAreaFilled(false);
-		Icon loginIcon3 = new ImageIcon("icones/add.png");
+		Icon loginIcon3 = new ImageIcon(getClass().getResource("/icones/add.png"));
 		btnAjouterPilote.setIcon(loginIcon3);
 		btnAjouterPilote.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -410,7 +410,7 @@ public class VoitureAvecEvent extends JPanel {
 		btnSupprimer.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnSupprimer.setBorderPainted(false);
 		btnSupprimer.setContentAreaFilled(false);
-		Icon loginIcon5 = new ImageIcon("icones/suppr.png");
+		Icon loginIcon5 = new ImageIcon(getClass().getResource("/icones/suppr.png"));
 		btnSupprimer.setIcon(loginIcon5);
 		btnSupprimer.setBounds(376, 297, 133, 29);
 		desktopPane.add(btnSupprimer);
@@ -461,7 +461,7 @@ public class VoitureAvecEvent extends JPanel {
 		btnModifier.setFont(new Font("Dialog", Font.PLAIN, 14));
 		btnModifier.setBorderPainted(false);
 		btnModifier.setContentAreaFilled(false);
-		Icon loginIcon6 = new ImageIcon("icones/edit.png");
+		Icon loginIcon6 = new ImageIcon(getClass().getResource("/icones/edit.png"));
 		btnModifier.setIcon(loginIcon6);
 		btnModifier.setBounds(221, 299, 145, 29);
 		desktopPane.add(btnModifier);

@@ -58,7 +58,7 @@ public class Language extends JPanel {
 		btnValider.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnValider.setContentAreaFilled(false);
 		btnValider.setBorderPainted(false);
-		Icon loginIcon4 = new ImageIcon("icones/valid.png");
+		Icon loginIcon4 = new ImageIcon(getClass().getResource("/icones/valid.png"));
 		btnValider.setIcon(loginIcon4);
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -82,7 +82,7 @@ public class Language extends JPanel {
 		btnQuitter.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnQuitter.setContentAreaFilled(false);
 		btnQuitter.setBorderPainted(false);
-		Icon loginIcon1 = new ImageIcon("icones/quit.png");
+		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/quit.png"));
 		btnQuitter.setIcon(loginIcon1);
 		btnQuitter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

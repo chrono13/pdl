@@ -478,7 +478,7 @@ public class CourseInterface extends JPanel {
 				});
 				btnExportTableur.setContentAreaFilled(false);
 				btnExportTableur.setBorderPainted(false);
-				Icon loginIcon12 = new ImageIcon("icones/tableur.png");
+				Icon loginIcon12 = new ImageIcon(getClass().getResource("/icones/tableur.png"));
 				btnExportTableur.setIcon(loginIcon12);
 				btnExportTableur.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnExportTableur.setBounds(464, 251, 202, 23);
@@ -500,7 +500,7 @@ public class CourseInterface extends JPanel {
 				});
 				btnImprimer.setContentAreaFilled(false);
 				btnImprimer.setBorderPainted(false);
-				Icon loginIcon13 = new ImageIcon("icones/print.png");
+				Icon loginIcon13 = new ImageIcon(getClass().getResource("/icones/print.png"));
 				btnImprimer.setIcon(loginIcon13);
 				btnImprimer.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnImprimer.setBounds(686, 251, 202, 23);
@@ -529,7 +529,7 @@ public class CourseInterface extends JPanel {
 				});
 				btnSupprimerTop.setContentAreaFilled(false);
 				btnSupprimerTop.setBorderPainted(false);
-				Icon loginIcon11 = new ImageIcon("icones/suppr.png");
+				Icon loginIcon11 = new ImageIcon(getClass().getResource("/icones/suppr.png"));
 				btnSupprimerTop.setIcon(loginIcon11);
 				btnSupprimerTop.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnSupprimerTop.setBounds(242, 251, 202, 23);
