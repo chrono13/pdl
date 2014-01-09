@@ -37,10 +37,4 @@ public class SauvegarderXML {
 			}	
 		}
 	}
-/*
-	public static void sauvegarder(Class<Voiture> class1, Voiture v) {
-		// TODO Auto-generated method stub
-		
-	}
-*/
 }
