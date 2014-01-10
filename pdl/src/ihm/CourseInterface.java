@@ -77,7 +77,11 @@ public class CourseInterface extends JPanel {
 		JMenuItem mntmRevenir = new JMenuItem(Dico.dansLedico("Retour", Dico.langue));
 		mntmRevenir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				removeAll();
+				repaint();
+				CaracteristiquesEvent inter3 = new CaracteristiquesEvent(event);// acces a la gestion des evenements
+				add(inter3);
+				validate();
 			}
 		});
 		mnFichier.add(mntmRevenir);

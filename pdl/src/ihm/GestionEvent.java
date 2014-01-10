@@ -70,7 +70,7 @@ public class GestionEvent extends JPanel {
 		
 		
 		
-		// bouton charger un ŽvŽnement		
+		// bouton charger un evenement		
 		JButton btnChargerEvent = new JButton(Dico.dansLedico("Charger un evenement", Dico.langue));
 		btnChargerEvent.setContentAreaFilled(false);
 		btnChargerEvent.setBorderPainted(false);
@@ -101,7 +101,7 @@ public class GestionEvent extends JPanel {
 				// récupération du fichier sélectionné
 				else {
 					try {	
-						
+						// chargement du fichier puis on passe a l'interface caracteristique de l'evenement
 						File file = new File(nomdufichier);
 						JAXBContext jaxbContext = JAXBContext.newInstance(Evenement.class);
 						Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -124,7 +124,7 @@ public class GestionEvent extends JPanel {
 		desktopPane.add(btnChargerEvent);
 
 		
-// bouton annuler		
+		// bouton annuler		
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);

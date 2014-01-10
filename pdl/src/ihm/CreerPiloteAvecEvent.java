@@ -77,11 +77,13 @@ public class CreerPiloteAvecEvent extends JPanel {
 		lblImageDuPilote.setBounds(170, 365, 120, 23);
 		desktopPane.add(lblImageDuPilote);
 		
+		// texte pour le nom prenom du pilote
 		textField = new JTextField();
 		textField.setBounds(551, 237, 270, 20);
 		desktopPane.add(textField);
 		textField.setColumns(10);
 		
+		// bouton Ajouter/modifier
 		JButton btnAjouterModifier = new JButton(Dico.dansLedico("Ajouter / Modifier", Dico.langue));
 		btnAjouterModifier.setContentAreaFilled(false);
 		btnAjouterModifier.setBorderPainted(false);
@@ -118,7 +120,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 				v.voiture_add_pilote(p);
 				removeAll();
 				repaint();
-				VoitureAvecEvent inter2 = new VoitureAvecEvent(event, v);
+				VoitureAvecEvent inter2 = new VoitureAvecEvent(event, v);// on rebascule sur la creation d'une voiture avec evenement
 				add(inter2);
 				validate();
 			}
@@ -126,19 +128,21 @@ public class CreerPiloteAvecEvent extends JPanel {
 		btnAjouterModifier.setBounds(236, 469, 219, 45);
 		desktopPane.add(btnAjouterModifier);
 		
+		// input pour la couleur du casque
 		textField_2 = new JTextField();
 		textField_2.setEditable(false);
 		textField_2.setBounds(551, 300, 104, 20);
 		desktopPane.add(textField_2);
 		textField_2.setColumns(10);
 		
+		// input pour le lien image du pilote
 		textField_3 = new JTextField();
 		textField_3.setBounds(551, 365, 270, 20);
 		desktopPane.add(textField_3);
 		textField_3.setColumns(10);
 		
 		
-		if (p!=null) {
+		if (p!=null) {// si on modifie un pilote on affecte tout les informations
 			verrou = true;
 			textField.setText(p.getPilote_nomprenom());
 			textField_3.setText(p.getPilote_lien_sur_img());
@@ -148,6 +152,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 			textField_2.setBackground(Color.decode(colorie_casque));// on affecte la couleur choisit comme background du textarea
 		}
 		
+		// bouton retour
 		JButton btnRetour = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnRetour.setContentAreaFilled(false);
 		btnRetour.setBorderPainted(false);
@@ -158,7 +163,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				VoitureAvecEvent inter2 = new VoitureAvecEvent(event, v);
+				VoitureAvecEvent inter2 = new VoitureAvecEvent(event, v);// on retourne sur la voiture sans rien modifier
 				add(inter2);
 				validate();
 			}
@@ -166,6 +171,7 @@ public class CreerPiloteAvecEvent extends JPanel {
 		btnRetour.setBounds(592, 469, 153, 45);
 		desktopPane.add(btnRetour);
 
+		// choix de la palette de couleur
 		JButton btnColorSelect = new JButton("");
 		btnColorSelect.setContentAreaFilled(false);
 		btnColorSelect.setBorderPainted(false);

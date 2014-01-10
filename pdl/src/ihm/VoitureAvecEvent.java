@@ -116,6 +116,7 @@ public class VoitureAvecEvent extends JPanel {
 		lblPiloteAuDopart.setBounds(574, 301, 189, 14);
 		desktopPane.add(lblPiloteAuDopart);
 
+		// choix pour le pilote actuelle de voiture
 		final JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(700, 299, 133, 23);
 		desktopPane.add(comboBox);
@@ -128,33 +129,38 @@ public class VoitureAvecEvent extends JPanel {
 			}
 		}
 
+		// input num de la voitre
 		numVoiture = new JTextField();
 		numVoiture.setBounds(189, 67, 283, 20);
 		desktopPane.add(numVoiture);
 		numVoiture.setColumns(10);
 
+		// input pour la coueur de la voiture
 		couleurVoiture = new JTextField();
-		couleurVoiture.setEditable(false);
+		couleurVoiture.setEditable(false);// non editable car on passe par une palette
 		couleurVoiture.setBounds(568, 68, 290, 20);
 		desktopPane.add(couleurVoiture);
 		couleurVoiture.setColumns(10);
 
+		// input de l'image de la voiture
 		imageVoiture = new JTextField();
 		imageVoiture.setBounds(189, 136, 283, 20);
 		desktopPane.add(imageVoiture);
 		imageVoiture.setColumns(10);
 
+		// input pour le nombre de tour
 		nbTours = new JTextField();
 		nbTours.setBounds(233, 202, 75, 20);
 		desktopPane.add(nbTours);
 		nbTours.setColumns(10);
 
+		// input pour le temps estime par tour
 		textField_4 = new JTextField();
 		textField_4.setBounds(662, 202, 119, 20);
 		desktopPane.add(textField_4);
 		textField_4.setColumns(10);
 
-		if (v!=null) {
+		if (v!=null) {// ici si la voiture est en modification, ou bien après que l'on a souhaiter creer un pilote
 			numVoiture.setText(v.getVoiture_num());
 			colorie_casque = v.getVoiture_couleur();
 			imageVoiture.setText(v.getVoiture_lien_img());
@@ -183,7 +189,7 @@ public class VoitureAvecEvent extends JPanel {
 
 		};
 		model.addColumn(Dico.dansLedico("Nom et prenom :", Dico.langue));
-		if (!v.listPiloteVide()) {
+		if (!v.listPiloteVide()) {// ajout des pilotes dans la table
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 
 			while(it.hasNext()) {
@@ -373,6 +379,7 @@ public class VoitureAvecEvent extends JPanel {
 					String fiel4 = textField_4.getText();
 					v.setVoiture_temps_estime_partour(fiel4);;
 				}
+				// on met en place la creation d'un pilote avec evenement
 				removeAll();
 				repaint();
 				CreerPiloteAvecEvent inter = new CreerPiloteAvecEvent(event, v, pil);
@@ -453,7 +460,7 @@ public class VoitureAvecEvent extends JPanel {
 						i++;
 					}
 				}
-				CreerPiloteAvecEvent inter = new CreerPiloteAvecEvent(event, v, p);
+				CreerPiloteAvecEvent inter = new CreerPiloteAvecEvent(event, v, p);// on met en place la creation d'un pilote avec evenement
 				add(inter);
 				validate();
 			}
@@ -466,6 +473,7 @@ public class VoitureAvecEvent extends JPanel {
 		btnModifier.setBounds(221, 299, 145, 29);
 		desktopPane.add(btnModifier);
 		
+		// bouton de la palette couleur pour le choix de la couleur de la voiture
 		JButton btnColorSelect = new JButton("");
 		btnColorSelect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

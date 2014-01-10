@@ -16,7 +16,7 @@ public class Dico {
 
 	static String langue;// la langue de notre application
 
-	public Dico (){
+	public Dico (){// constructeur vide
 
 	}
 	public static String getlangue() {
