@@ -243,5 +243,17 @@ public class Chrono extends JPanel implements Runnable{
         }
 		return res;
 	}
+	
+	public String stops() {
+		// TODO Auto-generated method stub
+		String res =time;// on recupere le temps entre deux tops
+    	on = false;
+    	runner = null;
+    	h = m = s = c = 0;
+    	time = setTime(0,0,0,0);// reinitialisation du temps a zero
+    	lcd = setLCD();
+    	repaint();
+    	return res;
+	}
 }
 
