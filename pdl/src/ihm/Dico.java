@@ -69,7 +69,7 @@ public class Dico {
 			put("Duree totale maximum par pilote :",    "Total maximum duration for a pilot :");
 			put("Edition",    "Edit");
 			put("Etat :",    "State :");
-			put("Export Tableur",    "Export Table");
+			put("Export tableur",    "Export Table");
 			put("Fichier",    "File");
 			put("Fichier incorrect", "Incorrect file");
 			put("Francais",    "French");
@@ -206,7 +206,7 @@ public class Dico {
 			put("Duree totale maximum par pilote :",    "Total maximal Zeit f\u00FCr einen Rennfahrer :");
 			put("Edition",    "Ausgabe");
 			put("Etat :",    "Stand :");
-			put("Export Tableur",    "Tabelle Export");
+			put("Export tableur",    "Tabelle Export");
 			put("Fichier",    "Datei");
 			put("Fichier incorrect", "Inkorrekte Datei");
 			put("Francais",    "Franz\u00F6sisch");
@@ -342,7 +342,7 @@ public class Dico {
 			put("Duree totale maximum par pilote :",    "Duraci\u00F3n total m\u00E1xima para un piloto :");
 			put("Edition",    "Edici\u00F3n");
 			put("Etat :",    "Estado :");
-			put("Export Tableur",    "Exportar hoja de c\u00E1lculo");
+			put("Export tableur",    "Exportar hoja de c\u00E1lculo");
 			put("Fichier",    "Archivo");
 			put("Fichier incorrect", "Archivo incorrecto");
 			put("Francais",    "Franc\u00E9s");
@@ -479,7 +479,7 @@ public class Dico {
 			put("Duree totale maximum par pilote :",    "Dur\u00E9e totale maximum par pilote :");
 			put("Edition",    "Edition");
 			put("Etat :",    "Etat :");
-			put("Export Tableur",    "Export Tableur");
+			put("Export tableur", "Export Tableur");
 			put("Fichier",    "Fichier");
 			put("Fichier incorrect", "Fichier incorrect");
 			put("Francais",    "Fran\u00E7ais");
