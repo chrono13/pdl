@@ -186,7 +186,7 @@ public class Dico {
 			put("Caracteristiques de l'evenement",    "Besonderheiten des Ereignis");
 			put("Caracteristiques",    "Besonderheiten");
 			put("Charger un evenement",    "Ein Ereignis laden");
-			put("Choisir un fichier xml", "");
+			put("Choisir un fichier xml", "XML Datei laufen");
 			put("Charger une course",    "Ein Rennen laden");
 			put("Choisir au moins un essai a lancer",     "W\u00E4hlen Sie mindesten einen Test zu laufen");
 			put("Choix de la langue",    "Wahl der Sprache");
@@ -208,7 +208,7 @@ public class Dico {
 			put("Etat :",    "Stand :");
 			put("Export Tableur",    "Tabelle Export");
 			put("Fichier",    "Datei");
-			put("Fichier incorrect", "");
+			put("Fichier incorrect", "Inkorrekte Datei");
 			put("Francais",    "Franz\u00F6sisch");
 			put("Gestion de la course",    "Rennensverwaltung");
 			put("Gestion de la course",    "Sie Wollen :");
@@ -458,7 +458,7 @@ public class Dico {
 			put("Caracteristiques de l'evenement",    "Caract\u00E9ristiques de l'\u00E9v\u00E9nement");
 			put("Caracteristiques",    "Caract\u00E9ristiques");
 			put("Charger un evenement",    "Charger un \u00E9v\u00E9nement");
-			put("Choisir un fichier xml", "");
+			put("Choisir un fichier xml", "Choisir un fichier xml");
 			put("Charger une course",    "Cargar una carrera");
 			put("Choisir au moins un essai a lancer",    "Choisir au moins un essai a lancer");
 			put("Choix de la langue",    "Choix de la langue");
