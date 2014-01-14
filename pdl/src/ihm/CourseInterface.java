@@ -452,24 +452,6 @@ public class CourseInterface extends JPanel {
 							modified = new ModificationTop(toup, model, ligne, table);
 							modified.setVisible(true);
 							
-							/*
-							
-							int cp = 0;
-							while (modified.isActive()) {
-								
-								cp++;
-							}
-							if (tooop!=null) {
-								model.setValueAt(tooop.getTop_comment(), ligne, 6);
-								model.setValueAt(tooop.getTop_etat(), ligne, 4 );	
-								model.setValueAt(tooop.getTop_heure_passage(), ligne, 5);
-								model.setValueAt(tooop.getTop_temps_tour(), ligne, 3);	
-								model.fireTableCellUpdated(ligne, 6);
-								model.fireTableCellUpdated(ligne, 5);
-								model.fireTableCellUpdated(ligne, 4);
-								model.fireTableCellUpdated(ligne, 3);
-								tooop = null;
-							}*/
 						}
 					}
 				});
@@ -480,6 +462,7 @@ public class CourseInterface extends JPanel {
 				JButton btnExportTableur = new JButton(Dico.dansLedico("Export tableur", Dico.langue));
 				btnExportTableur.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						
 						Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
 						JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
 						File fichier;
@@ -510,7 +493,39 @@ public class CourseInterface extends JPanel {
 							{
 								err.printStackTrace();
 							}
+						}	
+						/*
+						Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre de sauvegarde
+						JFileChooser dialogue = new JFileChooser(new File("."));// ouverture d'une boite de dialogue
+						File fichier;
+						String namefile = "";
+						String pathname= "";
+						if (dialogue.showSaveDialog(null)==JFileChooser.APPROVE_OPTION){
+							fichier = dialogue.getSelectedFile();
+							namefile = fichier.getName();// on recupere le nom du fichier
+							pathname = fichier.getParent();// on recupere le chemein du fichier
 						}
+						String nomdufichier = pathname+"/"+namefile+".xls";// on ajoute l'extension xml au fihcier
+						if (!nomdufichier.equals("/.xls")){// verifie que lors du choix de l'emplacement si on fait annuler on arrete l'enregistrement
+							try {
+								FileWriter out = new FileWriter(nomdufichier);
+								for(int i=0; i < model.getColumnCount(); i++) {
+									out.write(model.getColumnName(i) + "\t");
+								}
+								out.write("\n");
+
+								for(int i=0; i< model.getRowCount(); i++) {
+									for(int j=0; j < model.getColumnCount(); j++) {
+										out.write(model.getValueAt(i,j).toString()+"\t");
+									}
+									out.write("\n");
+								}
+								out.close();
+							}	catch(Exception err)
+							{
+								err.printStackTrace();
+							}
+						}*/
 					}
 				});
 				btnExportTableur.setContentAreaFilled(false);
