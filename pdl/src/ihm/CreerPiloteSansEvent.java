@@ -67,17 +67,20 @@ public class CreerPiloteSansEvent extends JPanel {
 		lblImageDuPilote.setBounds(182, 313, 150, 23);
 		desktopPane.add(lblImageDuPilote);
 		
+		// input de la couleur du casque 
 		couleurCasque = new JTextField();
 		couleurCasque.setEditable(false);
 		couleurCasque.setBounds(551, 251, 104, 20);
 		desktopPane.add(couleurCasque);
 		couleurCasque.setColumns(10);
 					
+		// input image pilote
 		imagePilote = new JTextField();
 		imagePilote.setBounds(551, 314, 270, 20);
 		desktopPane.add(imagePilote);
 		imagePilote.setColumns(10);
 		
+		// input nom du pilote
 		nomPilote = new JTextField();
 		nomPilote.setBounds(551, 184, 270, 20);
 		desktopPane.add(nomPilote);
@@ -162,6 +165,7 @@ public class CreerPiloteSansEvent extends JPanel {
 		btnRetour.setBounds(584, 490, 150, 45);
 		desktopPane.add(btnRetour);
 		
+		// bouton de la palette de couleur
 		JButton btnColorSelect = new JButton("");
 		btnColorSelect.setContentAreaFilled(false);
 		btnColorSelect.setBorderPainted(false);

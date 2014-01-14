@@ -20,7 +20,7 @@ import javax.swing.SwingConstants;
  * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
  *
  */
-
+// fenetre permettant l'affichage des choix des langues
 public class Language extends JPanel {
 
 	/**
@@ -43,11 +43,11 @@ public class Language extends JPanel {
 		final JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(367, 194, 216, 54);
 		desktopPane.add(comboBox);
+		// les langues que notre application propose
 		comboBox.addItem("Fran\u00E7ais");
 		comboBox.addItem("Deutsch");
 		comboBox.addItem("English");
 		comboBox.addItem("Espa\u00F1ol");
-		comboBox.addItem("Italiano");
 		
 		
 		/* BOUTONS DE LA FENETRE */
@@ -64,10 +64,10 @@ public class Language extends JPanel {
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String langue = comboBox.getSelectedItem().toString(); 
-				Dico.langue = langue;
+				Dico.langue = langue;// on fixe la langue choisit par l'utilisateur a la classe dictionnaire
 				removeAll();
 				repaint();
-				FirstFenetre inter3 = new FirstFenetre();
+				FirstFenetre inter3 = new FirstFenetre();// on prepare la premiere fenetre reel de notre application
 				add(inter3);
 				validate();
 			}
@@ -76,7 +76,7 @@ public class Language extends JPanel {
 		desktopPane.add(btnValider);
 		
 		
-//bouton Quitter	
+		//bouton Quitter	
 		JButton btnQuitter = new JButton("Quitter");
 		btnQuitter.setBorderPainted(false);
 		btnQuitter.setContentAreaFilled(false);
@@ -87,7 +87,7 @@ public class Language extends JPanel {
 		btnQuitter.setIcon(loginIcon1);
 		btnQuitter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				System.exit(0);// on quitte l'application
 			}
 		});
 		btnQuitter.setBounds(560, 351, 216, 66);

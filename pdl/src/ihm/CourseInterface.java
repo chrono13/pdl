@@ -77,7 +77,11 @@ public class CourseInterface extends JPanel {
 		JMenuItem mntmRevenir = new JMenuItem(Dico.dansLedico("Retour", Dico.langue));
 		mntmRevenir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				removeAll();
+				repaint();
+				CaracteristiquesEvent inter3 = new CaracteristiquesEvent(event);// acces a la gestion des evenements
+				add(inter3);
+				validate();
 			}
 		});
 		mnFichier.add(mntmRevenir);
@@ -341,8 +345,35 @@ public class CourseInterface extends JPanel {
 				JButton btnStop = new JButton(Dico.dansLedico("STOP", Dico.langue));
 				btnStop.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						/*
 						chr.stop();
 						temps.stop();
+						lancement = true;
+						*/
+						
+						
+						Date madate = new Date();
+						SimpleDateFormat formater = new SimpleDateFormat("H:mm:ss");
+						String heure = formater.format(madate);
+						String time = chr.stops();
+						String finatime = temps.stops();
+						textPane_5.setText(time);
+						String comm = "";
+						String comm2 = "The end";
+						comm = commentari.getText();
+						if (!comm.equals("")) {
+							commentari.setText("");
+						}
+						model.addRow((new Object [] {car_name, timeManager.get_compteur() , comboBox.getSelectedItem(), time, comboBox_etat.getSelectedItem() , heure, comm}));
+						String pilotes = (String) comboBox.getSelectedItem();
+						String etat = (String) comboBox_etat.getSelectedItem();
+						Top t = new Top (car_name, nb_tour, pilotes, time, etat, heure,comm);
+						session.AddTop(t);
+						timeManager.set_compteur(timeManager.get_compteur()+1);
+						model.addRow((new Object [] {car_name, "final" , comboBox.getSelectedItem(), finatime, "O" , heure, comm2}));
+						t = new Top (car_name, nb_tour, pilotes, finatime, "O", heure,comm2);
+						
+						
 						lancement = true;
 					}
 				});

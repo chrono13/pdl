@@ -2,7 +2,7 @@ package ihm;
 
 //==============================================================================
 // L c d D i g i t                                                        Class
-//                                                            By Bruno Bachelet modified by PDL-Chrono13
+//                                                            By Bruno Bachelet  && modified by PDL-Chrono13
 //==============================================================================
 // Copyright (c) 1999-2003
 // Bruno Bachelet - bruno@nawouak.net - http://www.nawouak.net

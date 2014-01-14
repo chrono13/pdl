@@ -21,7 +21,7 @@ import principal.Voiture;
  * @author Blanchard KÈvin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
  *
  */
-
+// fenetre permettant soit l'acces a la creation de voiture sans evenement ou l'acces a l'interface evenement
 public class FirstFenetre extends JPanel {
 
 	/**
@@ -43,7 +43,7 @@ public class FirstFenetre extends JPanel {
 		/* BOUTONS DE LA FENETRE */
 		
 
-//bouton créer un événement		
+		//bouton creer un evenement		
 		JButton btnCreerEvent = new JButton(Dico.dansLedico("Creer un evenement", Dico.langue));
 		btnCreerEvent.setContentAreaFilled(false);
 		btnCreerEvent.setBorderPainted(false);
@@ -56,7 +56,7 @@ public class FirstFenetre extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
 				repaint();
-				GestionEvent inter3 = new GestionEvent();
+				GestionEvent inter3 = new GestionEvent();// acces a la gestion des evenements
 				add(inter3);
 				validate();
 			}
@@ -79,7 +79,7 @@ public class FirstFenetre extends JPanel {
 				Voiture v = new Voiture();
 				removeAll();
 				repaint();
-				VoitureSansEvent inter3 = new VoitureSansEvent(v);
+				VoitureSansEvent inter3 = new VoitureSansEvent(v);// acces a la partie de creation d'une voiture sans evenement
 				add(inter3);
 				validate();
 			}
@@ -88,7 +88,7 @@ public class FirstFenetre extends JPanel {
 		desktopPane.add(btnCreerVoiture);
 		
 		
-//bouton annuler		
+		//bouton annuler		
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Retour", Dico.langue));
 		btnAnnuler.setContentAreaFilled(false);
 		btnAnnuler.setBorderPainted(false);
@@ -96,7 +96,7 @@ public class FirstFenetre extends JPanel {
 		btnAnnuler.setIcon(loginIcon1);
 		btnAnnuler.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnAnnuler.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {// si on clique sur le bouton annuler on ferme l'application 
+			public void actionPerformed(ActionEvent e) {// si on clique sur le bouton annuler on retourne au choix de la langue
 				removeAll();
 				repaint();
 				Language inter2 = new Language();

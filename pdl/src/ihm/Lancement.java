@@ -20,7 +20,7 @@ import javax.swing.UIManager;
  * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
  *
  */
-
+// c'est la fenetre d'acceuil de l'application, ou nous presentons les createurs de cette application
 public class Lancement extends JPanel {
 
 	/**
@@ -52,7 +52,7 @@ public class Lancement extends JPanel {
 		desktopPane.add(lblRealiseeParKavishan);
 		
 		
-// bouton Continuer		
+		// bouton Continuer		
 		JButton btnContinuer = new JButton("Continuer");
 		btnContinuer.setContentAreaFilled(false);
 		btnContinuer.setBorderPainted(false);
@@ -61,12 +61,12 @@ public class Lancement extends JPanel {
 		Icon loginIcon1 = new ImageIcon(getClass().getResource("/icones/flag2.png"));
 		btnContinuer.setIcon(loginIcon1);
 		btnContinuer.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				removeAll();
-				repaint();
-				Language inter2 = new Language();
-				add(inter2);
-				validate();
+			public void actionPerformed(ActionEvent e) {// si le bouton continuer est appuyer alors on propose la fenetre permettant le choix de la langue
+				removeAll();// on supprime le contenu de la fenetre
+				repaint();// on reinitialise
+				Language inter2 = new Language();// on creer le contenu de choix de la langue
+				add(inter2);// on ajoute le contenu a la fenetre
+				validate();// on valide
 			}
 		});
 		btnContinuer.setBounds(78, 462, 218, 56);

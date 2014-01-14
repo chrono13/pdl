@@ -91,7 +91,7 @@ public class Chrono extends JPanel implements Runnable{
         while(on)
         {
             pause(9);
-
+            // gestion du temps via un compteur
             if (c<99) c+=1;
             else{
                 c = 0;
@@ -242,6 +242,18 @@ public class Chrono extends JPanel implements Runnable{
         	on = true;
         }
 		return res;
+	}
+	
+	public String stops() {
+		// TODO Auto-generated method stub
+		String res =time;// on recupere le temps entre deux tops
+    	on = false;
+    	runner = null;
+    	h = m = s = c = 0;
+    	time = setTime(0,0,0,0);// reinitialisation du temps a zero
+    	lcd = setLCD();
+    	repaint();
+    	return res;
 	}
 }
 

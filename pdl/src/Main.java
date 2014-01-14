@@ -22,7 +22,7 @@ public class Main extends JFrame {
 		public void run() {
 				try {
 					Main frame = new Main();
-					Lancement l = new Lancement();
+					Lancement l = new Lancement();// on appelle la premiere 
 					frame.add(l);
 					frame.pack();
 					frame.setVisible(true);

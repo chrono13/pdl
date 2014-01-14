@@ -20,6 +20,7 @@ public class VoitureTest {
 
 	@Test 
 	public void test1() throws JAXBException {// test pour envoyer des informations d'une voiture en xml
+		/* a travers ce test la creation d'un pilote est egalement tester*/
 		Pilote p = new Pilote();
 		p.setPilote_couleur("rouge");
 		p.setPilote_lien_sur_img("tottotototo");
@@ -38,12 +39,12 @@ public class VoitureTest {
 		v.setVoiture_pilote_actuelle(p);
 		v.voiture_add_pilote(p);
 		v.voiture_add_pilote(p2);
-		File file = new File("C:/Users/Kavishan/xaxa.xml");//sauvegarde dans l'explorateur le fichier
+		File file = new File("C:/Users/Kavishan/xaxa.xml");//test d'une sauvegarde dans l'explorateur le fichier
 		JAXBContext jaxbContext = JAXBContext.newInstance(Voiture.class);
 		Marshaller m = jaxbContext.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		m.marshal(v, file);
-		m.marshal(v, System.out);
+		m.marshal(v, file);// sortie xml vers un fichier
+		m.marshal(v, System.out);// sortie xml vers la console
 	}
 
 }

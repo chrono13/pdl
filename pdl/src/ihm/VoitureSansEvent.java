@@ -39,7 +39,7 @@ import principal.Voiture;
  * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
  *
  */
-
+// fenetre de creation d'une voiture sans evenement
 public class VoitureSansEvent extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
@@ -122,6 +122,7 @@ public class VoitureSansEvent extends JPanel {
 		lblPiloteAuDopart.setBounds(547, 304, 189, 14);
 		desktopPane.add(lblPiloteAuDopart);
 
+		// choix des pilotes de la voiture
 		final JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(684, 296, 97, 27);
 		desktopPane.add(comboBox);
@@ -135,33 +136,39 @@ public class VoitureSansEvent extends JPanel {
 		}
 		this.v = v;
 		
+		// input pour le num de la voiture	
 		textField = new JTextField();
 		textField.setBounds(189, 67, 283, 20);
 		desktopPane.add(textField);
 		textField.setColumns(10);		
 
+		// input de la couleur du casque
 		textField_1 = new JTextField();
 		textField_1.setBounds(568, 68, 290, 20);
-		textField_1.setEditable(false);
+		textField_1.setEditable(false);// on ne peut pas editer la couleur du casque car l'utilisateur par une palette
 		desktopPane.add(textField_1);
 		textField_1.setColumns(10);
 
+		// input du lien de l'image de la voiture
 		textField_2 = new JTextField();
 		textField_2.setBounds(189, 136, 290, 20);
 		desktopPane.add(textField_2);
 		textField_2.setColumns(10);
 
+		// input pour le nombre de tour par relais
 		textField_3 = new JTextField();
 		textField_3.setBounds(233, 202, 75, 20);
 		desktopPane.add(textField_3);
 		textField_3.setColumns(10);
-
+		
+		// input pour le temps estime par tour
 		textField_4 = new JTextField();
 		textField_4.setBounds(662, 202, 119, 20);
 		desktopPane.add(textField_4);
 		textField_4.setColumns(10);
 		
-		if (v != null) {
+		if (v != null) {// si v n'est pas null alors on place les informations
+			// on passe ici lorsque la fenetre revient apres la creation d'un pilote
 			textField.setText(v.getVoiture_num());
 			colorie_casque = v.getVoiture_couleur();
 			textField_2.setText(v.getVoiture_lien_img());
@@ -192,7 +199,7 @@ public class VoitureSansEvent extends JPanel {
 		model.addColumn(Dico.dansLedico("Couleur du casque", Dico.langue));
 		model.addColumn(Dico.dansLedico("Lien vers l'image :", Dico.langue));
 		
-		if (!v.listPiloteVide()) {
+		if (!v.listPiloteVide()) {// si il y a des pilote, on les ajoute dans la table
 			Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 		
 			while(it.hasNext()) {
@@ -321,11 +328,12 @@ public class VoitureSansEvent extends JPanel {
 					String fiel4 = textField.getText();
 					v.setVoiture_temps_estime_partour(fiel4);;
 				}
+				// on met en place la creation d'un pilote avec evenement
 				removeAll();
 				repaint();
 				int ligne = table.getSelectedRow();
 				Pilote p = new Pilote ();
-				if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas
+				if (ligne !=-1) {// si rien n'est selectionner dans le tableau alors on ne rentre pas, cela veut dire que l'n est pas en modification de pilote
 					int i = 0;
 					Iterator <Pilote> it = v.getVoiture_list_pilotes().iterator();
 					while(it.hasNext() && i<=ligne){
@@ -341,6 +349,7 @@ public class VoitureSansEvent extends JPanel {
 		btnAjouterPilote.setBounds(120, 302, 190, 18);
 		desktopPane.add(btnAjouterPilote);
 		
+		// bouton supprimer un pilote
 		JButton button_supprimerpilote = new JButton(Dico.dansLedico("Supprimer", Dico.langue));
 		button_supprimerpilote.setFont(new Font("Dialog", Font.PLAIN, 14));
 		button_supprimerpilote.setBorderPainted(false);

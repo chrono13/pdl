@@ -24,6 +24,11 @@ import javax.swing.table.DefaultTableModel;
 
 import principal.Top;
 
+/**
+ * Classe permettant la modification d'un top
+ * @author Blanchard Kévin /Ganeshamoorthy Kavishan/ Leroy Philippe/Veillot Yann
+ *
+ */
 public class ModificationTop extends JFrame {
 
 	private JPanel contentPane;
@@ -73,6 +78,7 @@ public class ModificationTop extends JFrame {
 		lblHeure.setBounds(6, 97, 127, 22);
 		desktopPane.add(lblHeure);
 
+		// input heure de passage
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(150, 91, 195, 28);
@@ -84,6 +90,7 @@ public class ModificationTop extends JFrame {
 		lblEtat.setBounds(6, 147, 127, 22);
 		desktopPane.add(lblEtat);
 
+		// choix de l'etat du top
 		final JComboBox <String> comboBoxEtat = new JComboBox <String>();
 		comboBoxEtat.setBounds(150, 147, 195, 27);
 		desktopPane.add(comboBoxEtat);
@@ -97,7 +104,7 @@ public class ModificationTop extends JFrame {
 		lblCommentaires.setBounds(6, 196, 162, 22);
 		desktopPane.add(lblCommentaires);
 
-
+		// input pour le commentaire
 		final JTextArea textArea = new JTextArea();
 		textArea.setBounds(160, 200, 296, 97);
 		desktopPane.add(textArea);
@@ -105,6 +112,7 @@ public class ModificationTop extends JFrame {
 			textArea.setText(toup.getTop_comment());
 		}
 
+		// bouton annuler
 		JButton btnAnnuler = new JButton(Dico.dansLedico("Annuler", Dico.langue));
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -119,7 +127,7 @@ public class ModificationTop extends JFrame {
 		btnAnnuler.setBounds(129, 306, 163, 65);
 		desktopPane.add(btnAnnuler);
 
-
+		// bouton valider
 		JButton btnValider = new JButton(Dico.dansLedico("Valider", Dico.langue));
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -138,7 +146,7 @@ public class ModificationTop extends JFrame {
 				
 				
 				
-				
+				// on actualise la table
 				mod.setValueAt(tops.getTop_comment(), ligne, 6);
 				mod.setValueAt(tops.getTop_etat(), ligne, 4 );	
 				mod.setValueAt(tops.getTop_heure_passage(), ligne, 5);
@@ -151,7 +159,7 @@ public class ModificationTop extends JFrame {
 				CourseInterface.updatetable(mod, table);
 				
 				((Window) contentPane.getTopLevelAncestor()).dispose();
-			
+				
 			}
 		});
 		btnValider.setFont(new Font("Dialog", Font.PLAIN, 14));
