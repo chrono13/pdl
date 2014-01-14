@@ -431,7 +431,7 @@ public class CourseInterface extends JPanel {
 				JButton btnModifierTop = new JButton(Dico.dansLedico("Modifier TOP", Dico.langue));
 				btnModifierTop.setContentAreaFilled(false);
 				btnModifierTop.setBorderPainted(false);
-				Icon loginIcon10 = new ImageIcon("icones/edit.png");
+				Icon loginIcon10 = new ImageIcon(getClass().getResource("/icones/edit.png"));
 				btnModifierTop.setIcon(loginIcon10);
 				btnModifierTop.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 				btnModifierTop.addActionListener(new ActionListener() {

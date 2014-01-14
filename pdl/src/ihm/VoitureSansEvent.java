@@ -142,10 +142,10 @@ public class VoitureSansEvent extends JPanel {
 		desktopPane.add(textField);
 		textField.setColumns(10);		
 
-		// input de la couleur du casque
+		// input de la couleur de la voiture
 		textField_1 = new JTextField();
-		textField_1.setBounds(568, 68, 290, 20);
-		textField_1.setEditable(false);// on ne peut pas editer la couleur du casque car l'utilisateur par une palette
+		textField_1.setBounds(568, 68, 149, 20);
+		textField_1.setEditable(false);// on ne peut pas editer la couleur de la voiture car l'utilisateur par une palette
 		desktopPane.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -382,6 +382,10 @@ public class VoitureSansEvent extends JPanel {
 		
 		// bouton pour afficher la palette de couleur
 		JButton btnColorSelect = new JButton("");
+		btnColorSelect.setContentAreaFilled(false);
+		btnColorSelect.setBorderPainted(false);
+		Icon loginIcon11 = new ImageIcon(getClass().getResource("/icones/color.png"));
+		btnColorSelect.setIcon(loginIcon11);
 		btnColorSelect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Dico.langueSystem(Dico.langue);// choix de la langue pour la fenetre choix des couleurs
@@ -390,7 +394,7 @@ public class VoitureSansEvent extends JPanel {
 				colorie_casque = Integer.toString(couleur.getRGB());
 			}
 		});
-		btnColorSelect.setBounds(880, 68, 46, 20);
+		btnColorSelect.setBounds(729, 62, 48, 35);
 		desktopPane.add(btnColorSelect);
 
 	}
